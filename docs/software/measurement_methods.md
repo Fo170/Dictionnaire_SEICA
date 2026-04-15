@@ -1,4 +1,4 @@
-# Méthodes de Mesure VIVA
+# Méthodes de Mesure SEICA
 
 Le système VIVA permet d'effectuer des mesures de précision sur les composants passifs (R, C, L) en utilisant différentes configurations de câblage pour compenser les impédances parasites et les courants de fuite.
 

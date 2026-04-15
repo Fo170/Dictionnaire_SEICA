@@ -12,18 +12,18 @@
 
 ## TABLE DES MATIÈRES
 
-1. [PRÉSENTATION DU LOGICIEL VIVA](#1-présentation-du-logiciel-viva)
+1. [PRÉSENTATION DU LOGICIEL SEICA](#1-présentation-du-logiciel-seica)
 2. [ENVIRONNEMENT WIZARD (ASSISTANT)](#2-environnement-wizard-assistant)
 3. [MÉTHODES DE MESURE & GUARDING](#3-méthodes-de-mesure--guarding)
 4. [MACROS DE TEST ANALOGIQUE (R, C, L, FNODE)](#4-macros-de-test-analogique-r-c-l-fnode)
 5. [MACROS SEMI-CONDUCTEURS & PUISSANCE](#5-macros-semi-conducteurs--puissance)
 6. [MACROS VECTORLESS & SERVICE](#6-macros-vectorless--service)
-7. [GUIDE DU LANGAGE VIVA (STATIC & DYNAMIC)](#7-guide-du-langage-viva-static--dynamic)
+7. [GUIDE DU LANGAGE SEICA (STATIC & DYNAMIC)](#7-guide-du-langage-seica-static--dynamic)
 8. [TIMING & PATTERNS (SYNCHRONISATION)](#8-timing--patterns-synchronisation)
 9. [PRÉ-PROCESSEUR & DIRECTIVES COMPILATEUR](#9-pré-processeur--directives-compilateur)
 10. [DÉCLARATIONS & STRUCTURES DE DONNÉES](#10-déclarations--structures-de-données)
 11. [CONTRÔLE DE FLUX & LOGIQUE](#11-contrôle-de-flux--logique)
-12. [OUTILS VNL (VIVA NATIVE LANGUAGE)](#12-outils-vnl-viva-native-language)
+12. [OUTILS VNL (SEICA NATIVE LANGUAGE)](#12-outils-vnl-seica-native-language)
 13. [INSTRUMENTS & MATÉRIEL (ANALOGIQUE & NUMÉRIQUE)](#13-instruments--matériel-analogique--numérique)
 14. [GESTION DE L'ALIMENTATION (SE2 / SE5)](#14-gestion-de-lalimentation-se2--se5)
 15. [MODULE DE BRASAGE LASER (SOLD)](#15-module-de-brasage-laser-sold)
@@ -43,7 +43,7 @@
 
 ---
 
-## 1. PRÉSENTATION DU LOGICIEL VIVA
+## 1. PRÉSENTATION DU LOGICIEL SEICA
 
 ### [Aperçu et Gestion des Utilisateurs](./docs/software/viva_overview.md)
 Le logiciel VIVA centralise le développement, le débogage et l'exécution des tests.
@@ -103,7 +103,7 @@ Tests avancés hors tension et fonctions de service.
 
 ---
 
-## 7. GUIDE DU LANGAGE VIVA (STATIC & DYNAMIC)
+## 7. GUIDE DU LANGAGE SEICA (STATIC & DYNAMIC)
 
 ### [Concepts Fondamentaux](./docs/software/language/VIVA_Language_Guide.md)
 Le langage VIVA est un langage structuré de haut niveau gérant les tests statiques (PC) et dynamiques (DSP).
@@ -163,7 +163,7 @@ Boucle Runtime avec compteur.
 
 ---
 
-## 12. OUTILS VNL (VIVA NATIVE LANGUAGE)
+## 12. OUTILS VNL (SEICA NATIVE LANGUAGE)
 
 ### [Outils et Méthodes VNL](./docs/software/logic/VNL_TOOLS.md)
 Le VNL est une approche orientée objet pour le pilotage des ressources.

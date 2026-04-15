@@ -71,7 +71,7 @@ ${selectedKeyword.example}
               <Terminal className="text-accent-primary w-6 h-6" />
             </div>
             <div className="font-extrabold text-xl text-accent-primary tracking-wider uppercase">
-              Viva v1.0
+              SEICA v1.0
             </div>
           </div>
           
@@ -171,7 +171,7 @@ ${selectedKeyword.example}
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-accent-primary rounded-full animate-pulse" />
-                <span>Système Viva v1.0 Prêt</span>
+                <span>Système SEICA v1.0 Prêt</span>
               </div>
             </footer>
           </div>

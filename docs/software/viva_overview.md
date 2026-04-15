@@ -1,4 +1,4 @@
-# Présentation du Logiciel VIVA
+# Présentation du Logiciel SEICA
 
 Le logiciel VIVA est conçu pour gérer le développement et l'exécution de programmes de test sur des dispositifs électroniques à l'aide des systèmes de test Seica S.p.A. Il dispose d'une interface graphique conviviale et d'un ensemble d'outils logiciels pour guider l'utilisateur.
 

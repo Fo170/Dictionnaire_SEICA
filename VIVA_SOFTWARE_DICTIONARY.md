@@ -5,19 +5,19 @@
 
 ## TABLE DES MATIÈRES
 
-1. [PRÉSENTATION DU LOGICIEL VIVA](#1-présentation-du-logiciel-viva)
+1. [PRÉSENTATION DU LOGICIEL SEICA](#1-présentation-du-logiciel-seica)
 2. [ENVIRONNEMENT WIZARD (ASSISTANT)](#2-environnement-wizard-assistant)
 3. [ENVIRONNEMENTS DE TRAVAIL SPÉCIALISÉS](#3-environnements-de-travail-spécialisés)
 4. [MÉTHODES DE MESURE & GUARDING](#4-méthodes-de-mesure--guarding)
 5. [MACROS DE TEST ANALOGIQUE (R, C, L, FNODE)](#5-macros-de-test-analogique-r-c-l-fnode)
 6. [MACROS SEMI-CONDUCTEURS & PUISSANCE](#6-macros-semi-conducteurs--puissance)
 7. [MACROS VECTORLESS & SERVICE](#7-macros-vectorless--service)
-8. [GUIDE DU LANGAGE VIVA (STATIC & DYNAMIC)](#8-guide-du-langage-viva-static--dynamic)
+8. [GUIDE DU LANGAGE SEICA (STATIC & DYNAMIC)](#8-guide-du-langage-seica-static--dynamic)
 9. [TIMING & PATTERNS (SYNCHRONISATION)](#9-timing--patterns-synchronisation)
 10. [PRÉ-PROCESSEUR & DIRECTIVES COMPILATEUR](#10-pré-processeur--directives-compilateur)
 11. [DÉCLARATIONS & STRUCTURES DE DONNÉES](#11-déclarations--structures-de-données)
 12. [CONTRÔLE DE FLUX & LOGIQUE](#12-contrôle-de-flux--logique)
-13. [OUTILS VNL (VIVA NATIVE LANGUAGE)](#13-outils-vnl-viva-native-language)
+13. [OUTILS VNL (SEICA NATIVE LANGUAGE)](#13-outils-vnl-seica-native-language)
 14. [ENTRÉE / SORTIE & INTERFACE UTILISATEUR](#14-entrée--sortie--interface-utilisateur)
 15. [FONCTIONS MATHÉMATIQUES & VARIABLES SYSTÈME](#15-fonctions-mathématiques--variables-système)
 16. [COMMUNICATION & SCRIPTS EXTERNES (API, VBS)](#16-communication--scripts-externes-api-vbs)
@@ -27,7 +27,7 @@
 
 ---
 
-## 1. PRÉSENTATION DU LOGICIEL VIVA
+## 1. PRÉSENTATION DU LOGICIEL SEICA
 
 ### [Aperçu et Gestion des Utilisateurs](./docs/software/viva_overview.md)
 Le logiciel VIVA centralise le développement, le débogage et l'exécution des tests.
@@ -101,7 +101,7 @@ Tests avancés hors tension et fonctions de service.
 
 ---
 
-## 8. GUIDE DU LANGAGE VIVA (STATIC & DYNAMIC)
+## 8. GUIDE DU LANGAGE SEICA (STATIC & DYNAMIC)
 
 ### [Concepts Fondamentaux](./docs/software/language/VIVA_Language_Guide.md)
 Le langage VIVA est un langage structuré de haut niveau gérant les tests statiques (PC) et dynamiques (DSP).
@@ -198,7 +198,7 @@ Branchements multiples.
 
 ---
 
-## 13. OUTILS VNL (VIVA NATIVE LANGUAGE)
+## 13. OUTILS VNL (SEICA NATIVE LANGUAGE)
 
 ### [Outils et Méthodes VNL](./docs/software/logic/VNL_TOOLS.md)
 Le VNL est une approche orientée objet pour le pilotage des ressources.

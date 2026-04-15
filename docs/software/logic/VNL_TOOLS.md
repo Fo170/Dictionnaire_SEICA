@@ -1,4 +1,4 @@
-# Outils et Méthodes VNL (VIVA Native Language)
+# Outils et Méthodes VNL (SEICA Native Language)
 
 ## Présentation
 Le VNL est le langage graphique utilisé dans l'environnement de programmation (CTRL+P) pour construire des macros. Il repose sur l'utilisation d'**Outils** (Tools) qui exposent des **Méthodes** (Methods).

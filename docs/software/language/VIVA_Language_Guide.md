@@ -1,4 +1,4 @@
-# Guide du Langage VIVA (Static & Dynamic)
+# Guide du Langage SEICA (Static & Dynamic)
 
 ## Environnements de Programmation
 Le langage VIVA s'exécute dans deux environnements distincts selon les ressources matérielles :
