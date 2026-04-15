@@ -23,21 +23,24 @@
 9. [PRÉ-PROCESSEUR & DIRECTIVES COMPILATEUR](#9-pré-processeur--directives-compilateur)
 10. [DÉCLARATIONS & STRUCTURES DE DONNÉES](#10-déclarations--structures-de-données)
 11. [CONTRÔLE DE FLUX & LOGIQUE](#11-contrôle-de-flux--logique)
-12. [OUTILS VNL (SEICA NATIVE LANGUAGE)](#12-outils-vnl-seica-native-language)
-13. [INSTRUMENTS & MATÉRIEL (ANALOGIQUE & NUMÉRIQUE)](#13-instruments--matériel-analogique--numérique)
-14. [GESTION DE L'ALIMENTATION (SE2 / SE5)](#14-gestion-de-lalimentation-se2--se5)
-15. [MODULE DE BRASAGE LASER (SOLD)](#15-module-de-brasage-laser-sold)
-16. [COMMANDES NUMÉRIQUES DÉTAILLÉES](#16-commandes-numériques-détaillées)
-17. [MODULE HAUTE TENSION (HV)](#17-module-haute-tension-hv)
-18. [MODULE USB & ZONE UTILISATEUR](#18-module-usb--zone-utilisateur)
-19. [MODULE GÉNÉRATEUR DE FONCTIONS (GEN)](#19-module-générateur-de-fonctions-gen)
-20. [MODULE F40 (HIGH FREQUENCY)](#20-module-f40-high-frequency)
-21. [OPTION DIGIPLEX (DIGITAL MULTIPLEXER)](#21-option-digiplex-digital-multiplexer)
-22. [COMMUNICATION IEEE / GPIB](#22-communication-ieee--gpib)
-23. [VECTEURS ALGORITHMIQUES](#23-vecteurs-algorithmiques)
-24. [ENTRÉE / SORTIE & INTERFACE UTILISATEUR](#24-entrée--sortie--interface-utilisateur)
-25. [FONCTIONS MATHÉMATIQUES & VARIABLES SYSTÈME](#25-functions-mathématiques--variables-système)
-26. [COMMUNICATION & INTERFACES EXTERNES (API, VBS, JTAG)](#26-communication--interfaces-externes-api-vbs-jtag)
+12. [GESTION D'ÉVÉNEMENTS & COMPARAISONS](#12-gestion-dévénements--comparaisons)
+13. [OUTILS VNL (SEICA NATIVE LANGUAGE)](#13-outils-vnl-seica-native-language)
+14. [INSTRUMENTS & MATÉRIEL (ANALOGIQUE & NUMÉRIQUE)](#14-instruments--matériel-analogique--numérique)
+15. [GESTION DE L'ALIMENTATION (SE2 / SE5)](#15-gestion-de-lalimentation-se2--se5)
+16. [MODULE DE BRASAGE LASER (SOLD)](#16-module-de-brasage-laser-sold)
+17. [COMMANDES NUMÉRIQUES DÉTAILLÉES](#17-commandes-numériques-détaillées)
+18. [MODULE HAUTE TENSION (HV)](#18-module-haute-tension-hv)
+19. [MODULE USB & ZONE UTILISATEUR](#19-module-usb--zone-utilisateur)
+20. [MODULE GÉNÉRATEUR DE FONCTIONS (GEN)](#20-module-générateur-de-fonctions-gen)
+21. [MODULE F40 (HIGH FREQUENCY)](#21-module-f40-high-frequency)
+22. [MODULE F48H (BOOSTER & FRONTEND)](#22-module-f48h-booster--frontend)
+23. [OPTION DIGIPLEX (DIGITAL MULTIPLEXER)](#23-option-digiplex-digital-multiplexer)
+24. [COMMUNICATION IEEE / GPIB](#24-communication-ieee--gpib)
+25. [VECTEURS ALGORITHMIQUES](#25-vecteurs-algorithmiques)
+26. [ENTRÉE / SORTIE & INTERFACE UTILISATEUR](#26-entrée--sortie--interface-utilisateur)
+27. [FONCTIONS MATHÉMATIQUES & VARIABLES SYSTÈME](#27-functions-mathématiques--variables-système)
+28. [OPÉRATIONS SUR L'ACCUMULATEUR (AR)](#28-opérations-sur-laccumulateur-ar)
+29. [COMMUNICATION & INTERFACES EXTERNES (API, VBS, JTAG)](#29-communication--interfaces-externes-api-vbs-jtag)
 
 ![Environnements VIVA](./docs/images/software/viva_environments.svg)
 
@@ -115,9 +118,9 @@ Le langage VIVA est un langage structuré de haut niveau gérant les tests stati
 
 ## 8. TIMING & PATTERNS (SYNCHRONISATION)
 
-### [Gestion du Timing](./docs/software/language/Timing_and_Patterns.md)
+### [Timing et Horloge Système](./docs/software/language/TIMING_CLOCK.md)
 Définition de la synchronisation temporelle pour les tests haute vitesse (F40/DHF).
-- **Paramètres :** PERIOD, DEAD, OVERLAY, PHASE, ASSERT, STROBE.
+- **Paramètres :** CLOCK, PERIOD, DEAD, STROBE, ASSERT.
 - **Patterns :** Unité d'exécution dynamique séparée par `/`.
 - **Boucles :** `BEGINLOOP` / `ENDLOOP` avec conditions d'arrêt (`ONERROR`, `ONPASS`).
 
@@ -155,15 +158,28 @@ Structures de données pour l'exécution.
 ### START / ENDTEST
 Délimite le bloc principal.
 
-### ~IF / ~ELSE / ~ENDIF
-Conditionnelle Runtime.
+### [Sections et Modes (~IF, ~FOR, ~DO)](./docs/software/logic/SECTIONS_MODES.md)
+Organisation du programme et contrôle de l'exécution.
+- **Sections :** USER, SET, DIGITAL, MEAS, DIAG.
+- **Modes :** DMASTER (Dynamic), STATIC.
+- **Boucles :** `~FOR`, `~WHILE`, `~DO / ~DONE`.
 
-### ~FOR / ~ENDFOR
-Boucle Runtime avec compteur.
+### ~REPEAT / ~UNTIL
+Boucle de répétition avec test de condition à la fin.
 
 ---
 
-## 12. OUTILS VNL (SEICA NATIVE LANGUAGE)
+## 12. GESTION D'ÉVÉNEMENTS & COMPARAISONS
+
+### [Gestion d'Événements (~ON)](./docs/software/logic/ON_EVENT.md)
+Définit les actions lors d'erreurs ou d'interruptions (ERROR, BREAK, TIMEOUT).
+
+### [Comparaison de Variables (~COMP)](./docs/software/logic/COMP_VAR.md)
+Compare une valeur avec des limites sans arrêter le test global.
+
+---
+
+## 13. OUTILS VNL (SEICA NATIVE LANGUAGE)
 
 ### [Outils et Méthodes VNL](./docs/software/logic/VNL_TOOLS.md)
 Le VNL est une approche orientée objet pour le pilotage des ressources.
@@ -216,13 +232,13 @@ Pilotage du système de brasage laser haute précision.
 
 ---
 
-## 17. MODULE HAUTE TENSION (HV)
+## 18. MODULE HAUTE TENSION (HV)
 
-### ~PCT
-Contrôle les contacts PCT du module Haute Tension.
+### [Contrôle du Module HV (~PCT, ~PLn)](./docs/hardware/modules/HV_CONTROL.md)
+Pilotage des relais haute tension et des lignes PL1-PL4.
 
-### ~PLn
-Contrôle la connexion des canaux HV sur les lignes internes (PL1 à PL4).
+### ~SET ISOLEV / ~SET PMM
+Configuration des niveaux d'isolement et du multimètre HV.
 
 ---
 
@@ -246,7 +262,7 @@ Mesure RMS vers DC via le module GEN.
 
 ---
 
-## 20. MODULE F40 (HIGH FREQUENCY)
+## 21. MODULE F40 (HIGH FREQUENCY)
 
 ### [Timing & Synchronisation](./docs/software/language/Timing_and_Patterns.md)
 Module de test numérique haute vitesse (25MHz).
@@ -254,7 +270,18 @@ Module de test numérique haute vitesse (25MHz).
 
 ---
 
-## 21. OPTION DIGIPLEX (DIGITAL MULTIPLEXER)
+## 22. MODULE F48H (BOOSTER & FRONTEND)
+
+### [Mode Booster (~BOOST_MODE)](./docs/hardware/modules/BOOST_MODE.md)
+Configure les canaux haute tension (-30V à +30V).
+- **Modes :** DYNAMIC, STATIC, BYPASS, OPEN, LI1, LI2.
+
+### [Paramètres Frontend (~FRONTEND)](./docs/hardware/modules/FRONTEND.md)
+Définit les caractéristiques électriques fines des canaux (Slew rate, impédance de terminaison).
+
+---
+
+## 23. OPTION DIGIPLEX (DIGITAL MULTIPLEXER)
 
 ### [Technique Digiplex](./docs/hardware/modules/digiplex_option.md)
 Permet le test numérique sur les canaux analogiques du scanner.
@@ -263,34 +290,38 @@ Permet le test numérique sur les canaux analogiques du scanner.
 
 ---
 
-## 22. COMMUNICATION IEEE / GPIB
+## 24. COMMUNICATION IEEE / GPIB
 
 ### ~SET BUS / ~SEND_IEEE / ~READ_IEEE
 Pilotage d'instruments externes via bus GPIB.
 
 ---
 
-## 23. VECTEURS ALGORITHMIQUES
+## 25. VECTEURS ALGORITHMIQUES
 
-### ACCI / ACCD / ACSR / ACSL
-Opérations sur l'accumulateur matériel (F50).
+### [Vecteurs et Accumulateur F50](./docs/software/math/ALGO_VECTORS.md)
+Opérations mathématiques et logiques à vitesse dynamique.
+- **Commandes :** MATH, ACCH, ACCI, ACCD, ACSR, ACSL.
 
 ### ACRC
 Calcul de CRC matériel en temps réel.
 
 ---
 
-## 24. ENTRÉE / SORTIE & INTERFACE UTILISATEUR
+## 26. ENTRÉE / SORTIE & INTERFACE UTILISATEUR
 
 ### ~WRITE / ~WRITEL
 Affichage terminal avec attributs de formatage.
+
+### [Flux et Couleurs (~STREAM, ~COLOR)](./docs/software/io/STREAM_COLOR.md)
+Redirection des sorties et personnalisation visuelle du terminal.
 
 ### ~MSG / ~ASKUSER
 Interactions utilisateur via boîtes de dialogue.
 
 ---
 
-## 25. FONCTIONS MATHÉMATIQUES & VARIABLES SYSTÈME
+## 27. FONCTIONS MATHÉMATIQUES & VARIABLES SYSTÈME
 
 ### ~CALC
 Opérations arithmétiques et logiques Runtime.
@@ -302,7 +333,20 @@ Opérations arithmétiques et logiques Runtime.
 
 ---
 
-## 26. COMMUNICATION & INTERFACES EXTERNES (API, VBS, JTAG)
+## 28. OPÉRATIONS SUR L'ACCUMULATEUR (AR)
+
+### [Manipulation du Registre AR](./docs/software/math/ACCUMULATOR_OPS.md)
+Instructions de bas niveau pour les calculs rapides.
+- **Transfert :** `~LOAD`, `~STORE`.
+- **Arithmétique :** `~ADD`, `~SUB`, `~MULT`, `~DIV`.
+- **Logique :** `~AND`, `~OR`, `~XOR`, `~SHL`, `~SHR`.
+
+---
+
+## 29. COMMUNICATION & INTERFACES EXTERNES (API, VBS, JTAG)
+
+### [Méthodes des Drivers VIVA](./docs/software/logic/VIVA_DRIVERS.md)
+Pilotage des instruments via les drivers propriétaires SEICA (~INIT, ~TERM, ~SEND, etc.).
 
 ### ~API / ~VBS
 Appel de DLL Windows et scripts VBScript.

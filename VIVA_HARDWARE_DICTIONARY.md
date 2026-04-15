@@ -12,11 +12,12 @@
 5. [MODULE USB & ZONE UTILISATEUR](#5-module-usb--zone-utilisateur)
 6. [MODULE GÉNÉRATEUR DE FONCTIONS (GEN)](#6-module-générateur-de-fonctions-gen)
 7. [MODULE F40 (HIGH FREQUENCY)](#7-module-f40-high-frequency)
-8. [MODULE SE2 (POWER CONTROL)](#8-module-se2-power-control)
-9. [COMMUNICATION IEEE / GPIB](#9-communication-ieee--gpib)
-10. [VECTEURS ALGORITHMIQUES (MATH SUR CANAUX)](#10-vecteurs-algorithmiques-math-sur-canaux)
-11. [BOUNDARY SCAN (JTAG)](#11-boundary-scan-jtag)
-12. [OPTION DIGIPLEX (DIGITAL MULTIPLEXER)](#12-option-digiplex-digital-multiplexer)
+8. [MODULE F48H (BOOSTER & FRONTEND)](#8-module-f48h-booster--frontend)
+9. [MODULE SE2 (POWER CONTROL)](#9-module-se2-power-control)
+10. [COMMUNICATION IEEE / GPIB](#10-communication-ieee--gpib)
+11. [VECTEURS ALGORITHMIQUES (MATH SUR CANAUX)](#11-vecteurs-algorithmiques-math-sur-canaux)
+12. [BOUNDARY SCAN (JTAG)](#12-boundary-scan-jtag)
+13. [OPTION DIGIPLEX (DIGITAL MULTIPLEXER)](#13-option-digiplex-digital-multiplexer)
 
 ![Architecture Système Viva](./docs/images/software/viva_architecture.svg)
 *Figure 1 : Vue d'ensemble des modules matériels Seica.*
@@ -85,17 +86,11 @@ Approche logicielle moderne pour le pilotage des ressources :
 
 ## 4. MODULE HAUTE TENSION (HV - HIGH VOLTAGE)
 
-### ~PCT
-Contrôle les contacts PCT.
+### [Contrôle du Module HV (~PCT, ~PLn)](./docs/hardware/modules/HV_CONTROL.md)
+Pilotage des relais haute tension et des lignes PL1-PL4.
 
-### ~PLn
-Connexion des canaux HV sur les lignes PL1-PL4.
-
-### ~SET ISOLEV / ~SET ISORES
-Références de tension flottante et charges résistives.
-
-### ~SET PMM
-Configuration du multimètre HV.
+### ~SET ISOLEV / ~SET PMM
+Configuration des niveaux d'isolement et du multimètre HV.
 
 ---
 
@@ -134,7 +129,18 @@ Module de test numérique haute vitesse (25MHz).
 
 ---
 
-## 8. MODULE SE2 (POWER CONTROL)
+## 8. MODULE F48H (BOOSTER & FRONTEND)
+
+### [Mode Booster (~BOOST_MODE)](./docs/hardware/modules/BOOST_MODE.md)
+Configure les canaux haute tension (-30V à +30V).
+- **Modes :** DYNAMIC, STATIC, BYPASS, OPEN, LI1, LI2.
+
+### [Paramètres Frontend (~FRONTEND)](./docs/hardware/modules/FRONTEND.md)
+Définit les caractéristiques électriques fines des canaux (Slew rate, impédance de terminaison).
+
+---
+
+## 9. MODULE SE2 (POWER CONTROL)
 Module de pilotage des alimentations avec programmation de courant.
 - **~SET PW1...8 :** Configuration individuelle des alimentations (V, I, Delay, Sense).
 - **~MEAS PW1...8 :** Mesure de tension ou courant sur l'unité spécifiée (résultat dans `AR`).
@@ -150,10 +156,11 @@ Pilotage d'instruments externes via bus GPIB.
 
 ---
 
-## 10. VECTEURS ALGORITHMIQUES (MATH SUR CANAUX)
+## 11. VECTEURS ALGORITHMIQUES (MATH SUR CANAUX)
 
-### ACCI / ACCD / ACSR / ACSL
-Opérations sur l'accumulateur matériel (F50).
+### [Vecteurs et Accumulateur F50](./docs/software/math/ALGO_VECTORS.md)
+Opérations mathématiques et logiques à vitesse dynamique.
+- **Commandes :** MATH, ACCH, ACCI, ACCD, ACSR, ACSL.
 
 ### ACRC
 Calcul de CRC matériel en temps réel.

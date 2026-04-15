@@ -17,11 +17,14 @@
 10. [PRÉ-PROCESSEUR & DIRECTIVES COMPILATEUR](#10-pré-processeur--directives-compilateur)
 11. [DÉCLARATIONS & STRUCTURES DE DONNÉES](#11-déclarations--structures-de-données)
 12. [CONTRÔLE DE FLUX & LOGIQUE](#12-contrôle-de-flux--logique)
-13. [OUTILS VNL (SEICA NATIVE LANGUAGE)](#13-outils-vnl-seica-native-language)
-14. [ENTRÉE / SORTIE & INTERFACE UTILISATEUR](#14-entrée--sortie--interface-utilisateur)
-15. [FONCTIONS MATHÉMATIQUES & VARIABLES SYSTÈME](#15-fonctions-mathématiques--variables-système)
-16. [COMMUNICATION & SCRIPTS EXTERNES (API, VBS)](#16-communication--scripts-externes-api-vbs)
-17. [SYNTAXE DES BIBLIOTHÈQUES NUMÉRIQUES (.LIB)](#17-syntaxe-des-bibliothèques-numériques-lib)
+13. [GESTION D'ÉVÉNEMENTS & COMPARAISONS](#13-gestion-dévénements--comparaisons)
+14. [SECTIONS DE TEST & MODES D'ENVIRONNEMENT](#14-sections-de-test--modes-denvironnement)
+15. [OUTILS VNL (SEICA NATIVE LANGUAGE)](#15-outils-vnl-seica-native-language)
+16. [ENTRÉE / SORTIE & INTERFACE UTILISATEUR](#16-entrée--sortie--interface-utilisateur)
+17. [FONCTIONS MATHÉMATIQUES & VARIABLES SYSTÈME](#17-fonctions-mathématiques--variables-système)
+18. [OPÉRATIONS SUR L'ACCUMULATEUR (AR)](#18-opérations-sur-laccumulateur-ar)
+19. [COMMUNICATION & SCRIPTS EXTERNES (API, VBS)](#19-communication--scripts-externes-api-vbs)
+20. [SYNTAXE DES BIBLIOTHÈQUES NUMÉRIQUES (.LIB)](#20-syntaxe-des-bibliothèques-numériques-lib)
 
 ![Environnements VIVA](../../images/software/viva_environments.svg)
 
@@ -198,7 +201,27 @@ Branchements multiples.
 
 ---
 
-## 13. OUTILS VNL (SEICA NATIVE LANGUAGE)
+## 13. GESTION D'ÉVÉNEMENTS & COMPARAISONS
+
+### [Gestion d'Événements (~ON)](./docs/software/logic/ON_EVENT.md)
+Définit les actions lors d'erreurs ou d'interruptions (ERROR, BREAK, TIMEOUT).
+
+### [Comparaison de Variables (~COMP)](./docs/software/logic/COMP_VAR.md)
+Compare une valeur avec des limites sans arrêter le test global.
+
+---
+
+## 14. SECTIONS DE TEST & MODES D'ENVIRONNEMENT
+
+### [Organisation et Modes d'Exécution](./docs/software/logic/SECTIONS_MODES.md)
+Structure du programme en blocs logiques et basculement entre les environnements Static et Dynamic.
+- **Sections :** USER, SET, DIGITAL, MEAS, DIAG, END.
+- **Modes :** DMASTER, STATIC.
+- **Options :** PROBE, NOPROBE, NOSTEP.
+
+---
+
+## 15. OUTILS VNL (SEICA NATIVE LANGUAGE)
 
 ### [Outils et Méthodes VNL](./docs/software/logic/VNL_TOOLS.md)
 Le VNL est une approche orientée objet pour le pilotage des ressources.
@@ -247,7 +270,17 @@ Opérations arithmétiques et logiques Runtime.
 
 ---
 
-## 16. COMMUNICATION & SCRIPTS EXTERNES (API, VBS)
+## 18. OPÉRATIONS SUR L'ACCUMULATEUR (AR)
+
+### [Manipulation du Registre AR](./docs/software/math/ACCUMULATOR_OPS.md)
+Instructions de bas niveau pour les calculs rapides.
+- **Transfert :** `~LOAD`, `~STORE`.
+- **Arithmétique :** `~ADD`, `~SUB`, `~MULT`, `~DIV`.
+- **Logique :** `~AND`, `~OR`, `~XOR`, `~SHL`, `~SHR`.
+
+---
+
+## 19. COMMUNICATION & SCRIPTS EXTERNES (API, VBS)
 
 ### ~API
 Appel de fonctions dans des DLL Windows.

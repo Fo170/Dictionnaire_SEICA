@@ -5,7 +5,7 @@ export interface Keyword {
   syntax: string;
   semantics: string;
   example: string;
-  category: 'Instruction' | 'Contrôle' | 'Entrée/Sortie' | 'Variable' | 'Pré-processeur' | 'Déclaration' | 'Instrument' | 'Mathématique';
+  category: 'Instruction' | 'Contrôle' | 'Entrée/Sortie' | 'Variable' | 'Pré-processeur' | 'Déclaration' | 'Instrument' | 'Mathématique' | 'Timing';
 }
 
 export interface DictionaryData {
