@@ -1,4 +1,4 @@
-# DICTIONNAIRE MATÉRIEL VIVA (SEICA)
+# DICTIONNAIRE MATÉRIEL SEICA
 ## Guide de Référence des Modules et Instruments de Test
 
 ---
@@ -11,9 +11,12 @@
 4. [MODULE HAUTE TENSION (HV - HIGH VOLTAGE)](#4-module-haute-tension-hv---high-voltage)
 5. [MODULE USB & ZONE UTILISATEUR](#5-module-usb--zone-utilisateur)
 6. [MODULE GÉNÉRATEUR DE FONCTIONS (GEN)](#6-module-générateur-de-fonctions-gen)
-7. [COMMUNICATION IEEE / GPIB](#7-communication-ieee--gpib)
-8. [VECTEURS ALGORITHMIQUES (MATH SUR CANAUX)](#8-vecteurs-algorithmiques-math-sur-canaux)
-9. [BOUNDARY SCAN (JTAG)](#9-boundary-scan-jtag)
+7. [MODULE F40 (HIGH FREQUENCY)](#7-module-f40-high-frequency)
+8. [MODULE SE2 (POWER CONTROL)](#8-module-se2-power-control)
+9. [COMMUNICATION IEEE / GPIB](#9-communication-ieee--gpib)
+10. [VECTEURS ALGORITHMIQUES (MATH SUR CANAUX)](#10-vecteurs-algorithmiques-math-sur-canaux)
+11. [BOUNDARY SCAN (JTAG)](#11-boundary-scan-jtag)
+12. [OPTION DIGIPLEX (DIGITAL MULTIPLEXER)](#12-option-digiplex-digital-multiplexer)
 
 ![Architecture Système Viva](./docs/images/software/viva_architecture.svg)
 *Figure 1 : Vue d'ensemble des modules matériels Seica.*
@@ -131,14 +134,23 @@ Module de test numérique haute vitesse (25MHz).
 
 ---
 
-## 8. COMMUNICATION IEEE / GPIB
+## 8. MODULE SE2 (POWER CONTROL)
+Module de pilotage des alimentations avec programmation de courant.
+- **~SET PW1...8 :** Configuration individuelle des alimentations (V, I, Delay, Sense).
+- **~MEAS PW1...8 :** Mesure de tension ou courant sur l'unité spécifiée (résultat dans `AR`).
+- **~SET GNDREF :** Contrôle du relais de masse commune (GND_REF).
+- **~SET ZTEST :** Connexion de composants de précision internes pour l'auto-étalonnage du module LAM.
+
+---
+
+## 9. COMMUNICATION IEEE / GPIB
 
 ### ~SET BUS / ~SEND_IEEE / ~READ_IEEE
 Pilotage d'instruments externes via bus GPIB.
 
 ---
 
-## 8. VECTEURS ALGORITHMIQUES (MATH SUR CANAUX)
+## 10. VECTEURS ALGORITHMIQUES (MATH SUR CANAUX)
 
 ### ACCI / ACCD / ACSR / ACSL
 Opérations sur l'accumulateur matériel (F50).
@@ -148,10 +160,20 @@ Calcul de CRC matériel en temps réel.
 
 ---
 
-## 9. BOUNDARY SCAN (JTAG)
+## 11. BOUNDARY SCAN (JTAG)
 
 ### ~SET VBNPOD / DECLARE BSCAN
 Configuration de l'interface JTAG et des chaînes de composants.
+
+---
+
+## 12. OPTION DIGIPLEX (DIGITAL MULTIPLEXER)
+
+### [Technique Digiplex](./docs/hardware/modules/digiplex_option.md)
+Permet le test numérique sur les canaux analogiques du scanner.
+- **Canaux :** Utilise les 4 canaux numériques de l'ACLAM.
+- **Multiplexage :** Via scanner ou SCAFP/probes.
+- **Fonctions :** Pull-up/down automatiques, charge programmable, mode mixte.
 
 ---
 

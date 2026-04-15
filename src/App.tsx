@@ -120,7 +120,7 @@ ${selectedKeyword.example}
         <div className="p-4 border-t border-border-ui text-[10px] text-text-dim/50 flex justify-between uppercase tracking-widest bg-black/10">
           <div className="flex items-center gap-2">
             <Book className="w-3 h-3" />
-            <span>Dictionnaire Viva</span>
+            <span>Dictionnaire SEICA</span>
           </div>
           <span>2026</span>
         </div>

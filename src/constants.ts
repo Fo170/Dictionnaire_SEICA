@@ -216,6 +216,15 @@ export const VIVA_KEYWORDS: Keyword[] = [
     example: '~CHLEV DATA_BUS VIL=0.8 VIH=2.4;'
   },
 
+  {
+    id: 'SET_DIGIPLEX',
+    name: '~SET DIGIPLEX',
+    frenchName: 'CONFIG_DIGIPLEX',
+    category: 'Instrument',
+    syntax: '~SET DIGIPLEX [PULL UP|PULL DOWN|LOAD|HOLD] <params>;',
+    semantics: 'Configure les ressources numériques sur canaux analogiques (Option Digiplex).',
+    example: '~SET DIGIPLEX PULL UP 1K;\n~SET DIGIPLEX LOAD V=4.5 I=0.2;'
+  },
   // --- ENTRÉE / SORTIE ---
   {
     id: 'WRITE',

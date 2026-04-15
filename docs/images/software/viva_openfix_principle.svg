@@ -1,0 +1,39 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#f8fafc"/>
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold" fill="#1e293b">Principe du Test OPENFIX (Capacitif)</text>
+  
+  <!-- IC Package -->
+  <rect x="300" y="150" width="200" height="100" rx="5" fill="#334155"/>
+  <text x="400" y="210" font-family="Arial" font-size="18" text-anchor="middle" fill="#fff">IC (UUT)</text>
+  
+  <!-- Pins -->
+  <line x1="320" y1="250" x2="320" y2="280" stroke="#94a3b8" stroke-width="4"/>
+  <line x1="360" y1="250" x2="360" y2="280" stroke="#94a3b8" stroke-width="4"/>
+  <line x1="400" y1="250" x2="400" y2="280" stroke="#ef4444" stroke-width="4"/> <!-- Open Pin -->
+  <line x1="440" y1="250" x2="440" y2="280" stroke="#94a3b8" stroke-width="4"/>
+  <line x1="480" y1="250" x2="480" y2="280" stroke="#94a3b8" stroke-width="4"/>
+  
+  <!-- PCB -->
+  <rect x="200" y="280" width="400" height="20" fill="#166534"/>
+  
+  <!-- Capacitive Probe -->
+  <rect x="320" y="100" width="160" height="10" rx="2" fill="#f59e0b" stroke="#92400e"/>
+  <text x="400" y="90" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold" fill="#92400e">Sonde Capacitive (Sensor)</text>
+  
+  <!-- AC Signal Injection -->
+  <path d="M 100 200 L 250 200" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="150" y="190" font-family="Arial" font-size="14" fill="#1e40af">Injection AC</text>
+  
+  <!-- Measurement -->
+  <path d="M 480 105 L 650 105 L 650 200" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="650" y="220" font-family="Arial" font-size="14" text-anchor="middle" fill="#92400e">Mesure de l'Amplitude</text>
+  
+  <!-- Fault Label -->
+  <text x="400" y="320" font-family="Arial" font-size="14" text-anchor="middle" fill="#ef4444" font-weight="bold">Défaut : Soudure Ouverte</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6" />
+    </marker>
+  </defs>
+</svg>

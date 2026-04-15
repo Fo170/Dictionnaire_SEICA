@@ -1,26 +1,52 @@
-# DICTIONNAIRE LOGICIEL VIVA (SEICA)
+# DICTIONNAIRE LOGICIEL SEICA
 ## Guide de Référence du Langage et de la Logique de Test
 
 ---
 
 ## TABLE DES MATIÈRES
 
-1. [ENVIRONNEMENTS DE TRAVAIL](#1-environnements-de-travail)
-2. [GUIDE DU LANGAGE VIVA (STATIC & DYNAMIC)](#2-guide-du-langage-viva-static--dynamic)
-3. [TIMING & PATTERNS (SYNCHRONISATION)](#3-timing--patterns-synchronisation)
-4. [PRÉ-PROCESSEUR & DIRECTIVES COMPILATEUR](#4-pré-processeur--directives-compilateur)
-5. [DÉCLARATIONS & STRUCTURES DE DONNÉES](#5-déclarations--structures-de-données)
-6. [CONTRÔLE DE FLUX & LOGIQUE](#6-contrôle-de-flux--logique)
-7. [OUTILS VNL (VIVA NATIVE LANGUAGE)](#7-outils-vnl-viva-native-language)
-8. [ENTRÉE / SORTIE & INTERFACE UTILISATEUR](#8-entrée--sortie--interface-utilisateur)
-9. [FONCTIONS MATHÉMATIQUES & VARIABLES SYSTÈME](#9-fonctions-mathématiques--variables-système)
-10. [COMMUNICATION & SCRIPTS EXTERNES (API, VBS)](#10-communication--scripts-externes-api-vbs)
+1. [PRÉSENTATION DU LOGICIEL VIVA](#1-présentation-du-logiciel-viva)
+2. [ENVIRONNEMENT WIZARD (ASSISTANT)](#2-environnement-wizard-assistant)
+3. [ENVIRONNEMENTS DE TRAVAIL SPÉCIALISÉS](#3-environnements-de-travail-spécialisés)
+4. [MÉTHODES DE MESURE & GUARDING](#4-méthodes-de-mesure--guarding)
+5. [MACROS DE TEST ANALOGIQUE (R, C, L, FNODE)](#5-macros-de-test-analogique-r-c-l-fnode)
+6. [MACROS SEMI-CONDUCTEURS & PUISSANCE](#6-macros-semi-conducteurs--puissance)
+7. [MACROS VECTORLESS & SERVICE](#7-macros-vectorless--service)
+8. [GUIDE DU LANGAGE VIVA (STATIC & DYNAMIC)](#8-guide-du-langage-viva-static--dynamic)
+9. [TIMING & PATTERNS (SYNCHRONISATION)](#9-timing--patterns-synchronisation)
+10. [PRÉ-PROCESSEUR & DIRECTIVES COMPILATEUR](#10-pré-processeur--directives-compilateur)
+11. [DÉCLARATIONS & STRUCTURES DE DONNÉES](#11-déclarations--structures-de-données)
+12. [CONTRÔLE DE FLUX & LOGIQUE](#12-contrôle-de-flux--logique)
+13. [OUTILS VNL (VIVA NATIVE LANGUAGE)](#13-outils-vnl-viva-native-language)
+14. [ENTRÉE / SORTIE & INTERFACE UTILISATEUR](#14-entrée--sortie--interface-utilisateur)
+15. [FONCTIONS MATHÉMATIQUES & VARIABLES SYSTÈME](#15-fonctions-mathématiques--variables-système)
+16. [COMMUNICATION & SCRIPTS EXTERNES (API, VBS)](#16-communication--scripts-externes-api-vbs)
+17. [SYNTAXE DES BIBLIOTHÈQUES NUMÉRIQUES (.LIB)](#17-syntaxe-des-bibliothèques-numériques-lib)
 
 ![Environnements VIVA](../../images/software/viva_environments.svg)
 
 ---
 
-## 1. ENVIRONNEMENTS DE TRAVAIL
+## 1. PRÉSENTATION DU LOGICIEL VIVA
+
+### [Aperçu et Gestion des Utilisateurs](./docs/software/viva_overview.md)
+Le logiciel VIVA centralise le développement, le débogage et l'exécution des tests.
+- **Rôles :** Opérateur, Développeur, Administrateur.
+- **Gestionnaires :** System Manager, User Manager, Program Manager.
+
+---
+
+## 2. ENVIRONNEMENT WIZARD (ASSISTANT)
+
+### [Flux de Travail Wizard](./docs/software/wizard_environment.md)
+Procédure guidée en trois étapes pour la création de programmes.
+- **PREPARE :** Importation CAD/BOM, édition de données, création automatique.
+- **VERIFY :** Setup du programme, alignement optique, vérification.
+- **TEST :** Exécution en production.
+
+---
+
+## 3. ENVIRONNEMENTS DE TRAVAIL SPÉCIALISÉS
 
 ### Wizard (CTRL+W)
 Procédure guidée pour la création de programmes (Import, Create, Verify, Run).
@@ -36,29 +62,65 @@ Mise au point des tests, visualisation graphique des mesures et modification des
 
 ---
 
-## 2. GUIDE DU LANGAGE VIVA (STATIC & DYNAMIC)
+## 4. MÉTHODES DE MESURE & GUARDING
 
-### [Concepts Fondamentaux](./docs/software/language/VIVA_Language_Guide.md)
-Le langage VIVA est un langage structuré de haut niveau gérant les tests statiques (PC) et dynamiques (DSP).
-- **Types :** INTEGER, FLOAT, STRING, ARRAYS.
-- **Flags :** Gestion des erreurs partielles et globales.
-- **Syntaxe :** Directives `@` (compilation) et instructions `~` (runtime).
+### [Configurations de Mesure](./docs/software/measurement_methods.md)
+VIVA supporte des mesures complexes pour garantir la précision.
+- **Modes :** 2, 3, 4 (Kelvin) et 6 fils.
+- **Guarding :** Active et Passive pour l'isolation des composants in-circuit.
+- **Instruments :** Pilotage via le bus analogique interne (8 lignes).
 
 ---
 
-## 3. TIMING & PATTERNS (SYNCHRONISATION)
+## 5. MACROS DE TEST ANALOGIQUE (R, C, L, FNODE)
+
+### [Composants Passifs](./docs/software/analog_macros.md)
+Macros pour la mesure de précision des composants R, C, L.
+- **FNODE :** Analyse harmonique par FFT pour le test de réseaux.
+- **Tolérances :** Gestion des limites symétriques et asymétriques.
+
+---
+
+## 6. MACROS SEMI-CONDUCTEURS & PUISSANCE
+
+### [Composants Actifs & Alimentation](./docs/software/power_active_macros.md)
+Pilotage des semi-conducteurs et des unités de puissance.
+- **Semi-conducteurs :** Diode, Zener, SCR, Triac, Transistor.
+- **Power :** Séquences de mise sous tension sécurisées.
+- **Soldering :** Paramètres du brasage laser "Donut".
+
+---
+
+## 7. MACROS VECTORLESS & SERVICE
+
+### [Tests Vectorless & Utilitaires](./docs/software/vectorless_service_macros.md)
+Tests avancés hors tension et fonctions de service.
+- **Vectorless :** AUTIC, JSCAN, OPENFIX (sonde capacitive).
+- **Service :** Jumper, Fuse, Discharge (protection UUT).
+- **Interface :** Message et AskUser via VBScript.
+
+---
+
+## 8. GUIDE DU LANGAGE VIVA (STATIC & DYNAMIC)
+
+### [Concepts Fondamentaux](./docs/software/language/VIVA_Language_Guide.md)
+Le langage VIVA est un langage structuré de haut niveau gérant les tests statiques (PC) et dynamiques (DSP).
+
+---
+
+## 9. TIMING & PATTERNS (SYNCHRONISATION)
 
 ### [Gestion du Timing](./docs/software/language/Timing_and_Patterns.md)
-Définition de la synchronisation temporelle pour les tests haute vitesse.
+Définition de la synchronisation temporelle pour les tests haute vitesse (F40/DHF).
 - **Paramètres :** PERIOD, DEAD, OVERLAY, PHASE, ASSERT, STROBE.
 - **Patterns :** Unité d'exécution dynamique séparée par `/`.
-- **Boucles :** `BEGINLOOP` / `ENDLOOP` avec conditions d'arrêt.
+- **Boucles :** `BEGINLOOP` / `ENDLOOP` avec conditions d'arrêt (`ONERROR`, `ONPASS`).
 
 ![Timing VIVA](../../images/software/viva_timing_diagram.svg)
 
 ---
 
-## 4. PRÉ-PROCESSEUR & DIRECTIVES COMPILATEUR
+## 10. PRÉ-PROCESSEUR & DIRECTIVES COMPILATEUR
 
 ### @COMPILER
 Définit les paramètres globaux de compilation.
@@ -92,7 +154,7 @@ Génération dynamique de code source.
 
 ---
 
-## 2. DÉCLARATIONS & STRUCTURES DE DONNÉES
+## 11. DÉCLARATIONS & STRUCTURES DE DONNÉES
 
 ### DECLARE
 Définit des objets (variables, canaux, signaux).
@@ -105,7 +167,7 @@ Structures de données pour l'exécution.
 
 ---
 
-## 3. CONTRÔLE DE FLUX & LOGIQUE
+## 12. CONTRÔLE DE FLUX & LOGIQUE
 
 ### START / ENDTEST
 Délimite le bloc principal.
@@ -134,7 +196,9 @@ Sauts vers des labels (`ONERROR`, `ONPASS`).
 ### ~SWITCH / ~CASE / ~ENDCASE
 Branchements multiples.
 
-## 5. OUTILS VNL (VIVA NATIVE LANGUAGE)
+---
+
+## 13. OUTILS VNL (VIVA NATIVE LANGUAGE)
 
 ### [Outils et Méthodes VNL](./docs/software/logic/VNL_TOOLS.md)
 Le VNL est une approche orientée objet pour le pilotage des ressources.
@@ -145,7 +209,7 @@ Le VNL est une approche orientée objet pour le pilotage des ressources.
 
 ---
 
-## 6. ENTRÉE / SORTIE & INTERFACE UTILISATEUR
+## 14. ENTRÉE / SORTIE & INTERFACE UTILISATEUR
 
 ### ~WRITE / ~WRITEL
 Affichage terminal avec attributs de formatage.
@@ -167,7 +231,7 @@ Manipulation de fichiers (OPEN, WRITE, READ, REMOVE).
 
 ---
 
-## 5. FONCTIONS MATHÉMATIQUES & VARIABLES SYSTÈME
+## 15. FONCTIONS MATHÉMATIQUES & VARIABLES SYSTÈME
 
 ### ~CALC
 Opérations arithmétiques et logiques Runtime.
@@ -183,7 +247,7 @@ Opérations arithmétiques et logiques Runtime.
 
 ---
 
-## 6. COMMUNICATION & SCRIPTS EXTERNES (API, VBS)
+## 16. COMMUNICATION & SCRIPTS EXTERNES (API, VBS)
 
 ### ~API
 Appel de fonctions dans des DLL Windows.
@@ -193,6 +257,18 @@ Exécution de scripts VBScript avec échange de données.
 
 ### ~SYS (Appel Système)
 Exécute une application externe Windows.
+
+---
+
+## 17. SYNTAXE DES BIBLIOTHÈQUES NUMÉRIQUES (.LIB)
+
+### [Structure des fichiers .LIB](./docs/hardware/modules/digiplex_option.md)
+Les bibliothèques définissent les composants pour le test numérique (DIGIPLEX).
+- **#CompName** : Nom et liste des pins.
+- **!CompType** : Type de composant (D=Digital).
+- ***PI** : Direction des pins (I=Input, O=Output).
+- ***TY** : Alimentations (G=GND, V=VCC).
+- **@L** : Lignes de la table de vérité (H, L, T, ., 1, 0).
 
 ---
 
@@ -221,6 +297,11 @@ Envoie des données vers une imprimante ou la console.
 
 ### ~SHL / ~SHR
 Décalage de bits sur le registre AR.
+
+### ~SET DIGIPLEX (Option Digiplex)
+Configure les ressources numériques sur canaux analogiques.
+- **Syntaxe :** `~SET DIGIPLEX [PULL UP|PULL DOWN|LOAD|HOLD] <params>;`
+- **Exemple :** `~SET DIGIPLEX PULL UP 1K;`
 
 ### ~STORE / ~LOAD
 Transfert entre variables et le registre AR.
