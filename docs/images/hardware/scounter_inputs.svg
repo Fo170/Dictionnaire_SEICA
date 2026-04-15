@@ -1,0 +1,31 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+  <text x="20" y="30" font-family="Arial" font-size="18" font-weight="bold" fill="#333">Entrées SCOUNTER (ACL)</text>
+  
+  <!-- Input A -->
+  <rect x="50" y="80" width="150" height="80" rx="5" fill="#e7f5ff" stroke="#228be6" stroke-width="2"/>
+  <text x="125" y="110" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Input A (Start)</text>
+  <text x="125" y="135" font-family="Arial" font-size="12" text-anchor="middle">L4 / L6</text>
+  
+  <!-- Input B -->
+  <rect x="50" y="200" width="150" height="80" rx="5" fill="#fff4e6" stroke="#fd7e14" stroke-width="2"/>
+  <text x="125" y="230" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Input B (Stop)</text>
+  <text x="125" y="255" font-family="Arial" font-size="12" text-anchor="middle">L2 / L8</text>
+  
+  <!-- Logic Block -->
+  <rect x="300" y="80" width="250" height="200" rx="10" fill="#f1f3f5" stroke="#495057" stroke-width="2"/>
+  <text x="425" y="110" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Logique de Comptage</text>
+  <text x="320" y="150" font-family="Arial" font-size="12">Seuils programmables (±100V)</text>
+  <text x="320" y="180" font-family="Arial" font-size="12">Fronts (Montant / Descendant)</text>
+  <text x="320" y="210" font-family="Arial" font-size="12">Hystérésis (10ns à 10µs)</text>
+  
+  <!-- Connections -->
+  <line x1="200" y1="120" x2="300" y2="120" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="200" y1="240" x2="300" y2="240" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+</svg>

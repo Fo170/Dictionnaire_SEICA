@@ -1,0 +1,31 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+  <text x="20" y="30" font-family="Arial" font-size="18" font-weight="bold" fill="#333">Générateurs DRA &amp; DRB</text>
+  
+  <!-- DRA Block -->
+  <rect x="50" y="80" width="200" height="120" rx="10" fill="#e3fafc" stroke="#1098ad" stroke-width="2"/>
+  <text x="130" y="110" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">DRA (Primary)</text>
+  <text x="130" y="140" font-family="Arial" font-size="12" text-anchor="middle">±10V / ±500mA</text>
+  <text x="130" y="160" font-family="Arial" font-size="12" text-anchor="middle">DDS / PPC</text>
+  
+  <!-- DRB Block -->
+  <rect x="350" y="80" width="200" height="120" rx="10" fill="#f1f3f5" stroke="#495057" stroke-width="2"/>
+  <text x="450" y="110" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">DRB (Secondary)</text>
+  <text x="450" y="140" font-family="Arial" font-size="12" text-anchor="middle">Guarding / Follower</text>
+  <text x="450" y="160" font-family="Arial" font-size="12" text-anchor="middle">High Freq Output</text>
+  
+  <!-- Bus Lines -->
+  <line x1="30" y1="280" x2="570" y2="280" stroke="#333" stroke-width="1"/>
+  <text x="40" y="275" font-family="Arial" font-size="10">L1</text>
+  <line x1="30" y1="300" x2="570" y2="300" stroke="#333" stroke-width="1"/>
+  <text x="40" y="295" font-family="Arial" font-size="10">L2</text>
+  <line x1="30" y1="320" x2="570" y2="320" stroke="#333" stroke-width="1"/>
+  <text x="40" y="315" font-family="Arial" font-size="10">L4</text>
+  
+  <!-- Connections -->
+  <circle cx="150" cy="280" r="4" fill="#1098ad"/>
+  <line x1="150" y1="200" x2="150" y2="280" stroke="#1098ad" stroke-width="2"/>
+  
+  <circle cx="450" cy="320" r="4" fill="#495057"/>
+  <line x1="450" y1="200" x2="450" y2="320" stroke="#495057" stroke-width="2"/>
+</svg>

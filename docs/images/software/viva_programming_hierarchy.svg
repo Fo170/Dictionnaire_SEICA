@@ -1,0 +1,53 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+  <text x="400" y="40" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#333">Hiérarchie de Programmation VIVA</text>
+  
+  <!-- Hierarchy -->
+  <g transform="translate(300, 80)">
+    <rect width="200" height="40" rx="5" fill="#e7f5ff" stroke="#228be6" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">PROGRAMME</text>
+    
+    <line x1="100" y1="40" x2="100" y2="70" stroke="#333" stroke-width="2"/>
+    
+    <g transform="translate(0, 70)">
+      <rect width="200" height="40" rx="5" fill="#f3f0ff" stroke="#7950f2" stroke-width="2"/>
+      <text x="100" y="25" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">SECTION</text>
+      
+      <line x1="100" y1="40" x2="100" y2="70" stroke="#333" stroke-width="2"/>
+      
+      <g transform="translate(0, 70)">
+        <rect width="200" height="40" rx="5" fill="#fff9db" stroke="#f08c00" stroke-width="2"/>
+        <text x="100" y="25" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">FONCTION</text>
+        
+        <line x1="100" y1="40" x2="100" y2="70" stroke="#333" stroke-width="2"/>
+        
+        <g transform="translate(0, 70)">
+          <rect width="200" height="40" rx="5" fill="#fff5f5" stroke="#fa5252" stroke-width="2"/>
+          <text x="100" y="25" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">MACRO</text>
+          
+          <line x1="100" y1="40" x2="100" y2="70" stroke="#333" stroke-width="2"/>
+          
+          <g transform="translate(0, 70)">
+            <rect width="200" height="40" rx="5" fill="#e3fafc" stroke="#1098ad" stroke-width="2"/>
+            <text x="100" y="25" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">LABEL</text>
+            
+            <line x1="100" y1="40" x2="100" y2="70" stroke="#333" stroke-width="2"/>
+            
+            <g transform="translate(0, 70)">
+              <rect width="200" height="40" rx="5" fill="#ebfbee" stroke="#40c057" stroke-width="2"/>
+              <text x="100" y="25" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">OUTIL (TOOL)</text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Explanations -->
+  <text x="520" y="105" font-family="Arial" font-size="12" fill="#666">Ensemble de sections</text>
+  <text x="520" y="175" font-family="Arial" font-size="12" fill="#666">Regroupement logique (ex: ICT)</text>
+  <text x="520" y="245" font-family="Arial" font-size="12" fill="#666">Associée à un composant/device</text>
+  <text x="520" y="315" font-family="Arial" font-size="12" fill="#666">Séquence de code réutilisable</text>
+  <text x="520" y="385" font-family="Arial" font-size="12" fill="#666">Bloc d'instructions (VNL)</text>
+  <text x="520" y="455" font-family="Arial" font-size="12" fill="#666">Méthodes logicielles (Object-Oriented)</text>
+</svg>

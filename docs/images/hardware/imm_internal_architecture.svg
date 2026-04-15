@@ -1,0 +1,34 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+  <text x="20" y="30" font-family="Arial" font-size="18" font-weight="bold" fill="#333">Architecture de Mesure IMM (ACL)</text>
+  
+  <!-- Analog Lines -->
+  <line x1="50" y1="80" x2="550" y2="80" stroke="#dee2e6" stroke-width="2"/>
+  <text x="560" y="85" font-family="Arial" font-size="12">L1 (Courant)</text>
+  <line x1="50" y1="120" x2="550" y2="120" stroke="#dee2e6" stroke-width="2"/>
+  <text x="560" y="125" font-family="Arial" font-size="12">L3/L7 (Ref)</text>
+  
+  <!-- Components -->
+  <rect x="100" y="150" width="120" height="60" rx="5" fill="#e7f5ff" stroke="#228be6" stroke-width="2"/>
+  <text x="115" y="185" font-family="Arial" font-size="14" font-weight="bold">INP_V (200K)</text>
+  
+  <rect x="300" y="150" width="100" height="100" rx="5" fill="#fff4e6" stroke="#fd7e14" stroke-width="2"/>
+  <text x="335" y="205" font-family="Arial" font-size="16" font-weight="bold">ADC</text>
+  <text x="325" y="225" font-family="Arial" font-size="12">14 bits / 10MHz</text>
+  
+  <rect x="450" y="150" width="100" height="100" rx="5" fill="#f3f0ff" stroke="#7950f2" stroke-width="2"/>
+  <text x="475" y="205" font-family="Arial" font-size="16" font-weight="bold">RAM</text>
+  <text x="465" y="225" font-family="Arial" font-size="12">64 Kwords</text>
+  
+  <!-- Connections -->
+  <path d="M 220 180 L 300 180" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 400 200 L 450 200" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrowhead definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+</svg>

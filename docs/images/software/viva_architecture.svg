@@ -1,0 +1,39 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Architecture Système VIVA (SEICA)</text>
+  
+  <!-- Main Computer -->
+  <rect x="50" y="80" width="200" height="340" rx="10" fill="#e9ecef" stroke="#495057" stroke-width="2"/>
+  <text x="150" y="110" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Main Computer</text>
+  <rect x="70" y="140" width="160" height="40" fill="#fff" stroke="#adb5bd"/>
+  <text x="150" y="165" font-family="Arial" font-size="14" text-anchor="middle">Logiciel VIVA</text>
+  <rect x="70" y="200" width="160" height="40" fill="#fff" stroke="#adb5bd"/>
+  <text x="150" y="225" font-family="Arial" font-size="14" text-anchor="middle">Interface PCI/GPIB</text>
+  
+  <!-- Fiber Optic Link -->
+  <path d="M 250 250 L 350 250" stroke="#fa5252" stroke-width="4" stroke-dasharray="10,5"/>
+  <text x="300" y="240" font-family="Arial" font-size="12" text-anchor="middle" fill="#fa5252">Lien Fibre Optique</text>
+  
+  <!-- ACL Module -->
+  <rect x="350" y="80" width="400" height="340" rx="10" fill="#fff9db" stroke="#f08c00" stroke-width="2"/>
+  <text x="550" y="110" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Module ACL (DSP Controlled)</text>
+  
+  <!-- DSP Block -->
+  <rect x="370" y="140" width="100" height="200" rx="5" fill="#fab005" stroke="#e67700"/>
+  <text x="420" y="245" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" transform="rotate(-90, 420, 245)">DSP Firmware</text>
+  
+  <!-- Hardware Blocks -->
+  <rect x="500" y="140" width="220" height="50" rx="5" fill="#e7f5ff" stroke="#228be6"/>
+  <text x="610" y="170" font-family="Arial" font-size="14" text-anchor="middle">Générateurs (DRA/DRB/DRC)</text>
+  
+  <rect x="500" y="210" width="220" height="50" rx="5" fill="#f3f0ff" stroke="#7950f2"/>
+  <text x="610" y="240" font-family="Arial" font-size="14" text-anchor="middle">Mesures (IMM / Counter)</text>
+  
+  <rect x="500" y="280" width="220" height="50" rx="5" fill="#fff4e6" stroke="#fd7e14"/>
+  <text x="610" y="310" font-family="Arial" font-size="14" text-anchor="middle">Matrice de Commutation</text>
+  
+  <!-- UUT Link -->
+  <line x1="550" y1="420" x2="550" y2="460" stroke="#333" stroke-width="2"/>
+  <rect x="450" y="460" width="200" height="30" fill="#ced4da" stroke="#333"/>
+  <text x="550" y="480" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">UUT (Carte à tester)</text>
+</svg>
