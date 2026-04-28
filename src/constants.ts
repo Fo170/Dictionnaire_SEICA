@@ -209,18 +209,18 @@ export const VIVA_KEYWORDS: Keyword[] = [
     name: '~IF / ~ELSE / ~ENDIF',
     frenchName: 'SI / SINON',
     category: 'Contrôle',
-    syntax: '~IF ( <condition> ) ; ... [~ELSE;] ... ~ENDIF ;',
-    semantics: 'Structure conditionnelle d\'exécution.',
-    example: '~IF (A > 10) ;\n  ~WRITE "OK";\n~ENDIF'
+    syntax: '~IF ( [NOT] <var> <cond> <expr> ) ; ... [~ELSE;] ... ~ENDIF ;',
+    semantics: 'Structure conditionnelle d\'exécution. Supporte jusqu\'à 10 niveaux d\'imbrication et des conditions complexes avec AND (&&) et OR (||).',
+    example: '~IF ( (A > 10) && (B < 5) ) ;\n  ~WRITE "Condition OK";\n~ENDIF'
   },
   {
     id: 'FOR_ENDFOR',
     name: '~FOR / ~ENDFOR',
     frenchName: 'BOUCLE_POUR',
     category: 'Contrôle',
-    syntax: '~FOR <var> = <deb> TO <fin> [STEP <pas>];',
-    semantics: 'Boucle de répétition Run-time.',
-    example: '~FOR I = 1 TO 10;\n  ~WRITE I;\n~ENDFOR'
+    syntax: '~FOR [NOT] <var> <cond> <expr> [TO <fin>] [STEP <pas>] [DO <action>];',
+    semantics: 'Boucle de répétition Run-time. Par défaut (sans TO/STEP), décrémente jusqu\'à >0. L\'option DO exécute une action après chaque cycle.',
+    example: '~FOR I = 1 TO 10 STEP 2;\n  ~WRITE I;\n~ENDFOR'
   },
   {
     id: 'DO_DONE',
@@ -246,17 +246,80 @@ export const VIVA_KEYWORDS: Keyword[] = [
     frenchName: 'SUR_EVENEMENT',
     category: 'Contrôle',
     syntax: '~ON <event> [CALL <subr>] [ABORT|CONTINUE];',
-    semantics: 'Définit l\'action à effectuer lors d\'un événement (ERROR, BREAK, TIMEOUT, etc.).',
-    example: '~ON ERROR CALL GESTION_ERREUR;'
+    semantics: 'Définit l\'action à effectuer lors d\'un événement. Événements supportés : ABORT, BREAK, END, TIMEOUT, ENDBURST, DYNAMIC, ERROR, ANA_ERROR, DIG_ERROR, STATIC_ERROR, BUTTON, TIMER.',
+    example: '~ON TIMEOUT CALL GESTION_DELAI;'
+  },
+  {
+    id: 'TIMER_CTRL',
+    name: '~TIMER',
+    frenchName: 'CONTROLE_TIMER',
+    category: 'Contrôle',
+    syntax: '~TIMER <n> [CLEAR|ARM|STOP] [VAL=<s>];',
+    semantics: 'Pilote les 32 timers système (0-31). CLEAR remet à zéro, ARM active l\'événement ONTIMER après VAL secondes, STOP désactive l\'événement.',
+    example: '~TIMER 1 ARM VAL=5.0; ! Événement après 5s'
+  },
+  {
+    id: 'READ_TIMER_VAL',
+    name: '~READ_TIMERn',
+    frenchName: 'LECTURE_TIMER',
+    category: 'Entrée/Sortie',
+    syntax: '~READ_TIMERN <var> [STATUS];',
+    semantics: 'Lit la valeur actuelle d\'un timer en microsecondes. L\'option STATUS retourne l\'état (0:Clear, 1:Armed, 2:Expired).',
+    example: '~READ_TIMER1 T_USEC;'
+  },
+  {
+    id: 'DIGITAL_CMD_ADVANCED',
+    name: 'IHn / ILn / OHn / OLn',
+    frenchName: 'PILOTAGE_MULTISTROBE',
+    category: 'Timing',
+    syntax: 'IH<n> <pins>; OL<n> <pins>;',
+    semantics: 'Versions indexées des commandes numériques. <n> correspond au numéro de PHASE (pour driver) ou de WINDOW (pour sensor) défini dans le TIMING. Permet des commutations multiples au sein d\'un même pattern.',
+    example: 'START TEST DYN;\n  / TIMING T1;\n  IH1 DATA_BUS; ! Change a ASSERT1\n  IL2 DATA_BUS; ! Change a ASSERT2\n  OH1 DATA_BUS; ! Mesure au STROBE1\n  /;\nENDTEST;'
+  },
+  {
+    id: 'DIGITAL_RETURN_MODES',
+    name: 'R0 / R1 / RZ',
+    frenchName: 'MODES_RETOUR_LOGIQUE',
+    category: 'Timing',
+    syntax: 'R0 <pins>; R1 <pins>; RZ <pins>;',
+    semantics: 'Définit le mode de retour automatique. R0 (Return to 0), R1 (Return to 1), RZ (Return to Tristate). Le canal génère une impulsion et revient à son état de repos défini par la PHASE.',
+    example: 'PHASE1 100N 300N;\nSTART TEST;\n  R1 CLK_PIN;\n  /! Génère une impulsion basse de 200ns puis revient à 1\nENDTEST;'
+  },
+  {
+    id: 'BSCAN_CONTROL',
+    name: '~SET VBNPOD / ~READ_VBN / ~TEST_VBN',
+    frenchName: 'CONTROLE_JTAG_BSCAN',
+    category: 'Instrument',
+    syntax: '~SET VBNPOD <n> FR=<val> TDI=<pin> TMS=<pin>...; ~READ_VBN <var> [BSDL] <type>;',
+    semantics: 'Pilote une chaîne Boundary Scan. Les pins du composant JTAG deviennent des canaux numériques virtuels manipulables par IL/IH/OL/OH. ~READ_VBN BSDL permet de lire la chaîne attendue depuis le fichier BSDL.',
+    example: 'DECLARE BSCAN NETLIST=u1.bss U1;\n~SET VBNPOD 1 F50 TDI=19 TMS=20 CLK=17 TDO=18;\n/;\nIH U1_ADD16; ! Force une pin interne du composant'
+  },
+  {
+    id: 'EXTERNAL_SCRIPTS',
+    name: '~VBS / ~VI',
+    frenchName: 'SCRIPTS_EXTERNES',
+    category: 'Contrôle',
+    syntax: '~VBS "<file.vbs>" <procedure> <params>; ~VI "<file.vi>" NAME="<p>" VALUE=<var>;',
+    semantics: 'Intégration de scripts externes. ~VBS appelle du VBScript (ex: accès base de données). ~VI pilote des instruments virtuels Labview. Passage par référence possible avec l\'astérisque (*).',
+    example: '~VBS "C:\\scripts\\log.vbs" WriteLog STRING "Erreur 102";\n~VI "C:\\vi\\scope.vi" PAR="Scale" IN VALUE=2.5;'
+  },
+  {
+    id: 'READ_RAM_MEMORY',
+    name: '~READ_RAM',
+    frenchName: 'LECTURE_MEMOIRE_CANAL',
+    category: 'Instrument',
+    syntax: '~READ_RAM <type>, <start>, <stop>, <array>, <group>;',
+    semantics: 'Récupère le contenu de la mémoire de capture des canaux (Post-processing). Types : DATA (IH/OH), RELEVANT (actif), ENABLE (driver actif), RESULT (état lu).',
+    example: 'DECLARE RUNTIME INTEGER ARRAY DAT_BUF[100];\n~READ_RAM RESULT, 1, 50, DAT_BUF[0], DATA_BUS;'
   },
   {
     id: 'COMP_VAR',
     name: '~COMP',
-    frenchName: 'COMPARER',
+    frenchName: 'COMPARAISON_LOCALE',
     category: 'Contrôle',
-    syntax: '~COMP <var> [LO=<val>] [HI=<val>] [ONERROR <lab>] [ONPASS <lab>];',
-    semantics: 'Compare une variable avec des limites et effectue un saut conditionnel.',
-    example: '~COMP AR LO=4.8 HI=5.2 ONERROR FAIL_LABEL;'
+    syntax: '~COMP <var> [LO=v HI=v] [ONERROR <dest>];',
+    semantics: 'Compare une valeur sans affecter le flag d\'erreur global. Idéal pour les boucles de recalage.',
+    example: '~COMP AR LO=1.0 ONERROR RETRY;'
   },
   {
     id: 'READ_ERROR_CH',
@@ -281,18 +344,72 @@ export const VIVA_KEYWORDS: Keyword[] = [
     name: '~SWITCH / ~CASE',
     frenchName: 'SELON_CAS',
     category: 'Contrôle',
-    syntax: '~SWITCH <var>; ~CASE <val>; ... ~ENDCASE;',
-    semantics: 'Structure de branchement multiple Run-time.',
-    example: '~SWITCH MODE;\n  ~CASE 1;\n    ~WRITE "INIT";\n  ~CASE 2;\n    ~WRITE "RUN";\n~ENDCASE;'
+    syntax: '~SWITCH <var> [CONTINUE]; ~CASE [NOT] <expr>; ... ~ENDCASE;',
+    semantics: 'Structure de branchement multiple. L\'expression peut être une plage (FROM N TO M) ou une liste. CONTINUE force l\'évaluation de tous les cas.',
+    example: '~SWITCH MODE;\n  ~CASE FROM 1 TO 5;\n    ~WRITE "Cas standard";\n  ~CASE 10, 11, 12;\n    ~WRITE "Cas exceptionnel";\n~ENDCASE;'
   },
   {
-    id: 'BRANCH_GOTO',
-    name: '~BRANCH',
-    frenchName: 'SAUT',
+    id: 'SUBR_DEF',
+    name: '~SUBR / ~ENDSUBR',
+    frenchName: 'DEFINITION_SOUS_PROG',
     category: 'Contrôle',
-    syntax: '~BRANCH [ONERROR|ONPASS] <label>;',
-    semantics: 'Exécute un saut vers un label, éventuellement conditionné par les flags d\'erreur.',
-    example: '~BRANCH ONERROR ECHEC_TEST;'
+    syntax: '~SUBR <name> [(<type> <arg1>... )]; ... ~RETURN; ~ENDSUBR;',
+    semantics: 'Définit une sous-routine avec passage d\'arguments (entiers, flottants, chaînes) et retour possible conditionné par les flags d\'erreur.',
+    example: '~SUBR CALC_GAIN(FLOAT PIN); ... ~RETURN; ~ENDSUBR;'
+  },
+  {
+    id: 'CALL_SOUS_PROG',
+    name: '~CALL',
+    frenchName: 'APPEL_SOUS_PROG',
+    category: 'Contrôle',
+    syntax: '~CALL <name> [(<par1>...)] [ONERROR] [ONPASS];',
+    semantics: 'Appelle une sous-routine déclarée. L\'appel peut être conditionnel à l\'état du flag d\'erreur partiel.',
+    example: '~CALL INIT_SYSTEM(12) ONPASS OK_LABEL;'
+  },
+  {
+    id: 'POWER_STATUS_READ',
+    name: '~READ STATUS PW',
+    frenchName: 'ETAT_ALIMENTATION',
+    category: 'Instrument',
+    syntax: '~READ STATUS PW<n> <param>;',
+    semantics: 'Lit les valeurs de programmation (V, I, VMAX, IMAX) ou l\'état (STATUS : 0=OFF, 1=ON) d\'une alimentation. Note : retourne la valeur programmée, pas la valeur réelle mesurée.',
+    example: '~READ STATUS PW1 STATUS; ! Place l\'état dans AR'
+  },
+  {
+    id: 'SCOUNTER_ADVANCED',
+    name: '~SET SCOUNTER / ~MEAS SCOUNTER',
+    frenchName: 'COMPTEUR_AVANCE_ACL',
+    category: 'Instrument',
+    syntax: '~SET SCOUNTER MODE=<mode> VAL=<exp> LEVEL_A=<v>...;',
+    semantics: 'Pilote le compteur haute performance du module ACL. Modes : COUNT (impulsions), FREQ (fréquence), PERIOD (durée), TINT_AB (intervalle entre A et B). Supporte l\'hystérésis automatique.',
+    example: '~SET SCOUNTER MODE=FREQ VAL=1000 INP_A=L4;\n~MEAS SCOUNTER INTO=F_VAL;'
+  },
+  {
+    id: 'SYSTEM_OBJECTS_IO',
+    name: '~PUT / ~GET',
+    frenchName: 'OBJETS_SYSTEME_VIVA',
+    category: 'Contrôle',
+    syntax: '~PUT "MAILBOX" NAME="m" VAL=<v>; ~GET "GLOBAL" NAME="g" INTO=<v>;',
+    semantics: 'Permet d\'échanger des données avec l\'environnement VIVA extérieur au cluster. Objets supportés : MAILBOX (réseau), GLOBAL (variables globales), MEMO (notes de macro), PINLIST.',
+    example: '~PUT "MAILBOX" NAME="SERIAL_NUM" VAL=STR1;\n~GET "GLOBAL" NAME="TEST_VER" INTO=VER;'
+  },
+  {
+    id: 'START_SUB_SECTION',
+    name: '~START_SUB / ~END_SUB',
+    frenchName: 'DELIMITEURS_SECTION_SOUS_PROG',
+    category: 'Contrôle',
+    syntax: '~START_SUB; ... ~END_SUB;',
+    semantics: 'Identifie le début et la fin du bloc réservé à la définition des sous-routines dans une session statique.',
+    example: 'START MAIN STATIC;\n  ~START_SUB;\n    ~SUBR MA_ROUTINE... \n  ~END_SUB;\nENDTEST;'
+  },
+  {
+    id: 'EXIT_CTRL',
+    name: '~EXIT',
+    frenchName: 'SORTIE_PRECOCE',
+    category: 'Contrôle',
+    syntax: '~EXIT;',
+    semantics: 'Interrompt immédiatement l\'exécution du bloc actuel (boucle, branchement multiple).',
+    example: '~IF (A=1); ~EXIT; ~ENDIF;'
   },
   {
     id: 'TEST_SECTIONS',
@@ -335,29 +452,101 @@ export const VIVA_KEYWORDS: Keyword[] = [
   {
     id: 'MEASURE_VOLTAGE',
     name: '~MEASURE Voltage',
-    frenchName: 'MESURE TENSION',
+    frenchName: 'MESURE_TENSION_AVANCEE',
     category: 'Instrument',
-    syntax: '~MEASURE Voltage TYPE=<opt> RANGE=<val> ON=<signal>;',
-    semantics: 'Mesure une tension sur un point de test.',
-    example: '~MEASURE Voltage TYPE=rms RANGE=10V ON=ch1'
+    syntax: '~MEASURE Voltage TYPE=<type> RANGE=<v> EXPECT=<v> GATE=<s> INTO=<var> [USING=<instr>];',
+    semantics: 'Mesure de tension DC, RMS, Peak, etc. Paramètres : ACCV (précision), GATE (fenêtre), FREQ (échantillonnage), SYNC/TRIG (déclenchement).',
+    example: '~MEASURE Voltage TYPE=max RANGE=10V GATE=500ms EXPECT=2V (5%) INTO=R_MEAS'
   },
   {
     id: 'ATEST',
     name: '~ATEST',
-    frenchName: 'TEST_ANA',
+    frenchName: 'COMPARAISON_GLOBALE',
     category: 'Instrument',
-    syntax: '~ATEST <var> [LO=<val>] [HI=<val>];',
-    semantics: 'Compare une variable avec des limites.',
-    example: '~ATEST testValue NAME="VCC" LO=4.5 HI=5.5'
+    syntax: '~ATEST <var> [NAME="lbl"] [LO=v HI=v] [VALUE=v TOL=p] [ONERROR <lab>];',
+    semantics: 'Compare une variable avec des limites numériques ou de tolérance (%). Si hors limite, active les flags d\'erreur partiels et globaux. Supporte les tolérances asymétriques (TOLM/TOLP).',
+    example: '~ATEST AR NAME="VCC" VALUE=5V TOL=10% ONERROR FAIL_LABEL'
   },
   {
-    id: 'SET_PW_ALL',
-    name: '~SET PW ALL',
-    frenchName: 'ALIM_TOUTES',
+    id: 'SET_BUS_IEEE',
+    name: '~SET BUS',
+    frenchName: 'CONFIG_BUS_IEEE',
     category: 'Instrument',
-    syntax: '~SET PW ALL [ON|OFF];',
-    semantics: 'Active/désactive toutes les alimentations.',
-    example: '~SET PW ALL ON;'
+    syntax: '~SET BUS <params> (UNT, UNL, MLA, MTA...);',
+    semantics: 'Envoie des commandes de gestion de protocole sur le bus IEEE (GPIB).',
+    example: '~SET BUS UNT, UNL, MLA, 3, MTA, 0;'
+  },
+  {
+    id: 'SET_HV_ES_PMM',
+    name: '~SET ES / ~SET PMM',
+    frenchName: 'HV_RESSOURCE_METER',
+    category: 'Instrument',
+    syntax: '~SET ESn PLn; ~SET PMM PP=<pos> PN=<neg>;',
+    semantics: 'Connecte une ressource HV aux lignes internes et configure le multimètre HV (PMM).',
+    example: '~SET ES1 PL2 IP=1000; ! Limite 1A'
+  },
+  {
+    id: 'SET_OPC',
+    name: '~SET OPC',
+    frenchName: 'OPEN_COLLECTOR',
+    category: 'Instrument',
+    syntax: '~SET OPC V=<val>;',
+    semantics: 'Commande les signaux Open Collector du module LAM (1=0V, 0=FLOTTANT).',
+    example: '~SET OPC=B11110000; ! Force 4 signaux à 0'
+  },
+  {
+    id: 'SET_PW_DETAILED',
+    name: '~SET PW1...8',
+    frenchName: 'ALIM_DETAILS',
+    category: 'Instrument',
+    syntax: '~SET PW<n> V=<v> [I=<i>] [SENSE] [ON|OFF] [PREPARE];',
+    semantics: 'Programmation détaillée d\'une alimentation (Tension, Courant, Sensing, Délai).',
+    example: '~SET PW1 V=5 I=1 SENSEOFF INT ON;'
+  },
+  {
+    id: 'SET_SERVICE_BUS_LAM',
+    name: '~SET SERVICE_BUS',
+    frenchName: 'BUS_SERVICE_LAM',
+    category: 'Instrument',
+    syntax: '~SET SERVICE_BUS <args> (LI3, LI4, EXS, EXG, PUL);',
+    semantics: 'Configure les signaux de service du module LAM (Strobe externe, Guarding, Pull-up externe).',
+    example: '~SET SERVICE_BUS LI3 EXG; ! Connecte EXL3 et EXGUARD'
+  },
+  {
+    id: 'SET_USER_BUS_WORD',
+    name: '~SET USER_BUSW / USER_WORD',
+    frenchName: 'BUS_USB_CUSTOM',
+    category: 'Instrument',
+    syntax: '~SET USER_BUSW<n> A=<a> D=<d>; ~SET USER_WORD<n> V=<v>;',
+    semantics: 'Écrit des données sur le bus numérique ou les lignes Custom du module USB.',
+    example: '~SET USER_BUSW1 A=0X55 D=0X3A;'
+  },
+  {
+    id: 'SET_USER_GEN_DETAILED',
+    name: '~SET USER_GEN',
+    frenchName: 'GENERATEUR_FONCTIONS_DETAILS',
+    category: 'Instrument',
+    syntax: '~SET USER_GEN HZ=<v> VOUT=<v> [SIN|TRI|RECT] [VPP] [GUA];',
+    semantics: 'Programmation complète du générateur de fonctions (Fréquence, Amplitude, Forme, Offset).',
+    example: '~SET USER_GEN HZ=1000 VOUT=3 SIN VPP;'
+  },
+  {
+    id: 'SET_USER_LOAD',
+    name: '~USER_LOAD',
+    frenchName: 'CHARGE_USB',
+    category: 'Instrument',
+    syntax: '~USER_LOAD<n> OHM=<v> [ONLINE];',
+    semantics: 'Programme les charges résistives du module USB et les connecte éventuellement aux lignes.',
+    example: '~SET USER_LOAD2 OHM=1 ONLINE; ! Charge 1 ohm entre LI2/LI4'
+  },
+  {
+    id: 'SET_ZTEST_CAL',
+    name: '~SET ZTEST',
+    frenchName: 'CALIBRATION_ZTEST',
+    category: 'Instrument',
+    syntax: '~SET ZTEST Z=<id> P1=<l1> P2=<l2>;',
+    semantics: 'Connecte des composants de précision internes (résistances, capacités) pour la calibration du LAM.',
+    example: '~SET ZTEST Z=Z3 P1=LL2 P2=LL4; ! Branche 10K ohms'
   },
   {
     id: 'SET_USER_DAC',
@@ -477,6 +666,105 @@ export const VIVA_KEYWORDS: Keyword[] = [
     example: '~LEVELA IL=0 IH=5 OL=0.8 OH=2.4;'
   },
   {
+    id: 'MH_ML_FORCING',
+    name: '~MH / ~ML',
+    frenchName: 'FORCAGE_NON_CONTROLE',
+    category: 'Instrument',
+    syntax: '~MH <chan>; ~ML <chan>;',
+    semantics: 'Force l\'état haut ou bas d\'un driver sans contrôle de boucle (utile pour les charges capacitives).',
+    example: '~ML 1/8; ! Décharge sans erreur'
+  },
+  {
+    id: 'OH_OL_SENSING',
+    name: '~OH / ~OL',
+    frenchName: 'TEST_LOGIQUE_MONITORE',
+    category: 'Instrument',
+    syntax: '~OH <chan>; ~OL <chan>;',
+    semantics: 'Exécute un test de niveau logique haut ou bas sur un canal sensor.',
+    example: '~OH CS; ! Vérifie que le signal est haut'
+  },
+  {
+    id: 'OM_MASKING',
+    name: '~OM',
+    frenchName: 'MASQUAGE_CANAL',
+    category: 'Instrument',
+    syntax: '~OM <chan>;',
+    semantics: 'Masque le contrôle sur un canal sensor pour ignorer son état (ne génère pas d\'erreur).',
+    example: '~OM 1/8; ! Ignore les canaux spécifiés'
+  },
+  {
+    id: 'ROUT_RSN',
+    name: '~ROUT RSn',
+    frenchName: 'RESISTANCE_SORTIE',
+    category: 'Instrument',
+    syntax: '~ROUT RS<n> [*,] <chan>;',
+    semantics: 'Connecte une résistance de sortie (0, 8, 10, 33 ohms) entre le driver et le connecteur.',
+    example: '~ROUT RS2 13; ! Insère 8 ohms'
+  },
+  {
+    id: 'REPORT_IO',
+    name: '~REPORT',
+    frenchName: 'RAPPORT',
+    category: 'Entrée/Sortie',
+    syntax: '~REPORT <val1>, <val2>...;',
+    semantics: 'Affiche des valeurs dans la fenêtre de rapport de test et les enregistre dans les statistiques.',
+    example: '~REPORT "VCC=" AR;'
+  },
+  {
+    id: 'SEND_IEEE_IO',
+    name: '~SEND_IEEE',
+    frenchName: 'ENVOYER_IEEE',
+    category: 'Entrée/Sortie',
+    syntax: '~SEND_IEEE <value>;',
+    semantics: 'Envoie une commande ou une valeur sur le bus IEEE (GPIB).',
+    example: '~SEND_IEEE "*IDN?";'
+  },
+  {
+    id: 'SET_ALM_EB',
+    name: '~SET ALM / EB0 / EB1',
+    frenchName: 'RELAIS_MATRICE',
+    category: 'Instrument',
+    syntax: '~SET ALM V=<val>; ~SET EB0 V=<val>;',
+    semantics: 'Contrôle les relais de matrice interne (ALM, External Bus) du module LAM.',
+    example: '~SET ALM V=15; ! Ouvre les 4 premiers relais'
+  },
+  {
+    id: 'SET_BUS_LINE_SERV',
+    name: '~SET BUS_LINE SERV',
+    frenchName: 'CONNEXION_LAM_SE2',
+    category: 'Instrument',
+    syntax: '~SET BUS_LINE SERV V=<val> | OPEN | CLOSE;',
+    semantics: 'Restaure ou configure les connexions des lignes LAM (LI1-LI8) via le module SE2.',
+    example: '~SET BUS_LINE SERV V=254;'
+  },
+  {
+    id: 'SET_CKGEN_DR',
+    name: '~SET CKGEN / DR1 / DR2',
+    frenchName: 'GENERATEURS_LAM',
+    category: 'Instrument',
+    syntax: '~SET CKGEN TIM=<v> NUM=<n>; ~SET DR1 V=<v> I=<i>;',
+    semantics: 'Programme les générateurs de précision du module LAM (Horloge, Tension/Courant).',
+    example: '~SET DR1 V=5.0 IL LI1; ! Alim 5V sur LI1'
+  },
+  {
+    id: 'SET_EMX_MATRIX',
+    name: '~SET EMX',
+    frenchName: 'MATRICE_EXTERNE',
+    category: 'Instrument',
+    syntax: '~SET EMX <instrument>=<line>;',
+    semantics: 'Configure la matrice EMX pour connecter des instruments externes aux lignes de carte.',
+    example: '~SET EMX DMM1+=FLI1 DMM1-=FLI4;'
+  },
+  {
+    id: 'SET_HV_GUA_PUL',
+    name: '~SET GUA / PUL / ISOLEV / ISORES',
+    frenchName: 'GUARDING_ET_HV',
+    category: 'Instrument',
+    syntax: '~SET GUA DR1; ~SET PUL UP OHM=<v>;',
+    semantics: 'Configuration avancée du guarding, des matrices de pull-resistors et des références flottantes HV.',
+    example: '~SET PUL UP OHM=10K; ! Pull-up 10K'
+  },
+  {
     id: 'HV_CONTROL',
     name: '~PCT / ~PLn',
     frenchName: 'CONTROLE_HV',
@@ -518,9 +806,9 @@ export const VIVA_KEYWORDS: Keyword[] = [
     name: '~SET DIGIPLEX',
     frenchName: 'CONFIG_DIGIPLEX',
     category: 'Instrument',
-    syntax: '~SET DIGIPLEX [PULL UP|PULL DOWN|LOAD|HOLD] <params>;',
-    semantics: 'Configure les ressources numériques sur canaux analogiques (Option Digiplex).',
-    example: '~SET DIGIPLEX PULL UP 1K;\n~SET DIGIPLEX LOAD V=4.5 I=0.2;'
+    syntax: '~SET DIGIPLEX [PULL UP|DOWN] [LOAD V=v I=a] [FREE|HOLD L1..4];',
+    semantics: 'Configure l\'option Digiplex (numérique sur analogique). FREE libère une ligne pour un test analogique simultané. HOLD verrouille une ligne spécifique.',
+    example: '~SET DIGIPLEX PULL UP 10K;\n~SET DIGIPLEX FREE L2;'
   },
   // --- ENTRÉE / SORTIE ---
   {
@@ -531,6 +819,15 @@ export const VIVA_KEYWORDS: Keyword[] = [
     syntax: '~WRITE [attribut] <valeur1>...;',
     semantics: 'Affiche du texte et des valeurs sur le terminal.',
     example: '~WRITE "\\CU\\010\\005", "Systeme Pret"'
+  },
+  {
+    id: 'MSG_ASKUSER_IO',
+    name: '~MSG / ~ASKUSER',
+    frenchName: 'MESSAGE_DIALOGUE',
+    category: 'Entrée/Sortie',
+    syntax: '~MSG "text" [,BAR]; ~ASKUSER "text" [,ONPASS|ONERROR];',
+    semantics: 'Affiche un message dans une boîte de dialogue ou sur la barre de statut (BAR). ~ASKUSER attend une réponse (OUI/NON).',
+    example: '~MSG "Branchez le câble", BAR;\n~ASKUSER "Continuer ?";'
   },
   {
     id: 'CURSOR',
@@ -616,13 +913,22 @@ export const VIVA_KEYWORDS: Keyword[] = [
     example: 'STROBE 8C\nASSERT1 2C'
   },
   {
+    id: 'F40_CLOCK_CMD',
+    name: 'C1...9 / CR / NR',
+    frenchName: 'HORLOGE_DYNAMIQUE_F40',
+    category: 'Timing',
+    syntax: 'C1 <chan>; CR <chan>; NR <chan>;',
+    semantics: 'C1 force une horloge sur une phase (non monitoré). CR active l\'horloge répétitive à l\'intérieur d\'un pattern. NR désactive le mode répétitif.',
+    example: 'CR CLK_PIN; ! Signal oscille sur toute la période'
+  },
+  {
     id: 'TIMING_PHASE',
     name: 'PHASE',
     frenchName: 'PHASE',
     category: 'Timing',
-    syntax: 'PHASE<n> <start> <end>;',
-    semantics: 'Définit une fenêtre temporelle active pour les signaux de type Pulse.',
-    example: 'PHASE1 3C 7C'
+    syntax: 'PHASE<n> <start> <end> [period];',
+    semantics: 'Définit une fenêtre temporelle active pour les signaux de type Pulse. L\'option period permet de définir la répétition interne.',
+    example: 'PHASE1 3C 7C 5C'
   },
 
   // --- MATHÉMATIQUES (ACCUMULATEUR AR) ---
@@ -663,22 +969,184 @@ export const VIVA_KEYWORDS: Keyword[] = [
     example: '~LOAD 0XFF\n~AND 0X0F ! AR=0X0F'
   },
   {
-    id: 'ALGO_VECTORS',
-    name: 'MATH / ACCH / ACCI / ACRC',
-    frenchName: 'VECTEURS_ALGO',
+    id: 'SET_USER_RELAIS',
+    name: '~USER_LINE / ~URP / ~URS / ~UOP',
+    frenchName: 'RELAIS_TRANSISTORS_USER',
+    category: 'Instrument',
+    syntax: '~USER_LINEn; ~URP=<relay>; ~UOP=<trans>;',
+    semantics: 'Contrôle les relais (Reed/Power) et transistors opto-couplés sur les modules USB.',
+    example: '~URP=5; ! Ferme le relais de puissance 5'
+  },
+  {
+    id: 'ARITH_SHIFTS',
+    name: '~SHL / ~SHR',
+    frenchName: 'DECALAGES_BITS',
     category: 'Mathématique',
-    syntax: 'MATH <pins>; ACCI <pins>; ACRC <pins>;',
-    semantics: 'Commandes pour les vecteurs algorithmiques et l\'accumulateur matériel F50.',
-    example: 'MATH 1/8; ! Canal suit l\'accumulateur\nACCI 1; ! Incrémente l\'accumulateur'
+    syntax: '~SHL <n>; ~SHR <n>;',
+    semantics: 'Décale les bits du registre AR vers la gauche ou la droite en insérant des zéros.',
+    example: '~LOAD 0XFF\n~SHL 4 ! AR = 0XF0'
+  },
+  {
+    id: 'TRIG_FUNCTIONS',
+    name: '~SIN / ~COS / ~ATAN',
+    frenchName: 'TRIGONOMETRIE',
+    category: 'Mathématique',
+    syntax: '~SIN; ~COS; ~ATAN;',
+    semantics: 'Fonctions trigonométriques opérant sur le registre AR (valeurs en radians).',
+    example: '~LOAD 1.57\n~SIN ! AR = sin(PI/2) = 1'
+  },
+  {
+    id: 'MATH_SQUARE',
+    name: '~SQR / ~SQUARE',
+    frenchName: 'RACINE_CARRE_PUISSANCE',
+    category: 'Mathématique',
+    syntax: '~SQR; ~SQUARE;',
+    semantics: 'Calcule la racine carrée (~SQR) ou le carré (~SQUARE) du registre AR.',
+    example: '~LOAD 16\n~SQR ! AR = 4'
+  },
+  {
+    id: 'PROTECTION_READ',
+    name: '~PROTECTION',
+    frenchName: 'LECTURE_PROTECTION',
+    category: 'Instrument',
+    syntax: '~PROTECTION;',
+    semantics: 'Lit l\'état de la protection générale du module HV (1 si active, 0 sinon) dans AR.',
+    example: '~PROTECTION;\n~IF AR=1; ~WRITE "ALERTE"; ~ENDIF;'
+  },
+  {
+    id: 'LIN_FLIN_LINES',
+    name: '~LIn / ~FLIn',
+    frenchName: 'CONNEXION_LIGNES',
+    category: 'Instrument',
+    syntax: '~LI<n>=<chan>; ~FLI<n>=<chan>;',
+    semantics: 'Connecte des canaux aux lignes analogiques (1-4) ou numériques (5-8) du système.',
+    example: '~LI1=99; ! Connecte canal 99 à LI1/LI5'
+  },
+  {
+    id: 'SYS_EXEC',
+    name: '~SYS',
+    frenchName: 'EXECUTION_SYSTEME',
+    category: 'Contrôle',
+    syntax: '~SYS [mode], [sync], "<app>", "<params>";',
+    semantics: 'Exécute une application Windows externe (Notepad, Script, etc.) en mode synchrone ou asynchrone.',
+    example: '~SYS NORMAL, SYNCHRON, "notepad.exe", "dati.txt";'
+  },
+  {
+    id: 'TEST_SPECIFIC',
+    name: '~TEST COUNTER / PW / PMM / VOLT',
+    frenchName: 'TESTS_INSTRUMENTS_RECYCLES',
+    category: 'Instrument',
+    syntax: '~TEST <instr> [params] LO=v HI=v [NRC=<n>] [MRC=<mode>];',
+    semantics: 'Mesure avec comparaison immédiate et gestion de recyclages. NRC définit le nombre de répétitions, MRC la modalité (M:Moyenne, H:Max, L:Min, P:Vpp).',
+    example: '~TEST COUNTER LI4 TIM=10ms NRC=10 MRC=M HI=1000'
+  },
+  {
+    id: 'ZG_MASKING_GROUP',
+    name: '~ZG',
+    frenchName: 'MASQUAGE_GROUPE',
+    category: 'Instrument',
+    syntax: '~ZG <group>=<valeur>;',
+    semantics: 'Masque ou démasque un groupe de canaux sensor selon le masque binaire spécifié.',
+    example: '~ZG DATI=0X0F; ! Masque les 4 premiers bits'
+  },
+  {
+    id: 'READ_STATUS_PW',
+    name: '~READ STATUS PW',
+    frenchName: 'ETAT_ALIMENTATION',
+    category: 'Instrument',
+    syntax: '~READ STATUS PW<n> <param>;',
+    semantics: 'Lit les paramètres programmés (V, I, Status) d\'une alimentation dans AR.',
+    example: '~READ STATUS PW1 STATUS; ! AR=1 si ON'
+  },
+  {
+    id: 'READ_DATE_TIME_TIMER',
+    name: '~READ_DATE / ~READ_TIME / ~READ_CLOCK',
+    frenchName: 'LECTURE_TEMPS_SYSTEME',
+    category: 'Entrée/Sortie',
+    syntax: '~READ_DATE <var>; ~READ_TIME <var>;',
+    semantics: 'Récupère la date, l\'heure ou la valeur d\'un timer système.',
+    example: '~READ_DATE DATS; ! DATS = "15/04/2026"'
+  },
+  {
+    id: 'FILE_OPS_ADVANCED',
+    name: '~FILE OPEN / READ / WRITE / CLOSE',
+    frenchName: 'OPERATIONS_FICHIERS_ASCII',
+    category: 'Entrée/Sortie',
+    syntax: '~FILE N=<n> [OPEN_READ|OPEN_WRITE|OPEN_APPEND] "<file>"; ~FILE N=<n> [READ|WRITE|REWIND|REMOVE];',
+    semantics: 'Gestion des fichiers ASCII sur disque. OPEN_APPEND permet l\'ajout en fin de fichier. REWIND replace le pointeur au début. REMOVE supprime le fichier physique.',
+    example: '~FILE N=1 OPEN_WRITE "ris.txt";\n~FILE N=1 WRITE "DATE=";\n~FILE N=1 REWIND;\n~FILE N=1 CLOSE;'
+  },
+  {
+    id: 'SERIAL_COM_PORT',
+    name: '~COM',
+    frenchName: 'PORT_SERIE_COM',
+    category: 'Entrée/Sortie',
+    syntax: '~COM <port>, <param>=<val>;',
+    semantics: 'Pilote les communications série (RS232) sur les ports COM1 à COM4 du système.',
+    example: '~COM 1, BAUDRATE=9600, PARITY=NONE;'
+  },
+  {
+    id: 'READ_OPTO_DETAILS',
+    name: '~READ_OPTO',
+    frenchName: 'LECTURE_OPTO',
+    category: 'Entrée/Sortie',
+    syntax: '~READ_OPTO<n> <variable>;',
+    semantics: 'Lit l\'état des entrées opto-couplées du module USB spécifié.',
+    example: '~READ_OPTO1 VAR1;'
+  },
+  {
+    id: 'READ_STATUS_DETAILED',
+    name: '~READ STATUS',
+    frenchName: 'LECTURE_STATUT',
+    category: 'Instrument',
+    syntax: '~READ STATUS <device> <param>;',
+    semantics: 'Lit les informations de statut (Alim V/I, Registres, Protection) dans le registre AR.',
+    example: '~READ STATUS PW1 V; ! Tension prog de PW1 dans AR'
+  },
+  {
+    id: 'RG_WG_GROUP_OPS',
+    name: '~RG / ~WG',
+    frenchName: 'LECTURE_ECRITURE_GROUPE',
+    category: 'Instrument',
+    syntax: '~RG <var>=<group>; ~WG <val>=<group>;',
+    semantics: 'Lit ou écrit une valeur binaire complète sur un groupe de canaux numériques déclaré.',
+    example: '~RG VAR1=23,24,25,26; ! Stocke l\'état de 4 pins dans VAR1'
+  },
+  {
+    id: 'FILE_FORMATTERS',
+    name: '~FORMAT / ~AFORMAT',
+    frenchName: 'FORMATTAGE_CONVERSION',
+    category: 'Entrée/Sortie',
+    syntax: '~FORMAT <int>,<dec>,<fmt> [AUTOCR]; ~AFORMAT <int>,<dec>,<fmt>;',
+    semantics: 'Définit le format de conversion pour l\'I/O et la conversion numérique->chaîne. Formats : EXP (exponential), DEC (decimal), HEX (hexadecimal), ASC (ascii). AUTOCR valide automatiquement les saisies.',
+    example: '~FORMAT 1, 0, AUTOCR; ! Saisie sans touche entrée'
   },
   {
     id: 'MATH_ADVANCED',
-    name: '~EXP / ~LOG / ~SQR',
+    name: '~EXP / ~LOG / ~SQR / ~SQUARE',
     frenchName: 'MATH_AVANCEE',
     category: 'Mathématique',
-    syntax: '~EXP; ~LOG; ~SQR;',
-    semantics: 'Fonctions mathématiques avancées opérant sur le registre AR.',
-    example: '~LOAD 2\n~EXP ! AR = e^2'
+    syntax: '~EXP; ~LOG; ~SQR; ~SQUARE;',
+    semantics: 'Fonctions mathématiques avancées opérant sur le registre AR (Expo, Log, Racine, Carré).',
+    example: '~LOAD 16\n~SQUARE ! AR = 256'
+  },
+  {
+    id: 'ALGO_VECTORS',
+    name: 'MATH / ACCH / ACCI / ACCD / ACSR / ACSL / ACCX / ACRC',
+    frenchName: 'VECTEURS_ALGO_F50',
+    category: 'Mathématique',
+    syntax: 'MATH <pins>; ACCI <pins>; ACSR <pins>; ACCX <pins>; ACRC <pins>;',
+    semantics: 'Commandes pour l\'accumulateur matériel 8-bits du module F50. ACCI (Inc), ACCD (Dec), ACSR/L (Shift), ACCX (Not), ACRC (Calcul CRC matériel).',
+    example: 'ACCI 1; ! Incrémente l\'accumulateur matériel\nMATH 1/8; ! Les canaux suivent l\'accumulateur'
+  },
+  {
+    id: 'MATH_CONVERSIONS',
+    name: 'Conversions Run-time',
+    frenchName: 'CONVERSIONS_TYPES',
+    category: 'Mathématique',
+    syntax: '~CALC <var_cible> = <var_source>;',
+    semantics: 'VIVA convertit automatiquement les types lors de l\'assignation. Float -> Integer tronque la décimale. String -> Integer retourne 0 si non numérique. Integer -> String utilise ~AFORMAT.',
+    example: 'DECLARE RUNTIME FLOAT F = 3.99;\nDECLARE RUNTIME INTEGER I;\n~CALC I = F; ! I vaudra 3'
   },
   {
     id: 'CALC',

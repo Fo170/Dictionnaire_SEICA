@@ -41,6 +41,10 @@ Délimitent les tests nécessitant que la carte (UUT) soit sous tension.
 Macro système pour configurer les alimentations PW1-PW8.
 - **Paramètres :** VOLT, CURRENT, DELAY, SENSE, EXTINT, SET.
 
+### ~SET PW1...8 / ~READ STATUS PW
+Programmation fine et lecture de l'état (V, I) des alimentations.
+- **Paramètres :** `SENSEOFF`, `PREPARE`, `INT`, `ON/OFF`.
+
 ---
 
 ## 2. COMMANDES NUMÉRIQUES DÉTAILLÉES (MODES & FORMATS)
@@ -65,10 +69,13 @@ Macro système pour configurer les alimentations PW1-PW8.
 ## 3. INSTRUMENTS ANALOGIQUES & MESURES
 
 ### ~MEASURE
-Instruction de haut niveau pour les mesures (Voltage, Current, Frequency, Time).
+Instruction de haut niveau pour les mesures (Voltage, Current, Frequency, Time, Counts).
+
+### ~MH / ~ML / ~OH / ~OL / ~OM
+Forçage et Sensing logique non-contrôlé (unmonitored) ou monitoré.
 
 ### ~ATEST
-Comparaison avec limites (LO, HI) et gestion d'erreurs.
+Comparaison avec limites (LO, HI) et gestion d'erreurs globales.
 
 ### ~CONNECT / ~DISCONNECT
 Contrôle manuel de la matrice de commutation (Scanner).
@@ -89,8 +96,9 @@ Approche logicielle moderne pour le pilotage des ressources :
 ### [Contrôle du Module HV (~PCT, ~PLn)](./docs/hardware/modules/HV_CONTROL.md)
 Pilotage des relais haute tension et des lignes PL1-PL4.
 
-### ~SET ISOLEV / ~SET PMM
-Configuration des niveaux d'isolement et du multimètre HV.
+### ~SET ISOLEV / ~SET PMM / ~SET ES
+Configuration des niveaux d'isolement, du multimètre HV et des connexions de ressources HV.
+- **~PROTECTION :** Indicateur de sécurité matériel.
 
 ---
 
@@ -99,8 +107,8 @@ Configuration des niveaux d'isolement et du multimètre HV.
 ### ~SET USER_BUSW / ~SET USER_DAC
 Bus numériques et convertisseurs DAC utilisateur.
 
-### ~SET USER_LOAD / ~SET USER_WORD
-Charges résistives et lignes CUSTOM.
+### ~SET USER_LOAD / ~SET USER_WORD / ~URP / ~UOP
+Charges résistives, lignes CUSTOM et relais/transistors de puissance USB.
 
 ### ~READ_OPTO
 Lecture des entrées opto-couplées.
@@ -144,12 +152,11 @@ Définit les caractéristiques électriques fines des canaux (Slew rate, impéda
 Module de pilotage des alimentations avec programmation de courant.
 - **~SET PW1...8 :** Configuration individuelle des alimentations (V, I, Delay, Sense).
 - **~MEAS PW1...8 :** Mesure de tension ou courant sur l'unité spécifiée (résultat dans `AR`).
-- **~SET GNDREF :** Contrôle du relais de masse commune (GND_REF).
-- **~SET ZTEST :** Connexion de composants de précision internes pour l'auto-étalonnage du module LAM.
+- **[~READ STATUS PW](./docs/hardware/modules/POWER_SUPPLY.md) :** Lecture des valeurs de programmation et de l'état.
 
 ---
 
-## 9. COMMUNICATION IEEE / GPIB
+## 10. COMMUNICATION IEEE / GPIB
 
 ### ~SET BUS / ~SEND_IEEE / ~READ_IEEE
 Pilotage d'instruments externes via bus GPIB.
@@ -162,19 +169,19 @@ Pilotage d'instruments externes via bus GPIB.
 Opérations mathématiques et logiques à vitesse dynamique.
 - **Commandes :** MATH, ACCH, ACCI, ACCD, ACSR, ACSL.
 
-### ACRC
-Calcul de CRC matériel en temps réel.
+---
+
+## 12. BOUNDARY SCAN (JTAG)
+
+### [Configuration et Test JTAG (BSCAN)](./docs/hardware/modules/BSCAN_JTAG.md)
+Utilise les ressources internes des composants (IEEE 1149.1).
+- **Déclarations :** DECLARE BSCAN.
+- **POD :** ~SET VBNPOD.
+- **Tests :** ~READ_VBN, ~TEST_VBN.
 
 ---
 
-## 11. BOUNDARY SCAN (JTAG)
-
-### ~SET VBNPOD / DECLARE BSCAN
-Configuration de l'interface JTAG et des chaînes de composants.
-
----
-
-## 12. OPTION DIGIPLEX (DIGITAL MULTIPLEXER)
+## 13. OPTION DIGIPLEX (DIGITAL MULTIPLEXER)
 
 ### [Technique Digiplex](./docs/hardware/modules/digiplex_option.md)
 Permet le test numérique sur les canaux analogiques du scanner.

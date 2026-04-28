@@ -173,41 +173,34 @@ Structures de données pour l'exécution.
 ## 12. CONTRÔLE DE FLUX & LOGIQUE
 
 ### START / ENDTEST
-Délimite le bloc principal.
+Délimite le bloc principal du programme.
 
 ### ~IF / ~ELSE / ~ENDIF
-Conditionnelle Runtime.
+Conditionnelle Runtime avec support pour conditions complexes (AND, OR).
 
-### ~FOR / ~ENDFOR
-Boucle Runtime avec compteur.
-
-### ~WHILE / WEND
-Boucle tant que.
-
-### ~REPEAT / ~UNTIL
-Boucle avec test à la fin.
-
-### ~DO / ~DONE
-Répétition fixe rapide.
+### ~FOR / ~ENDFOR / ~WHILE
+Boucles de répétition et de contrôle de flux Run-time.
 
 ### ~SUBR / ~RETURN / ~ENDSUBR
-Sous-routines avec passage d'arguments.
+[Définition de Sous-routines](./docs/software/math/ACCUMULATOR_OPS.md) avec passage d'arguments et retours conditionnés.
 
 ### ~BRANCH (GOTO)
 Sauts vers des labels (`ONERROR`, `ONPASS`).
 
 ### ~SWITCH / ~CASE / ~ENDCASE
-Branchements multiples.
+Branchements multiples avec option `CONTINUE`.
 
 ---
 
-## 13. GESTION D'ÉVÉNEMENTS & COMPARAISONS
+## 13. GESTION D’ÉVÉNEMENTS & COMPARAISONS
+
+### ~ATEST / ~COMP
+Deux types de comparaison :
+- **~ATEST :** Comparaison globale. Active le flag d'erreur système `ERR` si hors limites.
+- **~COMP :** Comparaison locale. N'affecte pas l'état global du test (idéal pour les recalages).
 
 ### [Gestion d'Événements (~ON)](./docs/software/logic/ON_EVENT.md)
 Définit les actions lors d'erreurs ou d'interruptions (ERROR, BREAK, TIMEOUT).
-
-### [Comparaison de Variables (~COMP)](./docs/software/logic/COMP_VAR.md)
-Compare une valeur avec des limites sans arrêter le test global.
 
 ---
 
@@ -232,41 +225,29 @@ Le VNL est une approche orientée objet pour le pilotage des ressources.
 
 ---
 
-## 14. ENTRÉE / SORTIE & INTERFACE UTILISATEUR
+## 16. ENTRÉE / SORTIE & INTERFACE UTILISATEUR
 
-### ~WRITE / ~WRITEL
-Affichage terminal avec attributs de formatage.
+### ~WRITE / ~WRITEL / ~REPORT
+Affichage terminal, messages de statut et boîtes de dialogue interactives.
 
-### ~READ_SCR
-Saisie utilisateur au clavier.
+### [Flux et Couleurs (~STREAM, ~COLOR)](./docs/software/io/STREAM_COLOR.md)
+Redirection des extrants et personnalisation visuelle.
 
-### ~MSG
-Boîte de dialogue modale.
+### ~CURSOR / ~WINDOW / ~FONT
+Gestion multi-fenêtres et polices de caractères.
 
-### ~CURSOR
-Positionnement du curseur.
-
-### ~WINDOW / ~FONT
-Gestion multi-fenêtres et polices.
-
-### ~FILE
-Manipulation de fichiers (OPEN, WRITE, READ, REMOVE).
+### ~FILE / ~FORMAT
+Manipulation de fichiers ASCII (OPEN, READ, WRITE, REWIND, REMOVE).
 
 ---
 
-## 15. FONCTIONS MATHÉMATIQUES & VARIABLES SYSTÈME
+## 17. FONCTIONS MATHÉMATIQUES & VARIABLES SYSTÈME
 
 ### ~CALC
-Opérations arithmétiques et logiques Runtime.
+Opérations arithmétiques et logiques. Supporte les [Conversions de Types](./docs/software/math/ACCUMULATOR_OPS.md).
 
 ### FONCTIONS INTÉGRÉES
-`~ABS`, `~SQRT`, `~SIN`, `~COS`, `~TAN`, `~EXP`, `~LOG`, `~LOG10`.
-
-### VARIABLES SYSTÈME
-- `AR` : Registre analogique (FLOAT).
-- `NC` : Compteur numérique (INTEGER).
-- `ERR` : Flag d'erreur global (0=OK, 1=KO).
-- `TIME`, `DATE` : Heure et date système.
+`~ABS`, `~SQRT`, `~SIN`, `~COS`, `~TAN`, `~EXP`, `~LOG`.
 
 ---
 
@@ -276,6 +257,7 @@ Opérations arithmétiques et logiques Runtime.
 Instructions de bas niveau pour les calculs rapides.
 - **Transfert :** `~LOAD`, `~STORE`.
 - **Arithmétique :** `~ADD`, `~SUB`, `~MULT`, `~DIV`.
+- **Trigonométrie :** `~SIN`, `~COS`, `~ATAN`, `~EXP`, `~LOG`.
 - **Logique :** `~AND`, `~OR`, `~XOR`, `~SHL`, `~SHR`.
 
 ---

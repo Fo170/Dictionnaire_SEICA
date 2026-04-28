@@ -156,11 +156,11 @@ Structures de données pour l'exécution.
 ## 11. CONTRÔLE DE FLUX & LOGIQUE
 
 ### START / ENDTEST
-Délimite le bloc principal.
+Délimite le bloc principal du programme.
 
-### [Sections et Modes (~IF, ~FOR, ~DO)](./docs/software/logic/SECTIONS_MODES.md)
-Organisation du programme et contrôle de l'exécution.
-- **Sections :** USER, SET, DIGITAL, MEAS, DIAG.
+### [Sections et Modes d'Exécution](./docs/software/logic/SECTIONS_MODES.md)
+Organisation du programme et contrôle du flux Run-time.
+- **Sections :** USER, SET, DIGITAL, MEAS, DIAG, END.
 - **Modes :** DMASTER (Dynamic), STATIC.
 - **Boucles :** `~FOR`, `~WHILE`, `~DO / ~DONE`.
 
@@ -195,10 +195,13 @@ Le VNL est une approche orientée objet pour le pilotage des ressources.
 
 ### ~MEASURE
 Instruction de haut niveau pour les mesures.
-- **Types :** `Voltage`, `Current`, `Frequency`, `Time`.
+- **Types :** `Voltage`, `Current`, `Frequency`, `Time`, `Counts`.
+
+### ~MH / ~ML / ~OH / ~OL / ~OM
+Forçage et test de niveaux logiques sur canaux individuels (monitored/unmonitored).
 
 ### ~ATEST
-Comparaison avec limites et gestion d'erreurs.
+Comparaison avec limites (numériques ou chaînes). Définit le flag d'erreur global.
 
 ### ~SET PW ALL
 Contrôle global des alimentations.
@@ -222,7 +225,13 @@ Pilotage du système de brasage laser haute précision.
 
 ---
 
-## 16. COMMANDES NUMÉRIQUES DÉTAILLÉES
+## 17. COMMANDES NUMÉRIQUES DÉTAILLÉES
+
+### [Commandes Numériques Avancées](./docs/software/language/ADVANCED_DIGITAL_CMD.md)
+Pilotage fin pour les tests dynamiques complexes.
+- **Multistrobes :** IHn, ILn, OHn, OLn synchronisés sur les PHASES/WINDOWS.
+- **Modes de retour :** R0, R1, RZ (Return to 0/1/Z).
+- **Horloges :** CR (Repetitive), NR (Not Repetitive).
 
 ### STRUCTURE DES COMMANDES
 - **D/S :** Driver (Sortie) / Sensor (Entrée).
@@ -237,8 +246,9 @@ Pilotage du système de brasage laser haute précision.
 ### [Contrôle du Module HV (~PCT, ~PLn)](./docs/hardware/modules/HV_CONTROL.md)
 Pilotage des relais haute tension et des lignes PL1-PL4.
 
-### ~SET ISOLEV / ~SET PMM
-Configuration des niveaux d'isolement et du multimètre HV.
+### ~SET ISOLEV / ~SET PMM / ~SET ES
+Configuration des niveaux d'isolement, du multimètre HV et des connexions de ressources.
+- **~PROTECTION :** Lecture du flag de sécurité matériel.
 
 ---
 
@@ -247,8 +257,8 @@ Configuration des niveaux d'isolement et du multimètre HV.
 ### ~SET USER_BUSW / ~SET USER_DAC
 Bus numériques et convertisseurs DAC utilisateur.
 
-### ~SET USER_LOAD / ~SET USER_WORD
-Charges résistives et lignes CUSTOM.
+### ~SET USER_LOAD / ~SET USER_WORD / ~URP / ~UOP
+Charges résistives, lignes CUSTOM et contrôle des relais/transistors USB.
 
 ---
 
@@ -300,24 +310,22 @@ Pilotage d'instruments externes via bus GPIB.
 ## 25. VECTEURS ALGORITHMIQUES
 
 ### [Vecteurs et Accumulateur F50](./docs/software/math/ALGO_VECTORS.md)
-Opérations mathématiques et logiques à vitesse dynamique.
-- **Commandes :** MATH, ACCH, ACCI, ACCD, ACSR, ACSL.
-
-### ACRC
-Calcul de CRC matériel en temps réel.
+Opérations mathématiques et logiques à vitesse dynamique (F50).
+- **Commandes :** MATH, ACCH, ACCI, ACCD, ACSR, ACSL, ACCX.
+- **CRC :** ACRC (Calcul de CRC matériel en temps réel).
 
 ---
 
 ## 26. ENTRÉE / SORTIE & INTERFACE UTILISATEUR
 
-### ~WRITE / ~WRITEL
-Affichage terminal avec attributs de formatage.
+### ~WRITE / ~WRITEL / ~MSG / ~ASKUSER
+Affichage terminal, messages de statut et boîtes de dialogue interactives.
 
 ### [Flux et Couleurs (~STREAM, ~COLOR)](./docs/software/io/STREAM_COLOR.md)
 Redirection des sorties et personnalisation visuelle du terminal.
 
-### ~MSG / ~ASKUSER
-Interactions utilisateur via boîtes de dialogue.
+### ~FILE (Operations)
+Gestion des fichiers ASCII : ~OPEN, ~READ, ~WRITE, ~CLOSE, ~REMOVE.
 
 ---
 
@@ -339,20 +347,23 @@ Opérations arithmétiques et logiques Runtime.
 Instructions de bas niveau pour les calculs rapides.
 - **Transfert :** `~LOAD`, `~STORE`.
 - **Arithmétique :** `~ADD`, `~SUB`, `~MULT`, `~DIV`.
-- **Logique :** `~AND`, `~OR`, `~XOR`, `~SHL`, `~SHR`.
+- **Trigonométrie & Logique :** `~SIN`, `~COS`, `~SHL`, `~SHR`, `~AND`, `~OR`.
 
 ---
 
 ## 29. COMMUNICATION & INTERFACES EXTERNES (API, VBS, JTAG)
 
 ### [Méthodes des Drivers VIVA](./docs/software/logic/VIVA_DRIVERS.md)
-Pilotage des instruments via les drivers propriétaires SEICA (~INIT, ~TERM, ~SEND, etc.).
+Pilotage via les drivers propriétaires SEICA (~INIT, ~TERM, ~SEND, etc.).
 
-### ~API / ~VBS
-Appel de DLL Windows et scripts VBScript.
+### [Scripts VBS et VI Labview](./docs/software/logic/EXTERNAL_SCRIPTS.md)
+Intégration de logique externe (~VBS, ~VI).
 
-### Boundary Scan (JTAG)
-Configuration de l'interface JTAG et des chaînes de composants.
+### [Configuration et Test JTAG (BSCAN)](./docs/hardware/modules/BSCAN_JTAG.md)
+Utilise les ressources internes des composants (IEEE 1149.1).
+- **Déclarations :** DECLARE BSCAN.
+- **POD :** ~SET VBNPOD.
+- **Tests :** ~READ_VBN, ~TEST_VBN.
 
 ---
 *Fin du Dictionnaire SEICA - Version Complète*
