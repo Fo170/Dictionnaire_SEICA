@@ -207,3 +207,6 @@ Contrôle global des alimentations.
 
 ### ~WG / ~RG (Bus de données)
 Écriture et lecture sur des groupes de canaux.
+
+---
+*Fin du Dictionnaire SEICA - Version 1.2 (Matériel)*

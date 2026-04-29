@@ -329,3 +329,6 @@ Mesure de temps d'exécution (8 timers).
 
 ### ~XOR / ~AND / ~OR
 Opérations logiques bit à bit sur le registre AR.
+
+---
+*Fin du Dictionnaire SEICA - Version 1.2 (Logiciel)*

@@ -366,7 +366,7 @@ Utilise les ressources internes des composants (IEEE 1149.1).
 - **Tests :** ~READ_VBN, ~TEST_VBN.
 
 ---
-*Fin du Dictionnaire SEICA - Version Complète*
+*Fin du Dictionnaire SEICA - Version 1.2 (Complète)*
 
 ## EXEMPLES DE PROGRAMMES COMPLETS
 
