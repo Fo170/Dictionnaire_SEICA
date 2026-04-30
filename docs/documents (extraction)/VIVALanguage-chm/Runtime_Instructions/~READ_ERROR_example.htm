@@ -1,0 +1,126 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~READ_ERROR example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+span.hcp1 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>~READ_ERROR 
+ example</h1>
+
+<p>&nbsp;</p>
+
+<p style="font-weight: bold;">Example 1</p>
+
+<p>&nbsp;</p>
+
+<p>integer j,k,i;</p>
+
+<p>string s1;</p>
+
+<p>declare channel chan1=1;</p>
+
+<p>declare channel chan2=2;</p>
+
+<p>declare channel chan3=3;</p>
+
+<p>TIMING T1 ;</p>
+
+<p>PERIOD 4000N;</p>
+
+<p>PHASE1 100N,200N;</p>
+
+<p>STROBE1 &nbsp;1100N,1200N;</p>
+
+<p>ENDTIMING;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>START F50ERR STATIC;</p>
+
+<p>&nbsp;</p>
+
+<p>read_ch_name n=2 s1; <span class="hcp1">&nbsp;!! 
+ read the name of channel 2 into string s1</span></p>
+
+<p>writel &quot;ch2=&quot;,s1;</p>
+
+<p>read_ch_name n=1 s1;<span class="hcp1"> !! read the name 
+ of channel 1 into string s1</span></p>
+
+<p>writel &quot;ch1=&quot;,s1;</p>
+
+<p>read_ch_name n=4 s1; <span class="hcp1">&nbsp;!! 
+ return 4 into string s1 since channel 4 as no name</span></p>
+
+<p>writel &quot;ch4=&quot;,s1;</p>
+
+<p>&nbsp;</p>
+
+<p>~pull down 1/32;</p>
+
+<p>DYNAMIC TIMING T1;</p>
+
+<p>OM0 1/32;</p>
+
+<p>OH &nbsp;chan2 
+ chan3 ;</p>
+
+<p>/ ;</p>
+
+<p>/ STATIC; &nbsp;<span class="hcp1">!! 
+ channel 2 &amp; 3 fail</span></p>
+
+<p>read error &nbsp;j; 
+ <span class="hcp1">&nbsp;&nbsp;!! 
+ return number of failing channel 2</span></p>
+
+<p>&nbsp;</p>
+
+<p>for i=1 to j; <span class="hcp1">!! scroll for all channel 
+ errors</span></p>
+
+<p>read error n=i k; <span class="hcp1">!! read the number of 
+ ith channel fail return 2 &nbsp;then 
+ 3</span></p>
+
+<p>read_ch_name n=k s1; <span class="hcp1">!! read the given 
+ name of the channel</span></p>
+
+<p>writel &quot;fail signal=&quot;,s1;<span class="hcp1"> !! 
+ print it</span> </p>
+
+<p>endfor;</p>
+
+<p>&nbsp;</p>
+
+<p>ENDTEST;</p>
+
+<p style="color: #008080;">____________________________________________________________</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

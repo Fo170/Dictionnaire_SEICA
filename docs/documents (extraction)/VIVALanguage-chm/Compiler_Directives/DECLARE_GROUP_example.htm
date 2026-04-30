@@ -1,0 +1,166 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>DECLARE GROUP example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>DECLARE GROUP 
+ example</h1>
+
+<p class="hcp1"><span><span style="font-weight: bold;">Example 
+ 1</span></span></p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL RESETN=156;</p>
+
+<p>DECLARE CHANNEL D0 = 1;</p>
+
+<p>DECLARE CHANNEL D1 = 2;</p>
+
+<p>DECLARE CHANNEL D2 = 3;</p>
+
+<p>DECLARE CHANNEL D3 = 4;</p>
+
+<p>DECLARE CHANNEL D4 =5;</p>
+
+<p>DECLARE CHANNEL A0 = 20;</p>
+
+<p>DECLARE CHANNEL A1 = 21;</p>
+
+<p>DECLARE CHANNEL A2 = 22;</p>
+
+<p>DECLARE CHANNEL A3 = 23;</p>
+
+<p>DECLARE GROUP DATI =1,2,3,4;</p>
+
+<p>DECLARE GROUP ADDR =A0,A1,A2,A3;</p>
+
+<p>START PRG12;</p>
+
+<p>IL RESETN; <span class="hcp2">!board reset!</span></p>
+
+<p>/;</p>
+
+<p>/;</p>
+
+<p>IH RESETN;</p>
+
+<p>/;</p>
+
+<p>/;</p>
+
+<p>IL S2;</p>
+
+<p>/;</p>
+
+<p>IH S4;</p>
+
+<p>/;</p>
+
+<p>IG DATI=B0101;<span class="hcp2"> !assigns the low value 
+ to channels 1 and 3 and the high value to channels 2 and 4!</span></p>
+
+<p>IG ADDR=0XC;<span class="hcp2"> !assigns the high value to 
+ channels A0 and A1 and the low value to A2 and A3!</span></p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 2</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL D0 = 1;</p>
+
+<p>DECLARE CHANNEL D1 = 2;</p>
+
+<p>DECLARE CHANNEL D2 = 3;</p>
+
+<p>DECLARE CHANNEL D3 = 4;</p>
+
+<p>DECLARE CHANNEL D4 =5;</p>
+
+<p>DECLARE CHANNEL D5 = 20;</p>
+
+<p>DECLARE CHANNEL D6 = 21;</p>
+
+<p>DECLARE CHANNEL D7 = 22;</p>
+
+<p>DECLARE CHANNEL D8 = 23;</p>
+
+<p>DECLARE GROUP DATL =DO,D1,D2,D3;</p>
+
+<p>DECLARE GROUP DATH =D4,D5,D6,D7;</p>
+
+<p>DECLARE GROUP DATABUS =DATL,DATH;</p>
+
+<p>START PRG13;</p>
+
+<p>IG DATL=B0101; <span class="hcp2">!assigns values to the 
+ data D0..D3</span></p>
+
+<p>/;</p>
+
+<p>IG DATH=0XC; <span class="hcp2">!assigns values to the data 
+ D4..D7</span></p>
+
+<p>/</p>
+
+<p>IG DATABUS=0XA4; <span class="hcp2">assigns a value to the 
+ bus</span> </p>
+
+<p>/;</p>
+
+<p>IL DATABUS;</p>
+
+<p>/;</p>
+
+<p>IH DATABUS;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p style="color: #008080;">________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

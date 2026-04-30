@@ -1,0 +1,391 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~SUBR example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+p.hcp2 { color:#008000; }
+p.hcp3 { color:#008080; }
+span.hcp4 { color:#008080; }
+-->
+</style>
+</head>
+<body>
+<h1>~SUBR example</h1>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example &nbsp;1</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">! Subroutine declaration &nbsp;</p>
+
+<p>DECLARE SUBROUTINE PROVA;</p>
+
+<p>&nbsp;</p>
+
+<p>~SUBR PROVA;</p>
+
+<p>~CURSOR 1,1;</p>
+
+<p>~WRITE &quot;TEST SUBROUTINE &nbsp;&quot; 
+ </p>
+
+<p>~PAUSE 1;</p>
+
+<p>~RETURN;</p>
+
+<p>~ENDSUBR;</p>
+
+<p>&nbsp;</p>
+
+<p>START PROFUN STATIC ;</p>
+
+<p>~CALL PROVA;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3">___________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 2</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">!Subroutine with internal variable declaration. 
+ Note that the variable J defined in the subroutine PROVA is DIFFERENT 
+ from the variable J !defined in PROVA2 even though the have the same name. 
+ Therefore the variables are local to their subroutine. &nbsp;</p>
+
+<p class="hcp2">&nbsp;</p>
+
+<p>DECLARE SUBROUTINE PROVA PROVA2;</p>
+
+<p>&nbsp;</p>
+
+<p>~SUBR PROVA;</p>
+
+<p>DECLARE RUNTIME FLOAT J;</p>
+
+<p>~CALC J=4.4;</p>
+
+<p>~CURSOR 1,1;</p>
+
+<p>~WRITE &quot;VALUE 1&quot; J;</p>
+
+<p>~PAUSE J;</p>
+
+<p>~RETURN;</p>
+
+<p>~ENDSUBR;</p>
+
+<p>&nbsp;</p>
+
+<p>~SUBR PROVA2;</p>
+
+<p>DECLARE RUNTIME FLOAT J;</p>
+
+<p>~CALC J=3.4;</p>
+
+<p>~CURSOR 1,2;</p>
+
+<p>~WRITE &quot;VALUE 2&quot;;</p>
+
+<p>~PAUSE J;</p>
+
+<p>~RETURN;</p>
+
+<p>~ENDSUBR;</p>
+
+<p>&nbsp;</p>
+
+<p>START PROFUN STATIC ;</p>
+
+<p>~CALL PROVA;</p>
+
+<p>~CALL PROVA2;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span class="hcp4">___________________________________________________________ 
+ </span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 3</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">!Inclusion of a subroutine library file. File 
+ &nbsp;MIESUB.lib 
+ written under the directory \\BOARD\nomeboard &nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE SUBROUTINE PROVA PROVA2;</p>
+
+<p>&nbsp;</p>
+
+<p>~SUBR PROVA;</p>
+
+<p>DECLARE RUNTIME FLOAT J;</p>
+
+<p>~CALC J=4.4;</p>
+
+<p>~CURSOR 1,1;</p>
+
+<p>~WRITE &quot;VALUE 1&quot; J;</p>
+
+<p>~PAUSE J;</p>
+
+<p>~RETURN;</p>
+
+<p>~ENDSUBROUTINE;</p>
+
+<p>&nbsp;</p>
+
+<p>~SUBR PROVA2;</p>
+
+<p>DECLARE RUNTIME FLOAT J;</p>
+
+<p>~CALC J=3.4;</p>
+
+<p>~CURSOR 1,2;</p>
+
+<p>~WRITE &quot;VALUE 2&quot;;</p>
+
+<p>~PAUSE J;</p>
+
+<p>~RETURN;</p>
+
+<p>~ENDSUBR;</p>
+
+<p>&nbsp;</p>
+
+<p>directory \\BOARD\nomeboard &nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>#INCLUDE MIESUB;</p>
+
+<p>&nbsp;</p>
+
+<p>START PROFUN STATIC ;</p>
+
+<p>~CALL PROVA;</p>
+
+<p>~CALL PROVA2;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span class="hcp4"><span class="hcp4">___________________________________________________________ 
+ </span></span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 4</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">! Definition of a subroutine with global arguments. 
+ &nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL CS=40;</p>
+
+<p>DECLARE CHANNEL RD=17;</p>
+
+<p>DECLARE CHANNEL CLK=19;</p>
+
+<p>DECLARE CHANNEL DAT0=67;</p>
+
+<p>DECLARE RUNTIME ARGUMENT INTEGER SUBERR;</p>
+
+<p>DECLARE SUBROUTINE SUB1, SUB2;</p>
+
+<p>&nbsp;</p>
+
+<p>~SUBR SUB1 (SUBERR);</p>
+
+<p>~DELAY SUBERR;</p>
+
+<p>~WRITE “DELAY TIME EQUAL TO: ”, SUBERR;</p>
+
+<p>~RETURN;</p>
+
+<p>~ENDSUBR;</p>
+
+<p>&nbsp;</p>
+
+<p>~SUBR SUB2 (SUBERR);</p>
+
+<p>~FOR I=1 TO SUBERR;</p>
+
+<p>~IL CLK;</p>
+
+<p>/;</p>
+
+<p>~IH CLK;</p>
+
+<p>/;</p>
+
+<p>~ENDFOR;</p>
+
+<p>~RETURN;</p>
+
+<p>~ENDSUBR;</p>
+
+<p>&nbsp;</p>
+
+<p>START PROG1 STATIC</p>
+
+<p>IL CS;</p>
+
+<p>/;</p>
+
+<p>IL RD;</p>
+
+<p>/;</p>
+
+<p>~CALL SUB2 (100);</p>
+
+<p>~CALL SUB1 (10);</p>
+
+<p>~CALL SUB2 (%); <span style="color: #008000;">!In this case the previous 
+ value of SUBERR is recalled, which is equal to 10.</span> &nbsp;</p>
+
+<p>OH DAT0;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span class="hcp4"><span><span class="hcp4">___________________________________________________________ 
+ </span></span></span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 5</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">!Subroutine definition with local arguments. 
+ &nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL CS=40;</p>
+
+<p>DECLARE CHANNEL RD=17;</p>
+
+<p>DECLARE CHANNEL CTR=143;</p>
+
+<p>DECLARE CHANNEL LINE0=10;</p>
+
+<p>DECLARE CHANNEL DAT0=67;</p>
+
+<p>DECLARE SUBROUTINE SUB2, TEST_TRI;</p>
+
+<p>&nbsp;</p>
+
+<p>~SUBR SUB2 (INTEGER P1, STRING P2);</p>
+
+<p>~DELAY P1;</p>
+
+<p>~WRITE P2;</p>
+
+<p>~RETURN;</p>
+
+<p>~ENDSUBR;</p>
+
+<p>&nbsp;</p>
+
+<p>~SUBR TEST_TRI (INTEGER TRICH);</p>
+
+<p>~CALC SUBERR=0;</p>
+
+<p>~LI4=TRICH;</p>
+
+<p>~SET PUL UP OHM=1K;</p>
+
+<p>~TEST VOLT HI=POSVOLT,LO=4,MAX=6,LI4,TIM=0.1;</p>
+
+<p>~RETURN</p>
+
+<p>~ENDSUBR;</p>
+
+<p>&nbsp;</p>
+
+<p>START PGR1 STATIC;</p>
+
+<p>IL CS;</p>
+
+<p>/;</p>
+
+<p>IL RD;</p>
+
+<p>/;</p>
+
+<p>OH DAT1;</p>
+
+<p>/;</p>
+
+<p>IH CTR;</p>
+
+<p>/;</p>
+
+<p>~CALL SUB2 (100, CICLO1); /;/;</p>
+
+<p>~CALL TEST_TRI (10)</p>
+
+<p>.. </p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

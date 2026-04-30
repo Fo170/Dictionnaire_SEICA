@@ -1,0 +1,180 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~FILE example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { color:#008000; }
+p.hcp2 { color:#000000; }
+span.hcp3 { color:#008000; }
+p.hcp4 { color:#008080; }
+-->
+</style>
+</head>
+<body>
+<h1>~FILE example</h1>
+
+<p style="font-weight: bold;"><span style="font-weight: bold;">Example 
+ 1</span></p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">writing data to a file and reading back .</p>
+
+<p class="hcp1">&nbsp;</p>
+
+<p class="hcp2">DECLARE RUNTIME FLOAT VAL,TENS;<span class="hcp3"> 
+ !Declaration of the integer type variable</span></p>
+
+<p class="hcp2">DECLARE RUNTIME STRING RES;&nbsp; <span class="hcp3">!Declaration 
+ of the STRING type variable</span></p>
+
+<p>&nbsp;</p>
+
+<p>START TRYFILE STATIC; <span class="hcp3">!Beginning of the 
+ program</span></p>
+
+<p>&nbsp;</p>
+
+<p>~MEAS VOLT LI1,MAX=2,TIM=1; <span class="hcp3">!Voltage measure 
+ executed on the line 1 with end scale equal to 2V and time equal to 1ms. 
+ The result is stored in the accumulator.</span></p>
+
+<p>~STORE TENS;<span class="hcp3"> !Assignment of the value 
+ in the accumulator to the variable TENS</span></p>
+
+<p>~FILE1 OPEN_WRITE “Risultati.txt” <span class="hcp3">!Opening 
+ for writing of the file Risultati.txt under the directory .\S20WIN\BOARD\ATD23.</span> 
+ </p>
+
+<p>~BRANCH ONERROR ERR; <span class="hcp3">! branch if the file 
+ can't be created</span></p>
+
+<p>~FILE1 WRITE TENS; <span class="hcp3">!Writing of the voltage 
+ value, container in the variable TENS in the file.</span></p>
+
+<p>~BRANCH ONERROR ERR; <span class="hcp3">! branch if can't 
+ access the file (write proctected)</span></p>
+
+<p>~FILE1 WRITE “PASS”;<span class="hcp3"> !Writing of the string 
+ PASS on the first line of the file</span></p>
+
+<p>~FILE1 CLOSE; <span class="hcp3">!Closing of the file.</span></p>
+
+<p>&nbsp;</p>
+
+<p>~FILE1 OPEN_APPEND “Risultati.txt” <span class="hcp3">!Opening 
+ of the file in &nbsp;&nbsp;APPEND 
+ mode.</span></p>
+
+<p>~BRANCH ONERROR ERR; <span class="hcp3">! branch if the file 
+ do not exist</span></p>
+
+<p>TENS=TENS+1;</p>
+
+<p>~FILE1 WRITE TENS; <span class="hcp3">!Append the value of 
+ variable TENS</span></p>
+
+<p>~BRANCH ONERROR ERR; <span class="hcp3">! branch if can't 
+ access the file (write proctected)</span></p>
+
+<p>~FILE1 WRITE “FAIL”; <span class="hcp3">!Append</span><span class="hcp3"> of the string FAIL, at the end of the file</span></p>
+
+<p>~FILE1 CLOSE; <span class="hcp3">!Closing of the file.</span></p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">~FILE1 OPEN_READ “Risultati.txt” <span class="hcp3">!Opening 
+ in reading mode of the file Risultati.txt under the directory .\S20WIN\BOARD\ATD23.</span> 
+ </p>
+
+<p>~BRANCH ONERROR ERR; <span class="hcp3">! branch if the file 
+ do not exist</span></p>
+
+<p class="hcp2">~FILE1 READ VAL; <span class="hcp3">!Reading 
+ of the first line of the file, the value is stored in the variable VAL</span></p>
+
+<p>~BRANCH ONERROR ERR; <span class="hcp3">! branch if end of 
+ file reached</span></p>
+
+<p class="hcp2">~CURSOR 10,10; <span class="hcp3">!Positioning 
+ of the &nbsp;cursor</span></p>
+
+<p class="hcp2">~WRITE “VALUE DEL FILE: ” VAL;<span class="hcp3"> 
+ !Display of the first value of the file </span></p>
+
+<p>&nbsp;</p>
+
+<p>~FILE1 REWIND; <span class="hcp3">&nbsp;&nbsp; !Positioning 
+ of the cursor at the beginning of the file</span></p>
+
+<p>~FILE1 READ VAL; <span class="hcp3">!Second reading of the 
+ first line of the, the value is stored in the variable VAL.</span></p>
+
+<p class="hcp2">~FILE1 READ VAL; <span class="hcp3">!Reading 
+ of the second value of the file and store in VAL</span></p>
+
+<p class="hcp2">~FILE1 READ RES; <span class="hcp3">!Reading 
+ the third line e store in the variable RES</span></p>
+
+<p class="hcp2">~CURSOR 20,10; <span class="hcp3">!Positioning 
+ of the &nbsp;cursor</span></p>
+
+<p class="hcp2">~WRITE “VALUE DEL FILE: ” VAL,&quot; TEST &quot;,RES; 
+ <span class="hcp3">!Display of the second value of the file 
+ and the string (result of the test) </span></p>
+
+<p class="hcp2">~FILE1 CLOSE; <span class="hcp3">!Closing 
+ of the file</span>.</p>
+
+<p class="hcp2">&nbsp;</p>
+
+<p class="hcp2">~FILE1 REMOVE “Risultati.txt” <span class="hcp3">!delete 
+ from the disk the file Risultati.txt </span></p>
+
+<p class="hcp2">~EXIT; !ending the the program </p>
+
+<p class="hcp2">&nbsp;</p>
+
+<p class="hcp2">LABEL=ERR; <span class="hcp3">!Error 
+ handling</span>.</p>
+
+<p class="hcp2">~WRITE &quot;Error during file management&quot;;</p>
+
+<p class="hcp2">FAIL=1; <span class="hcp3">! Set 
+ error flag.</span></p>
+
+<p class="hcp2">&nbsp;</p>
+
+<p class="hcp2">ENDTEST; <span class="hcp3">End of 
+ the program.</span></p>
+
+<p class="hcp4">&nbsp;</p>
+
+<p class="hcp4">_______________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

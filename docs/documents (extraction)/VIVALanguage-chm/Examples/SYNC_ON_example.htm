@@ -1,0 +1,67 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>SYNC_ON example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+span.hcp1 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>SYNC_ON example</h1>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL C1;</p>
+
+<p>DECLARE CHANNEL C2;</p>
+
+<p>&nbsp;</p>
+
+<p>START PRG1;</p>
+
+<p>/;</p>
+
+<p>IL C1;</p>
+
+<p>/;</p>
+
+<p>IH C1;</p>
+
+<p>SYNC_ON;</p>
+
+<p>IL C2;</p>
+
+<p>/ <span class="hcp1">!Synchro signal here</span> &nbsp;</p>
+
+<p>IH C2;</p>
+
+<p>/; <span class="hcp1">!Synchro signal here</span> &nbsp;</p>
+
+<p>/; <span class="hcp1">!Synchro signal here</span> &nbsp;</p>
+
+<p>SYNC_OFF;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

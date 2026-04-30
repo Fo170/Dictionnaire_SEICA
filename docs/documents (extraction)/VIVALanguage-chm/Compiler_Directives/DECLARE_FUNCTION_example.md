@@ -1,0 +1,36 @@
+# DECLARE 
+ FUNCTION example
+
+Example 
+ 1
+
+~FUNCTION PROVA ( INTEGER PAR1 , FLOAT PAR2) RETURN STRING;
+
+DECLARE RUNTIME STRING R;
+
+~CURSOR 1,1;
+
+~WRITE "TEST SUBROUTINE" PAR1, PAR2;
+
+~PAUSE 1;
+
+ R="MYARG="+PAR1+","+PAR2;
+
+~RETURN R;
+
+~ENDFUNCTION;
+
+DECLARE FUNCTION PROVA;
+
+DECLARE RUNTIME STRING MYS;
+
+START PROFUN STATIC ;
+
+MYS=PROVA(33,123.45);
+
+ENDTEST;
+
+________________________________________________________________ 
+
+&#169;2008 
+ Seica S.p.a - All right reserved

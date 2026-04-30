@@ -1,0 +1,101 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>#INCLUDE example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>#INCLUDE example</h1>
+
+<p class="hcp1">Example 1</p>
+
+<p>&nbsp;</p>
+
+<p>#INCLUDE FUNZMAC; <span class="hcp2">! Include of the functional 
+ macro file FUNZMAC.lib</span></p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL S1=1;CLOCK=50N;</p>
+
+<p>TIMING</p>
+
+<p>TIM1;</p>
+
+<p>PERIOD 10C;</p>
+
+<p>STROBE 3C;</p>
+
+<p>ENDTIMING;</p>
+
+<p>START PRG1;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p style="font-weight: bold; color: #008080;">___________________________________________________________</p>
+
+<p class="hcp1">Example 2</p>
+
+<p>&nbsp;</p>
+
+<p>@COMPILER INCLUDE_ON; <span class="hcp2">!this directive 
+ allows the &nbsp;contents 
+ of the MACRO.lib file to be included in the list file PRG2.pac</span> 
+ &nbsp;</p>
+
+<p>$INCLUDE MACRO; &nbsp;<span class="hcp2">!Includes 
+ the MACRO.lib file!</span> </p>
+
+<p>DECLARE CHANNEL DAT1=34;</p>
+
+<p>DECLARE CHANNEL DAT2=35;</p>
+
+<p>TIMING TIM2;</p>
+
+<p>PERIOD 5C;</p>
+
+<p>STROBE 4C;</p>
+
+<p>ENDTIMING;</p>
+
+<p>START PGR2;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

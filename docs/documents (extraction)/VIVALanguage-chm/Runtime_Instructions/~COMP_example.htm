@@ -1,0 +1,129 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~COMP example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+span.hcp1 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>~COMP example</h1>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL S1=1;</p>
+
+<p>DECLARE CHANNEL S2=4;</p>
+
+<p>DECLARE VARIABLE VAR1;</p>
+
+<p>DECLARE RUNTIME FLOAT RREG;</p>
+
+<p>DECLARE RUNTIME INTEGER RVAR2;</p>
+
+<p>DECLARE RUNTIME STRING PAROLA;</p>
+
+<p>CLOCK=50N;</p>
+
+<p>START TCOMP STATIC;</p>
+
+<p>/;</p>
+
+<p>~CALC RREG=2;</p>
+
+<p>~CALC RVAR2=3;</p>
+
+<p>~CALC PAROLA=“CHANNEL1”;</p>
+
+<p>IH S1 S2;</p>
+
+<p>/;</p>
+
+<p>IL S1 S2;</p>
+
+<p>/;</p>
+
+<p>~COMP RREG LO=3 HI=5; <span class="hcp1">!Instruction ~COMP 
+ specifying the test range</span> &nbsp;</p>
+
+<p>/;</p>
+
+<p>~COMP RREG LO=3; <span class="hcp1">!Instruction ~COMP specifying 
+ only the lower limit. If the RREG value is smaller than 3 the partial 
+ error flag is activated</span> &nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>/;</p>
+
+<p>~COMP RREG HI=5; <span class="hcp1">!Instruction ~COMP specifying 
+ only the upper limit. If the RREG value is bigger than 5 the partial error 
+ flag is activated</span> &nbsp;</p>
+
+<p>/;</p>
+
+<p>~COMP RREG LO=3 HI=5 ONERROR LAB1; <span class="hcp1">!If 
+ the RREG is out of the specified range, the system jumps to label LAB1</span> 
+ &nbsp;</p>
+
+<p>/;</p>
+
+<p>~COMP RREG LO=3 HI=5 ONPASS LAB1; <span class="hcp1">!If 
+ the RREG is within the specified range, the system &nbsp;jumps 
+ to label LAB1</span> &nbsp;</p>
+
+<p>/;</p>
+
+<p>~COMP RREG LO=VAR1 HI=5 ONERROR LAB1; <span class="hcp1">!The 
+ value of the lower limit is specified by a variable</span> &nbsp;</p>
+
+<p>/;</p>
+
+<p>~COMP RREG LO=3 HI=(RVAR2+5) ONERROR LAB1; <span class="hcp1">!The 
+ value of the upper limit is specified by an expression</span> &nbsp;</p>
+
+<p>/;</p>
+
+<p>~COMP PAROLA LO=“CHANNEL3” HI=“CHANNEL3”; <span class="hcp1">!The 
+ variable to compare is a string type</span> &nbsp;</p>
+
+<p>/;</p>
+
+<p>IH S2;</p>
+
+<p>/;</p>
+
+<p>/;</p>
+
+<p>IH S1;</p>
+
+<p>/;</p>
+
+<p>LABEL LAB1;</p>
+
+<p>~WRITE “Comparison done ! &nbsp;”;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

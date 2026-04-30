@@ -1,0 +1,243 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>VIVA drivers</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+td.hcp3 { padding-right:10px; padding-left:10px; }
+p.hcp4 { font-weight:normal; }
+p.hcp5 { margin-left:80px; }
+span.hcp6 { color:#008080; }
+span.hcp7 { font-family:Verdana, sans-serif; font-weight:bold; }
+span.hcp8 { font-family:Verdana, sans-serif; font-weight:bold; color:#008080; }
+-->
+</style>
+</head>
+<body>
+<h1>VIVA drivers</h1>
+
+<p>&nbsp;</p>
+
+<p>VIVA is equipped with proprietary drivers to manage external instruments 
+ and external functions. These drivers enables us to:</p>
+
+<p>&nbsp;</p>
+
+<ul type="disc" class="hcp1">
+	
+	<li class=kadov-p><p>Standardize in VL language the use of all instrumentation 
+ on board</p></li>
+	
+	<li class=kadov-p><p>Maintain language compatibility</p></li>
+	
+	<li class=kadov-p><p>Check for syntax errors during compilation without 
+ using the hardware (off line verification)</p></li>
+	
+	<li class=kadov-p><p>Substitute instruments on board without needing 
+ to rewrite the functional test</p></li>
+	
+	<li class=kadov-p><p>Omit most of the instrument's parameters, since 
+ they are automatically provided by the software according to their default 
+ values </p></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>The drivers are written in XML language and can be viewed from VIVA's 
+ <span style="font-style: italic;">System Configuration </span>page. Click 
+ <a href="Installation_of_drivers.htm">here</a> to know more about driver 
+ installation and viewing.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Every instrument driver is composed of:</p>
+
+<p>&nbsp;</p>
+
+<ul type="disc" class="hcp1">
+	
+	<li class=kadov-p><p>a <span class="hcp2">NAME</span> 
+ : this name identifies the driver, so it must be unique.</p></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<ul type="disc" class="hcp1">
+	
+	<li class=kadov-p><p>one or more <span class="hcp2">METHODS</span>: 
+ a method describes a function related to the driver; there are some methods 
+ that have been standardized (see list below), while others are not and 
+ must be used together with the <a href="~DRIVER.htm">~DRIVER</a> instruction. 
+ &nbsp;&nbsp;</p></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div align=left><table x-use-null-cells
+		style="x-cell-content-align: top;
+				float: alignleft;
+				left: 0px;
+				top: 352px;
+				height: 133px;
+				margin-left: 40px;
+				width: 780px;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0
+		width=780
+		height=133>
+<col style="width: 28.309%;">
+<col style="width: 71.691%;">
+
+<tr style="x-cell-content-align: top;"
+	valign=top>
+<td style="width:28.309%;" width="28.309%" class="hcp3">
+<p style="text-align: center; font-weight: normal;"
+	align=center><span style="x-text-underline: normal; /*begin!kadov{{*/ text-decoration: underline; /*}}end!kadov*/ ">Standard 
+ methods</span>:</td>
+<td style="width:71.691%;" width="71.691%" class="hcp3">
+<p class="hcp4">CLEAR</p>
+<p class="hcp4">CLOSE</p>
+<p class="hcp4">DISPLAY</p>
+<p class="hcp4">GET</p>
+<p class="hcp4">INIT</p>
+<p class="hcp4">MEAS</p>
+<p class="hcp4">OPEN</p>
+<p class="hcp4">PUT</p>
+<p class="hcp4">RECEIVE</p>
+<p class="hcp4">RESET</p>
+<p class="hcp4">SEND</p>
+<p class="hcp4">SET</p>
+<p class="hcp4">TERM</td></tr>
+</table>
+</div><p style="margin-left: 40px;">&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<ul type="disc" class="hcp1">
+	
+	<li class=kadov-p><p>one or more <span class="hcp2">PARAMETERS</span>: 
+ the parameters are related to the METHOD of the driver; some METHODS don't 
+ have any parameters. There are two types of parameters:</p></li>
+</ul>
+
+<p class="hcp5">&nbsp;</p>
+
+<p class="hcp5">REG: parameters that have associated a value 
+ or single keywords</p>
+
+<p class="hcp5">FLAG: options of a REG type parameter</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;"><span><span class="hcp6"><span class="hcp7"><span class="hcp8">_</span>_________________________</span></span></span></p>
+
+<h3>Syntax&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </h3>
+
+<p>The Syntax to recall an instrument through a driver is:</p>
+
+<p>&nbsp;</p>
+
+<p style="margin-left: 40px; font-weight: bold;">~Method Name Parameters 
+ ;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;"><span class="hcp6"><span class="hcp7"><span class="hcp8">_</span>_________________________</span></span></p>
+
+<h3>See also &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </h3>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #0000ff;">&nbsp;</p>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;"><span class="hcp8">__________________________</span></p>
+
+<h3>Examples</h3>
+
+<p>~Driver example</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

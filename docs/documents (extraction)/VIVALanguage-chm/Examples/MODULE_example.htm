@@ -1,0 +1,192 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>MODULE example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<h1>MODULE example</h1>
+
+<p>&nbsp;</p>
+
+<p>CLOCK 200NS;</p>
+
+<p>TIMING DEFAULT;</p>
+
+<p>STROBE 8C;</p>
+
+<p>PERIOD 10C;</p>
+
+<p>PHASE1 4C,6C;</p>
+
+<p>ENDTIMING;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">MODULE U1;</p>
+
+<p>DECLARE PINLIST = 191,31,32,33,34,35,36,123,136,75,100,0,188,187,186,185, 
+ 184,183,2,117;</p>
+
+<p>DECLARE GROUP DBUS=31,32,33,34,35,36;</p>
+
+<p>DECLARE GROUP OBUS=183,184,185,186,187,188;</p>
+
+<p>DECLARE CHANNEL WRCK = 191;</p>
+
+<p>DECLARE CHANNEL RD4 = 100;</p>
+
+<p>DECLARE VARIABLE = I,J;</p>
+
+<p>&nbsp;</p>
+
+<p>@MACRO WRITE;</p>
+
+<p>IG DBUS=I;</p>
+
+<p>IH WRCK RD4;</p>
+
+<p>/;</p>
+
+<p>IL WRCK;</p>
+
+<p>/;</p>
+
+<p>IH WRCK;</p>
+
+<p>/;</p>
+
+<p>/;</p>
+
+<p>@ENDMACRO;</p>
+
+<p>@MACRO READ;</p>
+
+<p>/;</p>
+
+<p>IH RD4;</p>
+
+<p>/;</p>
+
+<p>IL RD4;</p>
+
+<p>OG OBUS=J;</p>
+
+<p>/;</p>
+
+<p>OM OBUS;</p>
+
+<p>IH RD4;</p>
+
+<p>/;</p>
+
+<p>@ENDMACRO;</p>
+
+<p>START U1;</p>
+
+<p>!!! DIGITAL GUARDING</p>
+
+<p>MH 157 103 162 89 78 171 79 100 172 192 173 99;</p>
+
+<p>/ timing default;</p>
+
+<p>/;</p>
+
+<p>!!! DIGITAL GUARDING</p>
+
+<p>/;</p>
+
+<p>@CALCOLATE I=0X3F;</p>
+
+<p>@WRITE;</p>
+
+<p>/;</p>
+
+<p>@CALCOLATE J=0X3F;</p>
+
+<p>@READ;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p class="hcp1">ENDMODULE;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">MODULE U10;</p>
+
+<p>DECLARE PINLIST = 103,5,23,24,6,7,31,32,8,75,121,9,33,34,10,11,35,36,12;</p>
+
+<p>START U10;</p>
+
+<p>!!! DIGITAL GUARDING</p>
+
+<p>MH 157 103 162 89 78 171 79 100 172 192 173 99;</p>
+
+<p>/ timing default;</p>
+
+<p>/;</p>
+
+<p>!!! DIGITAL GUARDING</p>
+
+<p>@L(L.........L.........);</p>
+
+<p>@L(L1H.......T.........);</p>
+
+<p>@L(L0L.......T.........);</p>
+
+<p>@L(L..H1.....T.........);</p>
+
+<p>@L(L..L0.....T.........);</p>
+
+<p>@L(L....1H...T.........);</p>
+
+<p>@L(L....0L...T.........);</p>
+
+<p>@L(L......H1.T.........);</p>
+
+<p>@L(L......L0.T.........);</p>
+
+<p>@L(L.........T1H.......);</p>
+
+<p>@L(L.........T0L.......);</p>
+
+<p>@L(L.........T..H1.....);</p>
+
+<p>@L(L.........T..L0.....);</p>
+
+<p>@L(L.........T....1H...);</p>
+
+<p>@L(L.........T....0L...);</p>
+
+<p>@L(L.........T......H1.);</p>
+
+<p>@L(L.........T......L0.);</p>
+
+<p>ENDTEST;</p>
+
+<p class="hcp1">ENDMODULE;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

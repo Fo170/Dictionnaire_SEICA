@@ -1,0 +1,126 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~CURSOR example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>~CURSOR examples</h1>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">EXAMPLE &nbsp;1</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE RUNTIME FLOAT TEMP,TEMP1,TEMP2;</p>
+
+<p>START PRG1;</p>
+
+<p>/;</p>
+
+<p>~CALC TEMP1=100;</p>
+
+<p>~CALC TEMP2= 3.3;</p>
+
+<p>/;</p>
+
+<p>~CALC TEMP=TEMP1/TEMP2*1000;</p>
+
+<p>/;</p>
+
+<p>~CURSOR 10,5;</p>
+
+<p>~WRITE “Channel impedance on positive voltage = &nbsp;&nbsp;”;</p>
+
+<p>~WRITE TEMP;</p>
+
+<p>/;</p>
+
+<p>~WRITE “\CU\001\025\” “CHANNEL NR. &nbsp;” 
+ CAN; <span class="hcp2">!Moves the cursor on the column1, line 
+ 25 and writes “CHANNEL NR. ”</span> &nbsp;</p>
+
+<p>~WRITE “\CU\002\030\” CAN1;</p>
+
+<p>~WRITE “\CU\001\025\” CAN “CHANNEL NR. ” CAN1;</p>
+
+<p>~WRITE “\CR “FINE”; !New line, and writes FINE &nbsp;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p style="color: #008080;">________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">EXAMPLE &nbsp;2</p>
+
+<p>&nbsp;</p>
+
+<p style="color: #008000;">!Creation of a graph on video</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE RUNTIME FLOAT REG2; <span class="hcp2">!When the 
+ registers REG1-100 are defined it is also possible to declare only the 
+ biggest, in this case REG2, the others will be automatically declared.</span> 
+ &nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE RUNTIME INTEGER I;</p>
+
+<p>START PROFUN1 STATIC;</p>
+
+<p>~CALC REG1=1;</p>
+
+<p>~FOR I=REG1 TO 10;</p>
+
+<p>~MEAS VOLT LI1 MAX=2 TIM=1;</p>
+
+<p>~CALC REG2=1;</p>
+
+<p>~CURSOR (REG1, REG2);</p>
+
+<p>~WRITE &quot;.&quot;;</p>
+
+<p>~CALC REG1=REG1+1;</p>
+
+<p>~ENDFOR;</p>
+
+<p>~PAUSE;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

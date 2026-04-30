@@ -1,0 +1,64 @@
+# DECLARE 
+ RUNTIME example
+
+Example 
+ 1
+
+DECLARE RUNTIME INTEGER A
+
+DECLARE RUNTIME INTEGER B,J,IN1;
+
+DECLARE RUNTIME FLOAT TEMP,CUR;
+
+DECLARE RUNTIME STRING NOME;
+
+START PRG1 STATIC;
+
+~CALC A=3;
+
+~CALC B=5;
+
+~CALC TEMP=14.7;
+
+~CALC CUR=150;
+
+~CALC NOME=CHANNEL nr. 1;
+
+/;
+
+ENDTEST;
+
+________________________________________________________________ 
+
+Example 2
+
+Register declaration.
+
+DECLARE VARIABLE FLOAT REG10;
+
+DECLARE VARIABLE INTGER I;
+
+START FGGF STATIC;
+
+~CALC REG1=1;
+
+~CALC REG10=1;
+
+~FOR I=1 TO 10;
+
+~CURSOR REG1,REG10;
+
+~WRITE x
+
+~CALC REG1=REG1+1;
+
+~ENDFOR;
+
+~PAUSE;
+
+~ENDFOR;
+
+ENDTEST;
+
+&#169;2008 
+ Seica S.p.a - All right reserved

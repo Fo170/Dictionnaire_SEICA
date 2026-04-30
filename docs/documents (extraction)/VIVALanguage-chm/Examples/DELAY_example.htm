@@ -1,0 +1,69 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>DELAY example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css">
+</head>
+<body>
+<h1>DELAY example</h1>
+
+<p>&nbsp;</p>
+
+<p>CLOCKF INT=20N;</p>
+
+<p>TIMING TIM1;</p>
+
+<p>PERIOD 4U;</p>
+
+<p>PHASE1 100N, 300N;</p>
+
+<p>STROBE 3.5U;</p>
+
+<p>ENDTIMING;</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL D0=12;</p>
+
+<p>DECLARE CHANNEL OUT1=12;</p>
+
+<p>&nbsp;</p>
+
+<p>START PROG1;</p>
+
+<p>/ TIMING TIM1;</p>
+
+<p>IL D0;</p>
+
+<p>/;</p>
+
+<p>OL OUT1;</p>
+
+<p>DELAY 1S; <span style="color: #008000;">!In this pattern the DELAY time 
+ is executed first and then there is the control on the sensor channel</span> 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

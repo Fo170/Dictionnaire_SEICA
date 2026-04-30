@@ -1,0 +1,230 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>CALC example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+p.hcp3 { color:#008080; }
+p.hcp4 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>CALC example</h1>
+
+<p class="hcp1"><span class="hcp2"><span class="hcp2">Example 
+ 1</span></span></p>
+
+<p>&nbsp;</p>
+
+<p>CLOCK 100N;</p>
+
+<p>TIMING T1;</p>
+
+<p>PERIOD 10C;</p>
+
+<p>STROBE 9C;</p>
+
+<p>ENDTIMING;</p>
+
+<p>DECLARE CHANNEL D0=36;</p>
+
+<p>DECLARE CHANNEL D1=88;</p>
+
+<p>DECLARE CHANNEL D2=93;</p>
+
+<p>DECLARE CHANNEL D3=123;</p>
+
+<p>DECLARE CHANNEL A0=36;</p>
+
+<p>DECLARE CHANNEL A1=88;</p>
+
+<p>DECLARE CHANNEL A2=93;</p>
+
+<p>DECLARE CHANNEL A3=123;</p>
+
+<p>DECLARE CHANNEL A4=123;</p>
+
+<p>DECLARE CHANNEL A5=123;</p>
+
+<p>DECLARE CHANNEL A6=123;</p>
+
+<p>DECLARE CHANNEL A7=123;</p>
+
+<p>DECLARE RUNTIME INTEGER ADR PAGE ADL ADDRESS DATA PATTERN;</p>
+
+<p>DECLARE RUNTIME INTEGER ARRAY RIS[256];</p>
+
+<p>DECLARE RUNTIME INDEX IDX;</p>
+
+<p>DECLARE VARIABLE I;</p>
+
+<p>DECLARE GROUP DAT=D0,D1,D2,D3;</p>
+
+<p>DECLARE GROUP ADD=A0,A1,A2,A3,A4,A5,A6,A7;</p>
+
+<p>START TEST4 STATIC;</p>
+
+<p>~CALC PAGE=0;</p>
+
+<p>~CALC PATTERN=H55;</p>
+
+<p>~FOR PAGE=0 TO HFF STEP H10;</p>
+
+<p>/ DMASTER TIMING T1;</p>
+
+<p>CALC DATA=PATTERN;</p>
+
+<p>CALC ADL=0;</p>
+
+<p>CALC ADDRESS=PAGE+ADL;</p>
+
+<p>WG ADD=ADDRESS;</p>
+
+<p>WG DAT=DATA;</p>
+
+<p>*WRITE CYCLE</p>
+
+<p>/;</p>
+
+<p>@FOR I=0 TO 255;</p>
+
+<p>CALC ADDRESS=ADDRESS+1;</p>
+
+<p>CALC DATA=DATA^HFF;</p>
+
+<p>WG DAT=DATA;</p>
+
+<p>/;</p>
+
+<p>@ENDFOR;</p>
+
+<p>*READ CYCLE</p>
+
+<p>/;</p>
+
+<p>CALC IDX=0;</p>
+
+<p>CALC ADDRESS=PAGE+ADL;</p>
+
+<p>WG ADD=ADDRESS;</p>
+
+<p>RG RIS[IDX]=DAT;</p>
+
+<p>/;</p>
+
+<p>@FOR I=0 TO 255;</p>
+
+<p>CALC ADDRESS=ADDRESS+1;</p>
+
+<p>CALC IDX=IDX+1;</p>
+
+<p>RG RIS[IDX]=DAT;</p>
+
+<p>/;</p>
+
+<p>@ENDFOR;</p>
+
+<p>/ STATIC;</p>
+
+<p>~ENDFOR;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span style="color: #008080;">________________________________________________________________ 
+ </span></p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 2</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE RUNTIME INTEGER RIS,K;</p>
+
+<p>DECLARE RUNTIME INDEX J;</p>
+
+<p>DECLARE RUNTIME INTEGER ARRAY VALORI[3];</p>
+
+<p>DECLARE CHANNEL D0=36;</p>
+
+<p>DECLARE CHANNEL D1=88;</p>
+
+<p>DECLARE CHANNEL D2=93;</p>
+
+<p>DECLARE CHANNEL D3=123;</p>
+
+<p>DECLARE GROUP DAT=D0,D1,D2,D3;</p>
+
+<p>START TEST4 STATIC;</p>
+
+<p>~CALC VALORI[2]=1;</p>
+
+<p>~CALC K=0;</p>
+
+<p>/ DMASTER TIMING T1;</p>
+
+<p>CALC J=K;</p>
+
+<p>RG VALORI[J]=DAT;</p>
+
+<p>/;</p>
+
+<p>CALC J=J+1;</p>
+
+<p>RG VALORI[J]=DAT;</p>
+
+<p>/;</p>
+
+<p>WG VALORI[2]=DAT;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp4">When the compiled (dynamic) session of the program 
+ is executed (/ DMASTER), the compiler executes all CALC and WG insructions 
+ in sequence. In a second execution phase, the compiler executes the CALC 
+ and RG instructions in sequence. This mechanism allows the execution of 
+ a dynamic session changing its parameters each time. (i.e. changing the 
+ memory address each read/write operation in EXAMPLE 1).</p>
+
+<p class="hcp4">Another advantage of writing/reading a memory 
+ using this method is that the entire ~FOR/~ENDFOR cycle its an interpreted 
+ instruction that takes few space in the object code. This feature is very 
+ important when dealing with memories or components that have a lot of 
+ data to write/read.</p>
+
+<p class="hcp1">&nbsp;</p>
+
+<p class="hcp3">________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

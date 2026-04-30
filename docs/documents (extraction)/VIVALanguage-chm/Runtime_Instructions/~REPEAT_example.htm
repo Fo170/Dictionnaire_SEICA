@@ -1,0 +1,114 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~REPEAT example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { color:#008080; }
+-->
+</style>
+</head>
+<body>
+<h1>~REPEAT examples</h1>
+
+<p>&nbsp;</p>
+
+<p style="font-weight: bold;">EXAMPLE &nbsp;1</p>
+
+<p>&nbsp;</p>
+
+<p>declare runtime INTEGER NC=4,J=6;</p>
+
+<p>declare runtime integer number=1;</p>
+
+<p>START NEWUNTIL STATIC;</p>
+
+<p style="color: #008000;">! Repeat the instruction between REPEAT and 
+ UNTIL until the parameter number is less than 10</p>
+
+<p>&nbsp;</p>
+
+<p>~REPEAT; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<p>~Write &quot;write number &quot;, number, &quot;\CR&quot;; </p>
+
+<p>~Pause &quot;I'm in repeat&quot;;</p>
+
+<p>number = number+1 ;</p>
+
+<p>~UNTIL ( number &lt; 10 );</p>
+
+<p>&nbsp;</p>
+
+<p>~REPEAT;</p>
+
+<p>J=J-1;</p>
+
+<p>NC=NC-1;</p>
+
+<p>~WRITE &quot;\CR UNTIL NC=&quot;,NC,&quot; J=&quot;,J,&quot;\CR&quot;;</p>
+
+<p>~PAUSE NC;</p>
+
+<p>~if j ;</p>
+
+<p style="margin-left: 40px;">~if nc = 2 ;</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~Write 
+ &quot;Jump to end&quot;,&quot;\CR&quot;;</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~pause 
+ &quot;EXIT&quot;;</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~EXIT; 
+ &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #008000;">&nbsp;! 
+ jump out of the REPEAT/UNTIL cycle</span></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~endif;</p>
+
+<p>~endif;</p>
+
+<p>&nbsp;</p>
+
+<p>~UNTIL &nbsp;(NC 
+ &gt; 0 || J &gt; 0 );</p>
+
+<p>&nbsp;</p>
+
+<p>~PAUSE &quot;FINE UNTIL&quot; ;</p>
+
+<p>&nbsp;</p>
+
+<p>~PAUSE &quot;The end&quot;;</p>
+
+<p>&nbsp;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">__________________________________________________________________ 
+ </p>
+
+<p class="hcp1">&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

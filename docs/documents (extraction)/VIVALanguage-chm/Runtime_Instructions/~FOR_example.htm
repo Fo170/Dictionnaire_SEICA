@@ -1,0 +1,188 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~FOR example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+p.hcp2 { color:#008000; }
+p.hcp3 { color:#008080; }
+span.hcp4 { color:#008080; }
+-->
+</style>
+</head>
+<body>
+<h1>~FOR example</h1>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example &nbsp;1</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">!Executes the ~FOR loop until A is greater than 
+ zero and each time decrements the variable by 1 &nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>~FOR A;</p>
+
+<p>~WRITE “A= ”, A;</p>
+
+<p>~ENDFOR;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3">&nbsp;_____________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 2</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">!Executes the ~FOR loop until A reaches the 
+ value of 10 incrementing the variable each time by 1 &nbsp;</p>
+
+<p class="hcp2">&nbsp;</p>
+
+<p>~FOR A=1 TO 10;</p>
+
+<p>~WRITE “A= ”, A;</p>
+
+<p>~ENDFOR;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span class="hcp4">&nbsp;_____________________________________________________________________ 
+ </span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 3</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">!Executes the &nbsp;~FOR 
+ loop until &nbsp;A 
+ reaches the value of 10 incrementing the variable each time by 2 &nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>~FOR A=1 TO 10 STEP 2;</p>
+
+<p>~WRITE “A= ”, A;</p>
+
+<p>~ENDFOR;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span class="hcp4">&nbsp;_____________________________________________________________________ 
+ </span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 4</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">!Executes the ~FOR loop the first time with 
+ A=1, executes A=B+1 (A=5) executes the FOR loop the second time with A=5, 
+ executes A=B+1 !(A=6) executes the FOR loop the third time with A=6, executes 
+ A=B+1 (A=7) and so on until A reaches or exceeds the value 30</p>
+
+<p class="hcp2">&nbsp;</p>
+
+<p>~CALC A=1;</p>
+
+<p>~CALC B=1;</p>
+
+<p>~FOR A=1 TO 30 DO A=B+3;</p>
+
+<p>~WRITE “CICLO”, A;</p>
+
+<p>~CALC B=B+1;</p>
+
+<p>~ENDFOR;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span class="hcp4"><span class="hcp4">&nbsp;_____________________________________________________________________ 
+ </span></span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 5</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">!The step value can also be a floating point 
+ and an arithmetic expression </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;~for 
+ f2=F to (g+3.4) step (F+1.1); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<p>&nbsp;~write 
+ &quot;\CRF2=&quot;,F2;</p>
+
+<p>&nbsp;~IF FLOAT 
+ (((J=0) &amp;&amp; (F2&gt;1.09) &amp;&amp; (F2&lt;1.11) ) || ((J=1) &amp;&amp; 
+ (F2&gt;3.29) &amp;&amp; (F2&lt;3.31) ) || ((J=2) &amp;&amp; (F2&gt;5.49) 
+ &amp;&amp; (F2&lt;5.51) ) ) ;</p>
+
+<p>&nbsp;J=J;</p>
+
+<p>&nbsp;~ELSE;</p>
+
+<p>&nbsp;~PAUSE 
+ &quot;FAIL&quot;;</p>
+
+<p>&nbsp;FAIL=FAIL+1;</p>
+
+<p>&nbsp;~ENDIF;</p>
+
+<p>&nbsp;J=J+1;</p>
+
+<p>n_loop=n_loop+1;</p>
+
+<p>~endfor;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

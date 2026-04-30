@@ -1,0 +1,89 @@
+# STROBE1..9 example
+
+Example 
+ 1
+
+DEFINITION OF A TIMING WITH A STROBE TIME 
+
+CLOCKF=20N;
+
+TIMING TIM1;
+
+STROBE1 900N;
+
+PHASE1 100N 300N;
+
+PERIOD 1000N;
+
+ENDTIMING;
+
+DECLARE CHANNEL D0=13;
+
+DECLARE CHANNEL A0=16;
+
+START PROG1 STATIC;
+
+/ DINAMIC;
+
+IL A0;
+
+/;
+
+OH1 D0;
+
+/;
+
+ENDTEST;
+
+________________________________________________________________ 
+
+Example 
+ 2
+
+DEFINITION AND APLLICATION OF A TIMING WITH 
+ CONTINUOUS STROBE 
+
+CLOCKF=20N;
+
+TIMING TIM1;
+
+STROBE1 900N;
+
+STROBE2 300N 900N;
+
+PHASE1 100N 300N;
+
+PHASE2 200N 600N;
+
+PERIOD 1000N;
+
+ENDTIMING;
+
+DECLARE CHANNEL D0=13;
+
+DECLARE CHANNEL DB0=23;
+
+DECLARE CHANNEL A0=16;
+
+START PROG1 STATIC;
+
+/ DINAMIC;
+
+IL D0,DB0;
+
+IL A0;
+
+/;
+
+OH1 D0;
+
+OH2 DB0;
+
+/;
+
+ENDTEST; 
+
+________________________________________________________________ 
+
+&#169;2008 
+ Seica S.p.a - All right reserved

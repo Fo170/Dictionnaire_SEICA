@@ -1,0 +1,131 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>RG example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css">
+</head>
+<body>
+<h1>RG example</h1>
+
+<p>&nbsp;</p>
+
+<p>CLOCKF INT=20N;</p>
+
+<p>TIMING TIM1;</p>
+
+<p>PERIOD 4U;</p>
+
+<p>PHASE1 100N, 300N;</p>
+
+<p>STROBE 3.5U;</p>
+
+<p>ENDTIMING;</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL D0=18;</p>
+
+<p>DECLARE CHANNEL D1=167;</p>
+
+<p>DECLARE CHANNEL D2=124;</p>
+
+<p>DECLARE CHANNEL D3=52;</p>
+
+<p>DECLARE GROUP DBUS=D0,D1,D2,D3;</p>
+
+<p>DECLARE CHANNEL CS=12;</p>
+
+<p>DECLARE CHANNEL RD=14;</p>
+
+<p>DECLARE CHANNEL A0=144;</p>
+
+<p>DECLARE CHANNEL A1=143;</p>
+
+<p>DECLARE RUNTIME INTEGER REA;</p>
+
+<p>DECLARE RUNTIME INTEGER ARRAY DAT[10];</p>
+
+<p>DECLARE RUNTIME INTEGER INDEX J;</p>
+
+<p>&nbsp;</p>
+
+<p>START PROG1;</p>
+
+<p>/ TIMING TIM1;</p>
+
+<p>IL A0;</p>
+
+<p>IL A1;</p>
+
+<p>/;</p>
+
+<p>IL CS;</p>
+
+<p>/;</p>
+
+<p>IL RD;</p>
+
+<p>/;</p>
+
+<p>RG REA=DBUS;</p>
+
+<p>/;</p>
+
+<p>RG DAT[1]=DBUS;</p>
+
+<p>/;</p>
+
+<p>RG DAT[2]=DBUS;</p>
+
+<p>/;</p>
+
+<p>IH CS,RD;</p>
+
+<p>/ STATIC; <span style="color: #008000;">!The result of the variables/array 
+ used in the dynamic session is now available (when switching back to the 
+ STATIC session)</span> &nbsp;</p>
+
+<p>~ATEST REA HI=0X55 ONERROR MES1; </p>
+
+<p>STATICA!</p>
+
+<p>~CURSOR 10,10;</p>
+
+<p>~WRITE “DATA OK”;</p>
+
+<p>~FOR J=1 TO 2;</p>
+
+<p>~CURSOR CR</p>
+
+<p>~WRITE “DATA =” DAT[J];</p>
+
+<p>~ENDFOR;</p>
+
+<p>/ MES1;</p>
+
+<p>~CURSOR 20,10;</p>
+
+<p>~WRITE “DATA NOT OK”;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

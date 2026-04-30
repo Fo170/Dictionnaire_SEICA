@@ -1,0 +1,139 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>PERIOD example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+span.hcp1 { color:#00ff00; }
+-->
+</style>
+</head>
+<body>
+<h1>PERIOD example</h1>
+
+<p style="font-weight: bold;"><span style="font-weight: bold;">Example 
+ 1</span></p>
+
+<p>FCLOCK 20N;</p>
+
+<p>&nbsp;</p>
+
+<p>TIMING TIM1;</p>
+
+<p>PERIOD 14C; <span class="hcp1">! 280NS 14 FCLOCK</span></p>
+
+<p>STROBE 12C; <span class="hcp1">! 240NS 12 FCLOCK</span></p>
+
+<p>ENDTIMING;</p>
+
+<p>&nbsp;</p>
+
+<p>TIMING TIM2;</p>
+
+<p>PERIOD 200U;</p>
+
+<p>STROBE 1OU;</p>
+
+<p>ENDTIMING;</p>
+
+<p>&nbsp;</p>
+
+<p>TIMING TIM3;</p>
+
+<p>PERIOD 1U;</p>
+
+<p>NCLOCK=20;</p>
+
+<p>STROBE 1OU;</p>
+
+<p>ENDTIMING;</p>
+
+<p>&nbsp;</p>
+
+<p>TIMING TIM4;</p>
+
+<p>PERIOD 1U;</p>
+
+<p>NCLOCK=AUTO;</p>
+
+<p>STROBE 1OU;</p>
+
+<p>ENDTIMING;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>START PRG1;</p>
+
+<p>/ DYNAMIC TIMING TIM1;</p>
+
+<p>IH 1;</p>
+
+<p>OL 2;</p>
+
+<p>/ ; ! Duration 280n &nbsp;14*fclock</p>
+
+<p>&nbsp;</p>
+
+<p>/ timing TIM2 ; &nbsp;! 
+ duration 200US </p>
+
+<p>&nbsp;</p>
+
+<p>/ timing TIM3 ; &nbsp;! 
+ duration 20Us &nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>/ timing TIM4 NCLOCK=30 ; &nbsp;! 
+ duration 30Us &nbsp;1u*NCLOCK 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>/ timing TIM4 NCLOCK=6 ; &nbsp;! 
+ duration 6Us no sense on S2 THE STROBE IS OUTSIDE THE PERIOD &nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>/ timing TIM4 NCLOCK=123 ; &nbsp;! 
+ duration 123Us no sense of signal S2 at 10US</p>
+
+<p>&nbsp;</p>
+
+<p>.</p>
+
+<p>ENDTEST;</p>
+
+<p style="color: #008080;">________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

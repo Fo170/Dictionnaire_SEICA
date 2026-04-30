@@ -1,0 +1,117 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>NCLOCK example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { color:#00ff00; }
+-->
+</style>
+</head>
+<body>
+<h1>NCLOCK example</h1>
+
+<p class="hcp1">Example 1</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Timing TSET1;</p>
+
+<p>Period 1u;</p>
+
+<p>NCLOCK= 4;</p>
+
+<p>strobe1 =3800n;</p>
+
+<p><span class="hcp2">Endtiming</span>;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1"><span class="hcp2">Timing TSET2;</span></p>
+
+<p>Period 1u;</p>
+
+<p>PHASE1,300N,500N;</p>
+
+<p>NCLOCK= AUTO;</p>
+
+<p>strobe1 =3800n;</p>
+
+<p><span class="hcp2">Endtiming</span>;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL RESET =39;</p>
+
+<p>DECLASE CHANNEL S1=67;</p>
+
+<p>DECLARE CHANNEL S3=86;</p>
+
+<p>START PRG1 PROBE_OFF;</p>
+
+<p>IL RESET;</p>
+
+<p>/ timing TSET1 ; <span class="hcp3">&nbsp;! 
+ Duration 1U*4; period*NCLOCK</span></p>
+
+<p>IH RESET;</p>
+
+<p>/;</p>
+
+<p>P1 S1;</p>
+
+<p>CR S1; &nbsp;&nbsp;<span class="hcp3">&nbsp;! 
+ generate 2 clock</span> </p>
+
+<p>OH S2; &nbsp;&nbsp;&nbsp;<span class="hcp3">! 
+ no check of the signal (the strobe is other the total period</span></p>
+
+<p>/ TIMING TSET2 NCLOCK=2; &nbsp;!<span class="hcp3">! duration 1u*2</span> </p>
+
+<p>OL S2; &nbsp;<span class="hcp3">&nbsp;! 
+ the signal s2 is checked at the window specifief</span></p>
+
+<p style="color: #00ff00;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;! 
+ s1 will generate 6 clock.</p>
+
+<p>/ &nbsp;NCLOCK=6; 
+ <span class="hcp3">!! &nbsp;duration 
+ 1u*6</span> </p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p style="color: #008080;">________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

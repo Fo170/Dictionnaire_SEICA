@@ -1,0 +1,361 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>MACRO example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+p.hcp2 { color:#008000; }
+p.hcp3 { color:#008080; }
+span.hcp4 { color:#008080; }
+span.hcp5 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>MACRO example</h1>
+
+<p style="font-weight: bold;"><span class="hcp1">Example 
+ 1</span></p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">Declaration of a macro and call to a macro inside 
+ the program.</p>
+
+<p>TIMING TIM3;</p>
+
+<p>PERIOD 10C;</p>
+
+<p>PHASE 3C 7C;</p>
+
+<p>STROBE 9C;</p>
+
+<p>ENDTIMING</p>
+
+<p>@MACRO CLKSU;</p>
+
+<p>IH CLK;</p>
+
+<p>IL CLKN,BRCLK,MN15P6;</p>
+
+<p>/;</p>
+
+<p>@ENDMACRO;</p>
+
+<p>START PRG1;</p>
+
+<p>/;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>@CLKSU;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span class="hcp4">________________________________________________________________ 
+ </span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><span class="hcp1">Example 2</span></p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">Declaration of a macro with passing of global 
+ parameters.</p>
+
+<p>TIMING TIM1;</p>
+
+<p>PERIOD 10C;</p>
+
+<p>PHASE 3C 7C;</p>
+
+<p>STROBE 9C;</p>
+
+<p>ENDTIMING;</p>
+
+<p>DECLARE ARGUMENT VAHH,VAHL,VALH,</p>
+
+<p>VALL,VDHH,VDHL;</p>
+
+<p>@MACRO RDROM (VAHH,VAHL,VALH,VALL,VDHH,VDHL);</p>
+
+<p>IG ADDHH=VAHH;</p>
+
+<p>IG ADDHL=VAHL;</p>
+
+<p>IG ADDLH=VALH;</p>
+
+<p>IG ADDLL=VALL;</p>
+
+<p>IL FC0,FC2,SIZE0;</p>
+
+<p>IH RW,FC1,SIZE1;</p>
+
+<p>/;</p>
+
+<p>IL ASN;</p>
+
+<p>/;</p>
+
+<p>IL DSN;</p>
+
+<p>/;</p>
+
+<p>OG DATHH=VDHH;</p>
+
+<p>OG DATHL=VDHL;</p>
+
+<p>/;</p>
+
+<p>@ENDMACRO;</p>
+
+<p>&nbsp;</p>
+
+<p>START PRG1;</p>
+
+<p>/;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>@RDROM (0X00, 0X01, 0X80, 0X 04, 0X55, 0XAA);</p>
+
+<p>/;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span class="hcp4">________________________________________________________________ 
+ </span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><span class="hcp1">Example 3</span></p>
+
+<p class="hcp2">Declaration of a macro with passing of local 
+ parameters.</p>
+
+<p>TIMING TIM2;</p>
+
+<p>PERIOD 10C;</p>
+
+<p>PHASE 3C 7C;</p>
+
+<p>STROBE 9C;</p>
+
+<p>ENDTIMING;</p>
+
+<p>DECLARE VARIABLE I, J,K;</p>
+
+<p>@MACRO SOMMA (J,K); <span class="hcp5">!The J and K arguments 
+ &nbsp;@CALC I=J+K; 
+ are local and are seen ENDMACRO; only by the SOMMA</span> </p>
+
+<p class="hcp2">macro!</p>
+
+<p>START PRG2;</p>
+
+<p>/;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>@SOMMA (2,3);</p>
+
+<p>/;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span class="hcp4">________________________________________________________________ 
+ </span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><span class="hcp1">Example 4</span></p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">Declaration of a macro with passing of local 
+ parameters.</p>
+
+<p>TIMING TIM3;</p>
+
+<p>PERIOD 10C;</p>
+
+<p>PHASE 3C 7C;</p>
+
+<p>STROBE 9C;</p>
+
+<p>ENDTIMING;</p>
+
+<p>DECLARE VARIABLE I, J,K;</p>
+
+<p>@MACRO SOMMA (J,K);<span class="hcp5"> !The J and K arguments</span> 
+ </p>
+
+<p>@CALC I=J+K;<span class="hcp5"> are local and are seen solo 
+ @ENDMACRO; only by the SOMMA macro!</span></p>
+
+<p>@MACRO SOTTRAI (J,K); <span class="hcp5">&nbsp;! 
+ Even though arguments J and K have</span> </p>
+
+<p>@CALC I=J-K;<span class="hcp5"> the same name as those of 
+ the SOMMA</span></p>
+
+<p>@ENDMACRO; <span class="hcp5">macro, they are different from 
+ the</span> </p>
+
+<p class="hcp2">preceding ones, are local and are seen </p>
+
+<p class="hcp2">only by the SOTTRAI macro!</p>
+
+<p>&nbsp;</p>
+
+<p>START PRG3;</p>
+
+<p>/;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>@SOMMA (2,3);</p>
+
+<p>/;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>@SOTTRAI (10,4);</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span class="hcp4">________________________________________________________________ 
+ </span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><span class="hcp1">Example 5</span></p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">Macro declaration with passage of “define” type 
+ parameters. When the described macro is compiled, it will develop the 
+ stimuli:</p>
+
+<p>TIMING TIM4;</p>
+
+<p>PERIOD 10C;</p>
+
+<p>PHASE 3C 7C;</p>
+
+<p>STROBE 9C;</p>
+
+<p>ENDTIMING;</p>
+
+<p>DECLARE CHANNEL CH1=16;</p>
+
+<p>DECLARE CHANNEL CH2=45;</p>
+
+<p>@MACRO CANALI (@STATO1,@STATO2);</p>
+
+<p>@STATO1 CH1;</p>
+
+<p>@STATO2 CH2;</p>
+
+<p>@ENDMACRO;<span class="hcp5"> !As you can see, the define 
+ type arguments must be preceded by the &nbsp;“@” 
+ character!</span></p>
+
+<p>START PRG4;</p>
+
+<p>/;</p>
+
+<p>.</p>
+
+<p>@CANALI (IL,IH); <span class="hcp5">!This macro develops 
+ the IL CH1 and IH CH2 stimuli in this pattern!</span></p>
+
+<p>/;</p>
+
+<p>@CANALI (IH,IL); <span class="hcp5">!This macro develops 
+ the &nbsp;IH 
+ CH1 and IL CH2 stimuli in this pattern!</span></p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3">________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

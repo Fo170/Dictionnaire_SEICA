@@ -1,0 +1,209 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~WRITE example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { color:#008000; }
+p.hcp3 { color:#008080; }
+span.hcp4 { color:#008080; }
+-->
+</style>
+</head>
+<body>
+<h1>~WRITE examples 
+ </h1>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">EXAMPLE &nbsp;1</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL S1=1;</p>
+
+<p>DECLARE CHANNEL S2=4;</p>
+
+<p>DECLARE RUNTIME FLOAT VAR1;</p>
+
+<p>DECLARE RUNTIME INTEGER CAN;</p>
+
+<p>DECLARE RUNTIME INTEGER R13,R13;</p>
+
+<p>DECLARE RUNTIME STRING RISULT;</p>
+
+<p>START PRG1 STATIC ;</p>
+
+<p>~IH S1;</p>
+
+<p>/;</p>
+
+<p>~IL S1 S2;</p>
+
+<p>/;</p>
+
+<p>~CALC VAR1=33.56;</p>
+
+<p>~CALC RISULT=&quot;PASS&quot;;</p>
+
+<p>~CALC CAN=256;</p>
+
+<p>/;</p>
+
+<p>~WRITE 12; <span class="hcp2">!Displays a constant</span> 
+ &nbsp;</p>
+
+<p>/;</p>
+
+<p>~WRITE VAR1; <span class="hcp2">!Displays a float runtime 
+ variable</span> &nbsp;</p>
+
+<p>/;</p>
+
+<p>~WRITE &quot;\CR CHANNEL NR. &quot; CAN; <span class="hcp2">!New 
+ line, and displays a string and an integer runtime variable</span> &nbsp;</p>
+
+<p>/;</p>
+
+<p>~WRITE RISULT; <span class="hcp2">!Displays a string type 
+ runtime variable</span> &nbsp;</p>
+
+<p>/;</p>
+
+<p>~CURSOR 10,10;</p>
+
+<p>~WRITE &quot;\DO REVISIONE SW = &quot; R12 &quot;.&quot; R13; <span class="hcp2">!Moves to line and column 10, moves a line under 
+ (attribute \DO) and writes</span> &nbsp;</p>
+
+<p>/;</p>
+
+<p>~IH S2;</p>
+
+<p>/;</p>
+
+<p>/;</p>
+
+<p>~IH S1;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3">__________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">EXAMPLE &nbsp;2</p>
+
+<p>&nbsp;</p>
+
+<p style="color: #008000;">!The VAR1 variable will be displayed ten times, 
+ incrementing its value starting from 10. &nbsp;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>~CALC VAR1=9;</p>
+
+<p>~DO 10;</p>
+
+<p>~CALC VAR1=VAR1+1;</p>
+
+<p>~WRITE VAR1;</p>
+
+<p>~DONE;</p>
+
+<p>.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span class="hcp4">__________________________________________________________________ 
+ </span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-weight: bold;">EXAMPLE &nbsp;3</span></p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE RUNTIME FLOAT REG1;</p>
+
+<p>START PRG1 STATIC;</p>
+
+<p>~CALC REG1=46; <span class="hcp2">!Octal value corresponding 
+ to the character “ &amp;”</span> &nbsp;</p>
+
+<p>~WRITE “\R01”; <span class="hcp2">!Displays the contents 
+ of the REG1 register and that is the character “&amp;”</span> &nbsp;</p>
+
+<p>/;</p>
+
+<p>~PAUSE 1;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span class="hcp4">__________________________________________________________________ 
+ </span></p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">EXAMPLE &nbsp;4</p>
+
+<p>&nbsp;</p>
+
+<p>START PRG2 STATIC;</p>
+
+<p>~WRITE “%007”; <span class="hcp2">!This instruction produces 
+ a sound, in fact the value 007 corresponds to the character BELL</span> 
+ &nbsp;</p>
+
+<p>~PAUSE 1;</p>
+
+<p>/;</p>
+
+<p>~WRITE “%043” <span class="hcp2">!This instruction displays 
+ the character #</span> &nbsp;</p>
+
+<p>~PAUSE 2;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

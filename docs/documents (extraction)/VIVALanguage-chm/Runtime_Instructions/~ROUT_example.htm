@@ -1,0 +1,73 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~ROUT example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>~ROUT example</h1>
+
+<p class="hcp1">&nbsp;</p>
+
+<p class="hcp1">!Connects the driver channel 13 to the sensor 
+ with a 0W &nbsp;resistor 
+ while all the other channels are connected RS1. &nbsp;</p>
+
+<p>~ROUT RS0 13; </p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">!Connects the driver channel 13 to the sensor 
+ with a 8W W &nbsp;resistor 
+ while all the other channels are connected RS1. &nbsp;</p>
+
+<p>~ROUT RS2 13; </p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">!Connects channels 1, 4 and from channel 6 to 
+ channel 32 with a 8W &nbsp;resistor 
+ and leaves all the other channels unchanged. &nbsp;</p>
+
+<p>~ROUT RS2 *,1-4/32; </p>
+
+<p>~CALC CH=15;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">!Connects channel 15 with a 8W resistor and 
+ connects all the other channels to RS1. &nbsp;</p>
+
+<p>~ROUT RS2 CH; </p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">!Connects channel 15 to RS0 and channels 6 up 
+ to 8 to RS3, all the other channels are connected to RS1. &nbsp;</p>
+
+<p>~ROUT RS0 15 RS3 6-8; </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

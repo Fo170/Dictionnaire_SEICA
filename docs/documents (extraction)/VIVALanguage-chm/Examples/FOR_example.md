@@ -1,0 +1,96 @@
+# @FOR example
+
+Example 1
+
+DECLARE VARIABLE I,J,K,VOLTE;
+
+DECLARE CHANNEL CLK=2;
+
+DECLARE CHANNEL A0=34;
+
+DECLARE CHANNEL A1=35;
+
+DECLARE CHANNEL A2=36;
+
+DECLARE CHANNEL A3=37;
+
+DECLARE GROUP ADD=A0,A1,A2,A3;
+
+START PRG1;
+
+/;
+
+@FOR I=1 TO=10;
+
+IL CLK;
+
+/;
+
+IH CLK;
+
+/;
+
+@ENDFOR;
+
+.
+
+.
+
+@CALCOLATE K=1;
+
+@CALCOLATE VOLTE =25;
+
+/;
+
+@FOR J=1 TO VOLTE STEP=2;
+
+@CALC K=K*2;
+
+IG ADD=K;
+
+/;
+
+@ENDFOR;
+
+.
+
+.
+
+@CALCOLATE K=10;
+
+@CALCOLATE VOLTE =2;
+
+/;
+
+@FOR I=K TO VOLTE STEP -2;
+
+IL CLK;
+
+/;
+
+IH CLK;
+
+/;
+
+@ENDFOR;
+
+/;
+
+@CALCOLATE I=2;
+
+@CALCOLATE VOLTE =15;
+
+/;
+
+@FOR J=I+1 TO VOLTE;
+
+@CALC K=K*2;
+
+IG ADD=K;
+
+/;
+
+@ENDFOR;
+
+&#169;2008 
+ Seica S.p.a - All right reserved

@@ -1,0 +1,110 @@
+# ~DO example
+
+Example 1
+
+DECLARE CHANNEL S1=1;
+
+DECLARE CHANNEL S2=4;
+
+START PRG1 STATIC;
+
+/;
+
+IH S1 S2;
+
+/;
+
+IL S1 S2;
+
+/;
+
+~DO 80;
+
+~WRITE "--";
+
+~DONE;
+
+/;
+
+.
+
+.
+
+ENDTEST;
+
+________________________________________________________________ 
+
+Example 2
+
+DECLARE CHANNEL S1=1;
+
+DECLARE CHANNEL S2=2;
+
+DECLARE CHANNEL S3=3;
+
+DECLARE CHANNEL S4=4;
+
+DECLARE VARIABLE VAR1;
+
+DECLARE RUNTIME FLOAT NCAN;
+
+DECLARE RUNTIME INTEGER
+
+PRICAN,ULTCAN,SUBERR,MAXERR;
+
+START PGR1 STATIC;
+
+/;
+
+IH S1 S2;
+
+/;
+
+IL S1 S2;
+
+/;
+
+~CALC NCAN=4;
+
+~CALC CAN=1;
+
+~CALC SUBERR=23;
+
+/;
+
+~CALC MAXERR=4;
+
+/;
+
+~DO NCAN;
+
+~CURSOR 60,3;
+
+~WRITE "CHANNEL N. " CAN;
+
+~CALC CAN=CAN+1;
+
+~MEAS VOLT=LI1,MAX=12,TIM=1;
+
+~BRANCH ONERROR FINE;
+
+~DONE;
+
+/;
+
+IH S2;
+
+/;
+
+IH S1;
+
+/;
+
+LABEL=FINE;
+
+/;
+
+ENDTEST;
+
+&#169;2008 
+ Seica S.p.a - All right reserved

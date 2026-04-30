@@ -1,0 +1,99 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~VBS example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-left:40px; }
+-->
+</style>
+</head>
+<body>
+<h1>~VBS example</h1>
+
+<p>&nbsp;</p>
+
+<p>DECLARE RUNTIME FLOAT F,F1,F2;</p>
+
+<p>DECLARE RUNTIME STRING mess;</p>
+
+<p>START VBS STATIC;</p>
+
+<p>F=12.34;</p>
+
+<p>F1=1112.34;</p>
+
+<p>F2=2212.34;</p>
+
+<p>mess = &quot;ciao&quot;;</p>
+
+<p>~VBS &nbsp;&quot;D:\Vivaboard\VBoard\PROVA.vbs&quot; 
+ &nbsp;&quot;FUN2&quot; 
+ STRING mess ;</p>
+
+<p>~WRITE mess,&quot;\CR&quot;; &nbsp;</p>
+
+<p>~pause;</p>
+
+<p>~VBS &nbsp;&quot; 
+ D:\Vivaboard\VBoard\PROVA.vbs &quot; &nbsp;&quot;FUN1&quot; 
+ &nbsp;&nbsp;DOUBLE 
+ * &nbsp;F &nbsp;;</p>
+
+<p>~write &quot;F=&quot; F,”\CR”;</p>
+
+<p>~PAUSE API;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p style="font-style: normal; font-weight: bold;"><span style="font-style: normal; font-weight: bold;">VBScript 
+ file PROVA.VBS</span></p>
+
+<p>&nbsp;</p>
+
+<p>Option Explicit</p>
+
+<p>&nbsp;</p>
+
+<p>Function FUN1 ( p, q, r )</p>
+
+<p class="hcp1">p = p + 3;</p>
+
+<p class="hcp1">q = q + 5;</p>
+
+<p class="hcp1">PROVA = 333.444</p>
+
+<p>End Function</p>
+
+<p>&nbsp;</p>
+
+<p>Sub FUN2( M )</p>
+
+<p class="hcp1">MsgBox M</p>
+
+<p>End Sub</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

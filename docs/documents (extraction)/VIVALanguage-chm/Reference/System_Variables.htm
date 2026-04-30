@@ -1,0 +1,243 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>System Variables</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { text-align:center; color:#008080; font-weight:bold; }
+td.hcp2 { padding:0cm 3.5pt 0cm 3.5pt; border-right-style:solid; border-bottom-style:solid; border-bottom-color:#c0c0c0; border-bottom-width:0.5pt; border-right-color:#c0c0c0; border-right-width:0.5pt; border-left-color:#c0c0c0; border-left-width:0.5pt; border-left-style:Solid; }
+p.hcp3 { text-align:center; }
+td.hcp4 { padding:0cm 3.5pt 0cm 3.5pt; border-right-style:solid; border-bottom-style:solid; border-bottom-color:#c0c0c0; border-bottom-width:0.5pt; border-right-color:#c0c0c0; border-right-width:0.5pt; }
+-->
+</style>
+</head>
+<body>
+<h1>System Variables</h1>
+
+<p>&nbsp;</p>
+
+<p>In the in-circuit and functional test environments there are some system 
+ variables used to exchange values between programs. These are:</p>
+
+<p>&nbsp;</p>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p>15 string variables STR[1-15] up to 80 characters 
+ long &nbsp;</p></li>
+	
+	<li class=kadov-p><p>15 Float variables NUM[1-15] up to 80 characters 
+ long &nbsp;</p></li>
+	
+	<li class=kadov-P><p>100 FLOAT registers (REG1-100). This registers 
+ are used in the ~CURSOR instruction. It is possible to write the column 
+ and row number inside the registers and change them inside a FOR cycle 
+ to draw simple graphs on the screen. Refer to ~CURSOR instruction for 
+ more details and examples. NOTE: When the REG1-100 are declared with the 
+ DECLARE RUNTIME FLOAT instruction it is possible to declare only the register 
+ with bigger index and all others will be automatically.</p></li>
+	
+	<li class=kadov-p><p>Special variables listed in the table below : 
+ </p></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				margin-left: 80px;
+				left: 0px;
+				top: 320px;
+				border-spacing: 0px;"
+		cellspacing=0>
+<col style="width: 188.2pt;">
+<col style="width: 281.6pt;">
+
+<tr style="height: 51px;">
+<td style="padding: 0cm 3.5pt 0cm 3.5pt;
+			border-top-style: solid;
+			border-right-style: solid;
+			border-bottom-style: solid;
+			border-bottom-color: #c0c0c0;
+			border-bottom-width: 0.5pt;
+			border-right-color: #c0c0c0;
+			border-right-width: 0.5pt;
+			border-left-color: #c0c0c0;
+			border-left-width: 0.5pt;
+			border-left-style: Solid;
+			border-top-color: #c0c0c0;
+			border-top-width: 0.5pt;"
+	width=250>
+<p align="center" class="hcp1">&nbsp;</p>
+<p align="center" class="hcp1">Variables</p>
+<p>&nbsp;</td>
+<td style="padding: 0cm 3.5pt 0cm 3.5pt;
+			border-top-style: solid;
+			border-right-style: solid;
+			border-bottom-style: solid;
+			border-bottom-color: #c0c0c0;
+			border-bottom-width: 0.5pt;
+			border-right-color: #c0c0c0;
+			border-right-width: 0.5pt;
+			border-top-color: #c0c0c0;
+			border-top-width: 0.5pt;"
+	width=375>
+<p align="center" class="hcp1">Description</td></tr>
+
+<tr style="height: 51px;">
+<td width="250" class="hcp2">
+<p align="center" class="hcp3">CODPRO</td>
+<td width="375" class="hcp4">
+<p>Alphanumeric variable containing the PRODUCT CODE</td></tr>
+
+<tr style="height: 51px;">
+<td width="250" class="hcp2">
+<p align="center" class="hcp3">OPERAT</td>
+<td width="375" class="hcp4">
+<p>Alphanumeric variable containing the OPERATOR CODE</td></tr>
+
+<tr style="height: 50px;">
+<td width="250" class="hcp2">
+<p align="center" class="hcp3">BARCODE</td>
+<td width="375" class="hcp4">
+<p>Alphanumeric variable containing the BARCODE NUMBER</td></tr>
+
+<tr style="height: 51px;">
+<td colspan="1" rowspan="1" width="250" class="hcp2">
+<p align="center" class="hcp3">BATCODE</td>
+<td colspan="1" rowspan="1" width="375" class="hcp4">
+<p>Alphanumeric variable containing the BATCH CODE</td></tr>
+
+<tr style="height: 51px;">
+<td colspan="1" rowspan="1" width="250" class="hcp2">
+<p align="center" class="hcp3">BATDATE</td>
+<td colspan="1" rowspan="1" width="375" class="hcp4">
+<p>Alphanumeric variable containing the BATCH DATE</td></tr>
+
+<tr style="height: 51px;">
+<td colspan="1" rowspan="1" width="250" class="hcp2">
+<p align="center" class="hcp3">RICNUM</td>
+<td colspan="1" rowspan="1" width="375" class="hcp4">
+<p>Alphanumeric variable containing the RECYCLE NUMBER of the different 
+ tests</td></tr>
+
+<tr style="height: 51px;">
+<td width="250" class="hcp2">
+<p align="center" class="hcp3">PREVVAL</td>
+<td width="375" class="hcp4">
+<p>Alphanumeric variable containing the last in-circuit test value</td></tr>
+
+<tr style="height: 51px;">
+<td width="250" class="hcp2">
+<p align="center" class="hcp3">NRTEST</td>
+<td width="375" class="hcp4">
+<p>Numeric variable containing the number of test program executions</td></tr>
+
+<tr style="height: 51px;">
+<td colspan="1" rowspan="1" width="250" class="hcp2">
+<p align="center" class="hcp3">AR</td>
+<td colspan="1" rowspan="1" width="375" class="hcp4">
+<p>Float type. It contains the result of arithmetic/logic expression and 
+ the result of measurements</td></tr>
+
+<tr style="height: 115px;">
+<td width="250" class="hcp2">
+<p align="center" class="hcp3">USOPT1</p>
+<p align="center" class="hcp3">&nbsp;</td>
+<td width="375" class="hcp4">
+<p>Numeric type. They appear in the Static Terminal and work as “buttons”. 
+ They can have value 0 or 1. The execution flow of the program changes 
+ if they are selected or not. They can be used in the same way as variables, 
+ so it is possible to assign them a value or check them (with the ~IF instruction 
+ for example)</td></tr>
+
+<tr style="height: 124px;">
+<td width="250" class="hcp2">
+<p align="center" class="hcp3">USOPT2</p>
+<p align="center" class="hcp3">&nbsp;</td>
+<td width="375" class="hcp4">
+<p>Numeric type. They appear in the Static Terminal and work as “buttons”. 
+ They can have value 0 or 1. The execution flow of the program changes 
+ if they are selected or not. They can be used in the same way as variables, 
+ so it is possible to assign them a value or check them (with the ~IF instruction 
+ for example)</td></tr>
+
+<tr style="height: 133px;">
+<td width="250" class="hcp2">
+<p align="center" class="hcp3">USOPT3</td>
+<td width="375" class="hcp4">
+<p>Numeric type. It appears in the Static Terminal and works as “button”. 
+ It can have value from 0 to n (where n is an INTEGER static variable) 
+ The execution flow of the program changes if it is elected or not. It 
+ can be used in the same way as a variable, so it is possible to assign 
+ it a value or check it (with the ~IF instruction for example)</td></tr>
+
+<tr style="height: 51px;">
+<td width="250" class="hcp2">
+<p align="center" class="hcp3">API</td>
+<td width="375" class="hcp4">
+<p>Integer type. It contains the returned value from an API function.</td></tr>
+
+<tr style="height: 51px;">
+<td width="250" class="hcp2">
+<p align="center" class="hcp3">FAIL</td>
+<td width="375" class="hcp4">
+<p>Integer type. It contains the number of errors occurred during the static 
+ program execution.</td></tr>
+
+<tr style="height: 84px;">
+<td width="250" class="hcp2">
+<p align="center" class="hcp3">LASTKEY</td>
+<td width="375" class="hcp4">
+<p>Integer type. It contains the numeric value of the last keyword stroke. 
+ Example: if the A character is pressed, the variable will assume value 
+ 41. If the pedal is pressed, the variable will be FF</td></tr>
+
+<tr style="height: 65px;">
+<td width="250" class="hcp2">
+<p align="center" class="hcp3">ERRPAT</td>
+<td width="375" class="hcp4">
+<p>Integer type. It contains the number of the failing pattern</td></tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

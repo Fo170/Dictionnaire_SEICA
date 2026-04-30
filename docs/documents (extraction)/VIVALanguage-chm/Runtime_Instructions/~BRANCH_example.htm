@@ -1,0 +1,216 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~BRANCH example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { color:#008000; }
+p.hcp4 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>~BRANCH example</h1>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 1</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE RUNTIME INTEGER SUBERR;</p>
+
+<p>DECLARE VARIABLE J;.</p>
+
+<p>START TBRAN STATIC;</p>
+
+<p>/;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p><span class="hcp2">~BRANCH</span> TEST1; <span class="hcp3">!The 
+ jump to test 1 is executed in any case</span> &nbsp;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>LABEL=TEST1;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p><span class="hcp2">~BRANCH</span> ONPASS LAB2; <span class="hcp3">!The 
+ jump is executed if the partial error flag is not active</span> &nbsp;</p>
+
+<p>~CALC SUBERR=SUBERR+1;</p>
+
+<p>LABEL=LAB2;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p><span class="hcp2">~BRANCH</span> ONERROR T2L2; <span class="hcp3">!The jump is executed if the partial error flag 
+ is active</span> &nbsp;</p>
+
+<p>@FOR J= 0 TO 2;</p>
+
+<p>~WRITE “MAIN”;</p>
+
+<p>@ENDFOR;</p>
+
+<p>LABEL=LAB2;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p style="color: #008080;">_______________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 2</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE VARIABLE J;</p>
+
+<p class="hcp4">*Jump within the macro MESS* &nbsp;</p>
+
+<p>@MACRO MESS VOLTE;</p>
+
+<p>@FOR J=3 TO VOLTE;</p>
+
+<p>@LABEL=j;</p>
+
+<p><span class="hcp2">~BRANCH</span>=@MAC;</p>
+
+<p>~WRITE &quot;MESSAGE IN MASTER &nbsp;&quot;;</p>
+
+<p>label=@MAC;</p>
+
+<p>@ENDFOR;</p>
+
+<p>@ENDMACRO;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p class="hcp4">*Jump within the macro MESS1* &nbsp;</p>
+
+<p>@MACRO MESS1 VOLTE;</p>
+
+<p>@FOR J=3 TO VOLTE;</p>
+
+<p>@LABEL=j;</p>
+
+<p><span class="hcp2">~BRANCH</span> ONPASS=@MAC1;</p>
+
+<p>~WRITE &quot;MESSAGE IN MASTER &nbsp;&quot;;</p>
+
+<p>label=@MAC1;</p>
+
+<p>@ENDFOR;</p>
+
+<p>@ENDMACRO;</p>
+
+<p>/;</p>
+
+<p class="hcp4">*Jump within the macro MESS2* &nbsp;</p>
+
+<p>@MACRO MESS2 VOLTE;</p>
+
+<p>@FOR J=3 TO VOLTE;</p>
+
+<p>@LABEL=j;</p>
+
+<p><span class="hcp2">~BRANCH</span> ONERROR=@MAC2;</p>
+
+<p>~WRITE &quot;MESSAGE IN MASTER &nbsp;&quot;;</p>
+
+<p>label=@MAC2;</p>
+
+<p>@ENDFOR;</p>
+
+<p>@ENDMACRO;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p class="hcp4">*Call to a macro* &nbsp;</p>
+
+<p>@MESS 7;</p>
+
+<p>/;</p>
+
+<p class="hcp4">*Call to a macro* &nbsp;</p>
+
+<p>@MESS2 2;</p>
+
+<p>/;</p>
+
+<p class="hcp4">*Call to a macro* &nbsp;</p>
+
+<p>@MESS1 3;</p>
+
+<p>/;</p>
+
+<p class="hcp4">*Call to a macro* &nbsp;</p>
+
+<p>@MESS1 9;</p>
+
+<p>/;</p>
+
+<p class="hcp4">*Call to a macro* &nbsp;</p>
+
+<p>@MESS2 6;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

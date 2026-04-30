@@ -1,0 +1,48 @@
+# @WHILE example
+
+Example 1
+
+DECLARE VARIABLE J,K;
+
+DECLARE CHANNEL CH2=34;
+
+START PRG1;
+
+/;
+
+@CALCOLATE J=15;
+
+/;
+
+@WHILE J ne 4;
+
+IL CH2;/;IL CH2;
+
+/;
+
+@CALCOLATE J=J-1;
+
+@ENDWHILE;
+
+/;
+
+@CALCOLATE K=10;
+
+@CALCOLATE J=100;
+
+@WHILE J ge K;
+
+IL CH2;/;IH CH2;
+
+/;
+
+@CALCOLATE J=J-1;
+
+@ENDWHILE;
+
+/;
+
+ENDTEST;
+
+&#169;2008 
+ Seica S.p.a - All right reserved

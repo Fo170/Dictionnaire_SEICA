@@ -1,0 +1,102 @@
+# RG example
+
+CLOCKF INT=20N;
+
+TIMING TIM1;
+
+PERIOD 4U;
+
+PHASE1 100N, 300N;
+
+STROBE 3.5U;
+
+ENDTIMING;
+
+DECLARE CHANNEL D0=18;
+
+DECLARE CHANNEL D1=167;
+
+DECLARE CHANNEL D2=124;
+
+DECLARE CHANNEL D3=52;
+
+DECLARE GROUP DBUS=D0,D1,D2,D3;
+
+DECLARE CHANNEL CS=12;
+
+DECLARE CHANNEL RD=14;
+
+DECLARE CHANNEL A0=144;
+
+DECLARE CHANNEL A1=143;
+
+DECLARE RUNTIME INTEGER REA;
+
+DECLARE RUNTIME INTEGER ARRAY DAT[10];
+
+DECLARE RUNTIME INTEGER INDEX J;
+
+START PROG1;
+
+/ TIMING TIM1;
+
+IL A0;
+
+IL A1;
+
+/;
+
+IL CS;
+
+/;
+
+IL RD;
+
+/;
+
+RG REA=DBUS;
+
+/;
+
+RG DAT[1]=DBUS;
+
+/;
+
+RG DAT[2]=DBUS;
+
+/;
+
+IH CS,RD;
+
+/ STATIC; !The result of the variables/array 
+ used in the dynamic session is now available (when switching back to the 
+ STATIC session) 
+
+~ATEST REA HI=0X55 ONERROR MES1; 
+
+STATICA!
+
+~CURSOR 10,10;
+
+~WRITE DATA OK;
+
+~FOR J=1 TO 2;
+
+~CURSOR CR
+
+~WRITE DATA = DAT[J];
+
+~ENDFOR;
+
+/ MES1;
+
+~CURSOR 20,10;
+
+~WRITE DATA NOT OK;
+
+/;
+
+ENDTEST;
+
+&#169;2008 
+ Seica S.p.a - All right reserved

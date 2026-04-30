@@ -1,0 +1,126 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~ATEST example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>~ATEST example</h1>
+
+<p>&nbsp;</p>
+
+<p>declare runtime float d=1.23;</p>
+
+<p>declare runtime float c=4.32; </p>
+
+<p>declare runtime float testValue;</p>
+
+<p>&nbsp;</p>
+
+<p>START example &nbsp;STATIC;</p>
+
+<p>&nbsp;</p>
+
+<p>testValue=2.4;</p>
+
+<p>~ATEST testValue &nbsp;NAME=&quot;TEST1&quot; 
+ &nbsp;LO=d &nbsp;HI= 
+ c ;</p>
+
+<p>&nbsp;</p>
+
+<p>testValue=11.34 ;</p>
+
+<p>~ATEST testValue &nbsp;NAME=&quot;TEST2&quot; 
+ &nbsp;LO=(d+10.1) 
+ &nbsp;HI=(c+10.1) 
+ ;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">! This test will fail so it won't jump to the 
+ label TEST7P </p>
+
+<p>testValue=11.32 ;</p>
+
+<p>~ATEST testValue &nbsp;NAME=&quot;TEST3&quot; 
+ &nbsp;LO=(d+10.1) 
+ &nbsp;HI=(c+10.1) 
+ ONPASS test7P ;</p>
+
+<p>.....</p>
+
+<p>LABEL=TEST7P;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">! This test will fail so it will jump to the 
+ label TESTFAIL</p>
+
+<p>testValue=5 ;</p>
+
+<p>~ATEST testValue &nbsp;NAME=&quot;TEST4&quot; 
+ &nbsp;LO=(d+10.1) 
+ &nbsp;HI=(c+10.1) 
+ ONERROR testfail ;</p>
+
+<p>.....</p>
+
+<p class="hcp1">! This test will fail the limit are set to &lt;19,&gt;21&nbsp; 
+(5 % of 20) </p>
+
+<p>testValue=22 ;</p>
+
+<p>~ATEST testValue &nbsp;NAME=&quot;TEST5&quot; 
+ &nbsp;VALUE=20 &nbsp;TOL=5;</p>
+
+<p>.....</p>
+
+<p class="hcp1">! This test will pass the limit are set to &lt;19&nbsp; 
+(5 % of 20) no upper limit</p>
+
+<p>testValue=22 ;</p>
+
+<p>~ATEST testValue &nbsp;NAME=&quot;TEST6&quot; 
+ &nbsp;VALUE=20 &nbsp;TOLM=5;</p>
+
+<p>.....</p>
+
+<p class="hcp1">! This test will fail the limit are set to &gt;21&nbsp; 
+(5 % of 20) no upper limit</p>
+
+<p>testValue=22 ;</p>
+
+<p>~ATEST testValue &nbsp;NAME=&quot;TEST7&quot; 
+ &nbsp;VALUE=20 &nbsp;TOLP=5;</p>
+
+<p>.....</p>
+
+<p>LABEL=TESTFAIL;</p>
+
+<p>&nbsp;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

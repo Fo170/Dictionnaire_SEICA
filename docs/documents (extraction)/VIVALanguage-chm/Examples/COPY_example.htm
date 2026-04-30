@@ -1,0 +1,105 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>COPY example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+span.hcp1 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>COPY example</h1>
+
+<p style="font-weight: bold;"><span style="font-weight: bold;">Example 
+ 1</span></p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL CH1=48;</p>
+
+<p>START PRG1;</p>
+
+<p>/; <span class="hcp1">!pattern1!</span></p>
+
+<p>COPY;</p>
+
+<p>IH CH1;</p>
+
+<p>/;<span class="hcp1"> !pattern2 CH1 is programmed high!</span></p>
+
+<p>/; <span class="hcp1">!pattern3 CH1 is programmed high!</span></p>
+
+<p>/; <span class="hcp1">!pattern4 CH1 is programmed high!</span></p>
+
+<p>/; <span class="hcp1">!pattern5 CH1 is programmed high!</span></p>
+
+<p>/; <span class="hcp1">!pattern6 CH1 is programmed high!</span> 
+ </p>
+
+<p>IH CH1;</p>
+
+<p>/;<span class="hcp1"> !pattern7 CH1 is programmed high!</span> 
+ </p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><span class="hcp1">We will now compare the EXAMPLE just described 
+ of the COPY instruction with that of the INCREMENTAL instruction</span>.</p>
+
+<p>DECLARE CHANNEL CH1=48;</p>
+
+<p>START PRG1;</p>
+
+<p>/; !pattern1!</p>
+
+<p>INCREMENTAL;</p>
+
+<p>IH CH1;</p>
+
+<p>/; <span class="hcp1">!pattern2 CH1 is programmed high!</span></p>
+
+<p>/; <span class="hcp1">!pattern3 the channel is not programmed!</span></p>
+
+<p>/;<span class="hcp1"> !pattern4 the channel is not programmed!</span></p>
+
+<p>/;<span class="hcp1"> !pattern5 the channel is not programmed!!</span></p>
+
+<p>/; <span class="hcp1">!pattern6 the channel is not programmed!</span></p>
+
+<p>IH CH1;</p>
+
+<p>/;<span class="hcp1"> !pattern7 the channel is not programmed 
+ because the channel is already high!</span></p>
+
+<p>ENDTEST; </p>
+
+<p style="color: #008080;">________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

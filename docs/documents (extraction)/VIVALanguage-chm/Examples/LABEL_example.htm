@@ -1,0 +1,97 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>@LABEL example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+span.hcp1 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>@LABEL example</h1>
+
+<p>&nbsp;</p>
+
+<p style="font-weight: bold;">Example 1</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL S1=1;</p>
+
+<p>DECLARE CHANNEL S2=2;</p>
+
+<p>DECLARE RUNTIME INTEGER J;</p>
+
+<p>DECLARE VARIABLE I;</p>
+
+<p>START PRG1 STATIC;</p>
+
+<p>/;</p>
+
+<p>~CALC J=4;</p>
+
+<p>@FOR I=1 TO 5;</p>
+
+<p>@LABEL=I; <span class="hcp1">!Definition of the label prefix</span> 
+ </p>
+
+<p>~CALC J=J+1;</p>
+
+<p>~IF J=7; <span class="hcp1">!If J=7 jumps to the label I_EQ7 
+ where I assumes a different value at every @FOR loop</span> &nbsp;</p>
+
+<p>~BRANCH @EQ7;</p>
+
+<p>~ENDIF;</p>
+
+<p>~BRANCH @NOTEQ; <span class="hcp1">!If J is different from 
+ 7, high at label I_NOTEQ where I assumes a different value at each @FOR</span> 
+ &nbsp;</p>
+
+<p>LABEL=@EQ7;</p>
+
+<p>~WRITE &quot;J=7&quot;;</p>
+
+<p>~BRANCH @ENDCY;<span class="hcp1"> !Jumps to the &nbsp;I_ENDCY 
+ label where &nbsp;I 
+ assumes a different value at each @FOR loop</span> &nbsp;</p>
+
+<p>LABEL=@NOTEQ;</p>
+
+<p>/;</p>
+
+<p>~WRITE &quot;J NOT 7&quot;;</p>
+
+<p>LABEL=@ENDCY;</p>
+
+<p>~PAUSE J;</p>
+
+<p>@ENDFOR;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

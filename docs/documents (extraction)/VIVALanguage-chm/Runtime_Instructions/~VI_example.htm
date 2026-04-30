@@ -1,0 +1,74 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~VI example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css">
+</head>
+<body>
+<h1>~VI example</h1>
+
+<p>&nbsp;</p>
+
+<p>DECLARE RUNTIME DOUBLE DAT1;</p>
+
+<p>START VI STATIC;</p>
+
+<p>~VI &quot;C:\S2KD\DRA&quot; &nbsp;PAR=&quot;PAR1&quot; 
+ ARG DOUBLE = 2.333 </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out 
+ &nbsp;&nbsp;NAME=&quot;PAR2&quot; 
+ VALUE POINTER LONG=DAT1</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in 
+ &nbsp;NAME=&quot;PAR3&quot; 
+ VALUE=DAT1 VALUE= DOUBLE 3.210 VALUE= LONG 54321 &nbsp;&nbsp;;</p>
+
+<p>! DRA NOME VI</p>
+
+<p>! SET NOME FUNZIONE (SI PUO' OMETTERE</p>
+
+<p>! NAME=&quot;PAR1&quot; NOME DEL PARAMETRO</p>
+
+<p>! DOUBLE = TIPO DI PARAMETRO ( CASTING)</p>
+
+<p>! 2.333 VALORE</p>
+
+<p>! NAME=&quot;PAR2&quot; NOME DEL PARAMETRO NEL CASO PARAMETERO DIOUTPUT 
+ DO TIPO LONG (PERCIO' PASSAGGIO PER REFERENCE</p>
+
+<p>! SI PUO CONSIDERARE &nbsp;CHE 
+ SE DI TIPO OUT DEVE ESSERE PER FORZA REFERENCE &nbsp;</p>
+
+<p>! NAME=&quot;PAR3&quot; NOME DEL PARAMETRO ( TIPO CONTAINER PERCHE' 
+ CI SONO PIU' VALUE IN SEQUENZA</p>
+
+<p>! VALUE=DAT1 &nbsp;MANCA 
+ IL CAST PERCIO PRENDE IL TIPO DEL VALORE NEL CASO DAT1 E DOUBLE </p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

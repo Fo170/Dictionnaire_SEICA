@@ -1,0 +1,85 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~FRONTEND example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<h1>~FRONTEND example</h1>
+
+<p class="hcp1">&nbsp;</p>
+
+<p class="hcp1"><span class="hcp2">Example 
+ 1</span></p>
+
+<p>&nbsp;</p>
+
+<p><br>
+<br>
+<br>
+START FRONTEND RELOAD STATIC;</p>
+<p><br>
+~chlev il=-4.2 IH=8.2 OL=-2.2 OH=6.2 1,2,3,4;<br>
+~chlev AUX il=-4.1 IH=8.1 OL=-2.1 OH=6.1 1,2,3,4;<br>
+<br>
+~FRONTEND SVH=11.2 SVL=1.2 SCH=0.0122 SCL=0.0112 IMP=400 PMO=2 OCH=0.7 OCL=0.52 
+SKH=15 SKL=15 TERM=50 1/4; </p>
+<p>! set the frontend parameter for the&nbsp; channel 1 trought 4<br>
+~FRONTEND AUX SVH=11.1 SVL=1.1 SCH=0.0121 SCL=0.01111 IMP=200 PMO=1 OCH=0.61 OCL=0.51 
+SKH=14 SKL=14 TERM=10 1/4; </p>
+<p>! set the frontend parameter for the auxsiliary&nbsp; channel 1 trought 4</p>
+<p><br>
+~AUX PHASE_1 1;<br>
+~AUX PHASE_2 2;<br>
+~AUX PHASE_3 3;<br>
+~AUX WINDOW_4 INV 4;<br>
+<br>
+~CHOUT DIGITAL 1/4;<br>
+!~PULL UP 2 DOWN 1 UP DOWN 3 NONE 4 UP 5/32;<br>
+!~ROUT RS1 1/32 ;<br>
+<br>
+!~CHLEV IH=14. IL=0 OH=2.4 OL=0.8 1/32;<br>
+!~FRONTEND SVH=40 SVL=1 SCH=0.01 SCL=0.01 IMP=400 PMO=2 OCH=0.7 OCL=0.8 SKH=15 
+SKL=15 TERM=50 1/4; <br>
+!~AUX PHASE_4 1 PHASE_2=4 ;<br>
+~PAUSE &quot;FRONTEND&quot;;<br>
+<br>
+ENDTEST;<br>
+&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p style="color: #008080;">________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><span class="hcp2">Example 2</span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

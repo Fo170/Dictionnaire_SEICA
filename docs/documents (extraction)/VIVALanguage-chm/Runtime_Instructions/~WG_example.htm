@@ -1,0 +1,99 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~WG example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css">
+</head>
+<body>
+<h1>~WG example</h1>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL D0=45;</p>
+
+<p>DECLARE CHANNEL D1=46</p>
+
+<p>DECLARE CHANNEL D2=47;</p>
+
+<p>DECLARE CHANNEL D3=48;</p>
+
+<p>DECLARE CHANNEL DT0=23;</p>
+
+<p>DECLARE CHANNEL DT1=24;</p>
+
+<p>DECLARE CHANNEL DT2=25;</p>
+
+<p>DECLARE CHANNEL DT3=26;</p>
+
+<p>DECLARE CHANNEL DT4=27;</p>
+
+<p>DECLARE CHANNEL DT5=28;</p>
+
+<p>DECLARE CHANNEL DT6=29;</p>
+
+<p>DECLARE CHANNEL DT7=30;</p>
+
+<p>DECLARE CHANNEL DATB=139;</p>
+
+<p>DECLARE GROUP DATB=34,35,36,37,38,39,40,41;</p>
+
+<p>DECLARE RUNTIME INTEGER VAL1,VAL2;</p>
+
+<p>&nbsp;</p>
+
+<p>START PRG1 STATIC;</p>
+
+<p>/;</p>
+
+<p style="color: #008000;">!The low logic level (0) will be associated 
+ to channel 45 while the high logic level (1) will be associated to channels 
+ 46,47,48 &nbsp;</p>
+
+<p>~WG B1110=45,46,47,48; </p>
+
+<p>~WG 0X55=23,24,25,26,27,28,29,30;</p>
+
+<p>/;</p>
+
+<p>~CALC VAL1=0X59;</p>
+
+<p>~CALC VAL2=0XA6;</p>
+
+<p>/;</p>
+
+<p>~WG VAL1=23,24,25,26,27,28,29,30;</p>
+
+<p>/;</p>
+
+<p>~WG VAL2=D0,D1,D2,D3;</p>
+
+<p>/;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>~WG VAL3=DATB;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

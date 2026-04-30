@@ -1,0 +1,78 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~COLOR example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css">
+</head>
+<body>
+<h1>~COLOR example</h1>
+
+<p>&nbsp;</p>
+
+<p>DECLARE RUNTIME FLOAT J,K;</p>
+
+<p>DECLARE RUNTIME STRING R1;</p>
+
+<p>START PRG1 STATIC;</p>
+
+<p>/;</p>
+
+<p>LABEL=OK;</p>
+
+<p>~CURSOR 65,4;</p>
+
+<p>~COLOR 1,2;</p>
+
+<p>~WRITE “PASS”;</p>
+
+<p>/;</p>
+
+<p>~BRANCH FINE;</p>
+
+<p>/;</p>
+
+<p>LABEL=NOK;</p>
+
+<p>~CURSOR 65,4;</p>
+
+<p>~COLOR 1,5</p>
+
+<p>~WRITE “FAIL”;</p>
+
+<p>/;</p>
+
+<p>LABEL=FINE;</p>
+
+<p>/;</p>
+
+<p>~CALC RES=“R2”;</p>
+
+<p>/;</p>
+
+<p>~WRITE “\CO\005\002\”, “Resistor &nbsp;”, 
+ RES;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~AUX</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style>
+<!--
+body { border-left-style:Inset; border-left-width:4px; border-right-style:Inset; border-right-width:4px; border-top-style:Inset; border-top-width:4px; border-bottom-style:Inset; border-bottom-width:4px; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:700; }
+tr.hcp4 { x-cell-content-align:top; }
+td.hcp5 { padding-right:10px; padding-left:10px; }
+p.hcp6 { text-align:center; }
+span.hcp7 { font-family:Verdana, sans-serif; font-weight:bold; color:#008080; }
+p.hcp8 { text-align:justify; }
+td.hcp9 { padding-right:10px; padding-left:10px; x-cell-content-align:center; }
+span.hcp10 { font-family:'Wingdings 2'  , serif; }
+-->
+</style>
+</head>
+<body>
+<div placeholder id="header" style="width:100%;" class="hcp1">
+ <p>&nbsp;</p>
+</div>
+<h1>~AUX<span style="font-size: 10.0pt;">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></h1>
+
+<h1>&nbsp;</h1>
+
+<h1 style="font-size: 10.0pt;">&nbsp;</h1>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;">&nbsp;</p>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;">________________________</p>
+
+<h3>Syntax</h3>
+
+<p>&nbsp;</p>
+
+<p style="margin-left: 40px;"><span class="hcp2">~AUX</span> 
+ <span class="hcp2">[</span>*<span class="hcp2">] 
+ [ON]</span> <span class="hcp3">[OFF] [INV]&nbsp; modes</span> 
+ (channel_list),[ modes, (channel_list)], etc. </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div align=left><table x-use-null-cells
+		style="x-cell-content-align: top;
+				float: alignleft;
+				margin-left: 40px;
+				left: 0px;
+				top: 317px;
+				width: 809px;
+				height: 1237px;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0
+		height=1237
+		width=809>
+<col style="width: 25.642%;">
+<col style="width: 74.358%;">
+
+<tr valign="top" class="hcp4">
+<td style="width:25.642%;" width="25.642%" class="hcp5">
+<p align="center" class="hcp6">[*]</td>
+<td style="width:74.358%;" width="74.358%" class="hcp5">
+<p>Maintains the previous channel settings (specified in a previous ~AUX 
+ instruction.</p>
+<p>&nbsp;</td></tr>
+
+<tr valign="top" class="hcp4">
+<td style="width:25.642%;" width="25.642%" class="hcp5">
+<p align="center" class="hcp6">ON</td>
+<td style="width:74.358%;" width="74.358%" class="hcp5">
+<p>connect the channel frontend (only the first 4 channel by sequence) 
+ see ~CHOUT</p>
+<p>&nbsp;</td></tr>
+
+<tr valign="top" class="hcp4">
+<td colspan="1" rowspan="1" style="width:25.642%;" width="25.642%" class="hcp5">
+<p align="center" class="hcp6">OFF</td>
+<td colspan="1" rowspan="1" style="width:74.358%;" width="74.358%" class="hcp5">
+<p>disconnect the channel frontend (only the first 4 channel by sequence)</p>
+<p>&nbsp;</td></tr>
+
+<tr valign="top" class="hcp4">
+<td colspan="1" style="width:25.642%;" width="25.642%" class="hcp5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ INV</td>
+<td colspan="1" style="width:74.358%;" width="74.358%" class="hcp5">invert the function selected
+<p>&nbsp;</td></tr>
+
+<tr valign="top" class="hcp4">
+<td colspan="1" rowspan="1" style="width:25.642%;" width="25.642%" class="hcp5"><span class="hcp3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ modes</span></td>
+<td colspan="1" rowspan="1" style="width:74.358%;" width="74.358%" class="hcp5">
+<p>&quot;Phase_1&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 0 TAT964_AUXS_PH1<br>
+&quot;Phase_2&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 1 TAT964_AUXS_PH2<br>
+&quot;Phase_3&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 2 TAT964_AUXS_PH3<br>
+&quot;Phase_4&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 3 TAT964_AUXS_PH4<br>
+&quot;Window_1&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4 TAT964_AUXS_WIN1<br>
+&quot;Window_2&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5 TAT964_AUXS_WIN2<br>
+&quot;Window_3&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6 TAT964_AUXS_WIN3<br>
+&quot;Window_4&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 7 TAT964_AUXS_WIN4<br>
+&quot;Waveform_1&quot;,&nbsp;&nbsp;&nbsp; 8 TAT964_AUXS_WF1<br>
+&quot;Waveform_2&quot;,&nbsp;&nbsp;&nbsp; 9 TAT964_AUXS_WF2<br>
+&quot;Waveform_3&quot;,&nbsp;&nbsp; 10 TAT964_AUXS_WF3<br>
+&quot;Waveform_4&quot;,&nbsp;&nbsp; 11 TAT964_AUXS_WF4<br>
+&quot;Sync_1&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 12 TAT964_AUXS_S1<br>
+&quot;Sync_2&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 13 
+ TAT964_AUXS_S2<br>
+&quot;Idle_Active&quot;,&nbsp;&nbsp;&nbsp; 14 TAT964_AUXS_IDLE<br>
+&quot;Sequence_Active&quot;, 15 TAT964_AUXS_SEQ<br>
+&quot;CH1_Good_1&quot;,&nbsp;&nbsp; 16 TAT964_AUXS_CH1G1<br>
+&quot;CH1_Good_0&quot;,&nbsp;&nbsp; 17 TAT964_AUXS_CH1G0<br>
+&quot;CH32_Good_1&quot;,&nbsp; 18 TAT964_AUXS_CH32G1<br>
+&quot;CH32_Good_0&quot;, 19 TAT964_AUXS_CH32G0<br>
+&quot;AUX1_Input&quot;,&nbsp;&nbsp;&nbsp; 20 TAT964_AUXS_AUX1I<br>
+&quot;AUX2_Input&quot;,&nbsp;&nbsp;&nbsp; 21 TAT964_AUXS_AUX2I<br>
+&quot;AUX3_Input&quot;,&nbsp;&nbsp; 22 TAT964_AUXS_AUX3I<br>
+&quot;AUX4_Input&quot;,&nbsp;&nbsp; 23 TAT964_AUXS_AUX4I<br>
+&quot;Sequence_Flag_1&quot;, 24 TAT964_AUXS_SF1<br>
+&quot;Sequence_Flag_2&quot;, 25 TAT964_AUXS_SF2<br>
+&quot;T0CLK&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 26 TAT964_AUXS_T0CLK<br>
+&quot;Pattern_Clock&quot;,&nbsp; 27 TAT964_AUXS_PCLK<br>
+&quot;SEQ_CLK_In&quot;,&nbsp;&nbsp;&nbsp; 28 TAT964_AUXS_SEQCLKI<br>
+&quot;Jump_In&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 29 
+ TAT964_AUXS_JUMPIN<br>
+&quot;Error_In&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30 TAT964_AUXS_ERRIN<br>
+&quot;SEQCLKD_In&quot;,&nbsp; 31 TAT964_AUXS_SEQCLKDI<br>
+&quot;T0CLK_Out&quot;,&nbsp;&nbsp; 32 TAT964_AUXS_T0CLKO<br>
+&quot;SEQ_CLK_Out&quot;, 33 TAT964_AUXS_SEQCLKO<br>
+&quot;Jump_Out&quot;, 34 TAT964_AUXS_JUMPO<br>
+&quot;SEQCLKD_Out&quot;, 35 TAT964_AUXS_SEQCLKDO<br>
+&quot;Misc_1&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 36 
+ TAT964_AUXS_MISC1<br>
+&quot;Misc_2&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 37 
+ TAT964_AUXS_MISC2<br>
+&quot;Misc_3&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 38 
+ TAT964_AUXS_MISC3<br>
+&quot;Misc_4&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 39 
+ TAT964_AUXS_MISC4<br>
+&quot;Misc_5&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 40 
+ TAT964_AUXS_MISC5<br>
+&quot;Misc_6&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 41 
+ TAT964_AUXS_MISC6<br>
+&quot;Misc_7&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 42 
+ TAT964_AUXS_MISC7<br>
+&quot;Misc_8&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 43 
+ TAT964_AUXS_MISC8<br>
+&quot;Misc_9&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 44 
+ TAT964_AUXS_MISC9<br>
+&quot;Misc_10&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 45 TAT964_AUXS_MISC10<br>
+&quot;Misc_11&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 46 TAT964_AUXS_MISC11<br>
+&quot;Misc_12&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 47 TAT964_AUXS_MISC12<br>
+&quot;Load_Sequence_Register&quot;, 48 TAT964_AUXS_LSR<br>
+&quot;Load_Loop_Count&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 49 TAT964_AUXS_LLC<br>
+&quot;Counter_Active&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 50 TAT964_AUXS_CA<br>
+&quot;Clocks_Per_Pattern_Done&quot;,51 TAT964_AUXS_CPPD<br>
+&quot;Last_Word&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 52 TAT964_AUXS_LW<br>
+&quot;Burst_Count_Done&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 53 TAT964_AUXS_BCD<br>
+&quot;Loop_Count_Done&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 54 TAT964_AUXS_LCD<br>
+&quot;Gosub_Active&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 55 TAT964_AUXS_INSUB<br>
+&quot;Counted_Loop&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 56 TAT964_AUXS_CLOOP<br>
+&quot;Subroutine_Return&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 57 TAT964_AUXS_SR<br>
+&quot;Return_Flag&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 58 TAT964_AUXS_RTN<br>
+&quot;Last_Sequence&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 59 TAT964_AUXS_LS<br>
+&quot;Misc_13&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 60 TAT964_AUXS_MISC13<br>
+&quot;Misc_14&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 61 TAT964_AUXS_MISC14<br>
+&quot;Misc_15&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 62 TAT964_AUXS_MISC15<br>
+&quot;Misc_16&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 63 TAT964_AUXS_MISC16<br>&nbsp;</p>
+<p>&nbsp;</td></tr>
+
+<tr valign="top" class="hcp4">
+<td style="height:41px; width:25.642%;" height="41" width="25.642%" class="hcp5">
+<p align="center" class="hcp6"><a href="Definitions/_pinlist_.htm">Channel_list</a></td>
+<td style="height:41px; width:74.358%;" height="41" width="74.358%" class="hcp5">
+<p>list of channels to be associated to the specified setting</td></tr>
+</table>
+</div><p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;">_____<span class="hcp7">_____________________</span></p>
+
+<h3>Note</h3>
+
+<ul style="list-style: disc;"
+	type=disc>
+	
+	<li class=kadov-p><p class="hcp8">the auxiliary channel 
+ only 12 for each sequencer.</p></li>
+	
+	<li class=kadov-p><p class="hcp8">the auxiliary channel 
+ has the same number of the regular channel&nbsp; 1/12,33/44,65/76 etc.</p></li>
+</ul>
+
+<p class=inlinestruzionisottotitolo1
+	style="font-family: Verdana, sans-serif;">&nbsp;</p>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;"><span class="hcp7"><span style="font-family: Verdana, sans-serif;
+	color: #0000ff;
+	font-weight: bold;">_</span>_________________________</span></p>
+
+<h3><span style="font-family: Verdana, sans-serif; font-weight: bold;">See 
+ also</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </h3>
+
+<p>~CHLEV, ~FRONTEND ~CHOUT</p>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;"><span class="hcp7">__________________________</span></p>
+
+<h3>Examples</h3>
+
+<p><a href="~FRONTEND_example.htm">~frontend example</a> &nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class=inlinestruzionisottotitolo1
+	style="font-family: Verdana, sans-serif;
+			color: #000000;
+			font-weight: normal;">&nbsp;</p>
+
+<p class=inlinestruzionisottotitolo1
+	style="font-family: Verdana, sans-serif;
+			color: #000000;
+			font-weight: normal;">&nbsp;</p>
+
+<div top-level=TRUE
+	style="background-color: #ffffff;
+			padding: 5px;
+			position: absolute;
+			top: 104px;
+			left: 19px;
+			width: 635px;
+			height: 64px;
+			/*begin!kadov{{*/ x-right: 391px;
+			x-bottom: 1099px; /*}}end!kadov*/ ">
+<p class="hcp8">Determines the mode for the auxiliary channel 
+ </p>
+
+<p style="font-family: Verdana, sans-serif;">&nbsp;</p>
+</div>
+
+<div top-level=TRUE
+	style="background-color: #ffffff;
+			padding: 5px;
+			position: absolute;
+			width: 457px;
+			height: 58px;
+			top: 44px;
+			left: 401px;
+			/*begin!kadov{{*/ x-right: 187px;
+			x-bottom: 1165px; /*}}end!kadov*/ ">
+<table x-use-null-cells
+		style="x-cell-content-align: Center;
+				left: 0px;
+				top: 60px;
+				height: 29px;
+				border-left-style: Outset;
+				border-top-style: Outset;
+				border-right-style: Outset;
+				border-bottom-style: Outset;
+				border-left-width: 1px;
+				border-right-width: 1px;
+				border-top-width: 1px;
+				border-bottom-width: 1px;
+				border-left-color: #008080;
+				border-right-color: #008080;
+				border-top-color: #008080;
+				border-bottom-color: #008080;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0
+		height=29>
+<col>
+
+<tr valign="top" class="hcp4">
+<td valign="middle" class="hcp9">
+<p style="font-family: Verdana, sans-serif;
+			font-size: 11pt;
+			font-weight: bold;"><span class=Tab>Preprocessor</span> <span class="hcp10">* &nbsp;</span><span 
+ class=Tab>Runtime :</span> &nbsp;&nbsp;<span 
+ class=Tab
+	style="font-weight: normal;">Dynamic</span><span 
+ style="font-weight: normal;"> </span><span class="hcp10">*</span> 
+ &nbsp;&nbsp;&nbsp;<span class=Tab
+													style="font-weight: normal;">Static</span> 
+ &nbsp;<span class="hcp10">R</span></td></tr>
+</table>
+
+<p>&nbsp;</p>
+</div>
+
+<div top-level=TRUE
+	style="background-color: #ffffff;
+			padding: 5px;
+			position: absolute;
+			width: 169px;
+			height: 66px;
+			top: 108px;
+			left: 679px;
+			/*begin!kadov{{*/ x-right: 197px;
+			x-bottom: 1056px; /*}}end!kadov*/ ">
+<table x-use-null-cells
+		style="x-cell-content-align: top;
+				border-left-style: Double;
+				border-top-style: Double;
+				border-right-style: Double;
+				border-bottom-style: Double;
+				border-left-width: 4px;
+				border-right-width: 4px;
+				border-top-width: 4px;
+				border-bottom-width: 4px;
+				border-left-color: #008080;
+				border-right-color: #008080;
+				border-top-color: #008080;
+				border-bottom-color: #008080;
+				left: 0px;
+				top: 0px;
+				width: 132px;
+				height: 69px;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0
+		height=69
+		width=132>
+<col>
+
+<tr valign="top" class="hcp4">
+<td valign="middle" class="hcp9">
+<p style="font-size: 11pt; font-weight: bold;"><span class=Tab>Modules: 
+ &nbsp;</span></p>
+<p style="font-size: 11pt; font-weight: normal;"><span class=Tab>T964</span></td></tr>
+</table>
+
+<p>&nbsp;</p>
+</div>
+
+<div placeholder id="footer" style="width:100%;" class="hcp1">
+ <p style="text-align: center;
+			font-size: 10pt;
+			font-weight: bold;"
+	align=center>&#169;2008 
+ Seica S.p.a - All rights reserved</p>
+ <p>&nbsp;</p>
+</div>
+</body>
+</html>

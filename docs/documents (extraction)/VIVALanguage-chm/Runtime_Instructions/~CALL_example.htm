@@ -1,0 +1,99 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~CALL example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<h1>~CALL example</h1>
+
+<p style="font-weight: bold;"><span class="hcp1">Example 
+ 1</span></p>
+
+<p>&nbsp;</p>
+
+<p>START PRG1 STATIC;</p>
+
+<p>~START_SUB;</p>
+
+<p>~SUB1 (INTEGER DAT,ADR);</p>
+
+<p>~WG DATAB=DAT;</p>
+
+<p>~WG ADB=ADR;</p>
+
+<p>~RETURN;</p>
+
+<p>~SUB2 (FLOAT PAR1,PAR2);</p>
+
+<p>~CALC RIS=PAR1+PAR2);</p>
+
+<p>~WRITE RIS;</p>
+
+<p>~RETURN;</p>
+
+<p>~SUB3 (STRING COMP, PAR);</p>
+
+<p>~WRITE COMP “, ” PAR;</p>
+
+<p>~RETURN;</p>
+
+<p>~SUB4 (FLOAT OP1,OP2);</p>
+
+<p>~CALC RIS=OP1+OP2;</p>
+
+<p>~WRITE “RISULTATO = ”,RIS;</p>
+
+<p>~RETURN;</p>
+
+<p>~END_SUB;</p>
+
+<p>.</p>
+
+<p><span class="hcp1">~CALL</span> SUB1 (0X55,0XAA);</p>
+
+<p>~CALL SUB2 (12.5,14.7);</p>
+
+<p>~CALL SUB3 (RESISTENZA, R12) ONERROR;</p>
+
+<p>~CALC VAR1=12.67;</p>
+
+<p>~CALC VAR2=VAR1+45.7;</p>
+
+<p>/;</p>
+
+<p>~CALL SUB4 (VAR1,VAR2);</p>
+
+<p>/;</p>
+
+<p>ENDTEST; </p>
+
+<p style="color: #008080;">________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

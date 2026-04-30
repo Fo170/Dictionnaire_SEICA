@@ -1,0 +1,89 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~PULL example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+span.hcp1 { color:#008000; }
+p.hcp2 { color:#008000; }
+span.hcp3 { margin-left:160px; }
+-->
+</style>
+</head>
+<body>
+<h1>~PULL example</h1>
+
+<p><span class="hcp1">!Connects channel 13 to the 1KW pull-up 
+ resistor. All the other channels are disconnected from pull-up/down resistors.</span> 
+ &nbsp;</p>
+
+<p>~PULL UP 13; </p>
+
+<p>&nbsp;</p>
+
+<p><span class="hcp1">!Connects channel 23 to the pull-down 
+ resistor and leaves all the other channels unchanged.</span> &nbsp;</p>
+
+<p>~PULL DOWN *,23; </p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">!Connects channels 1, 4 and from channel 6 to 
+ channel 32 to the pull-down resistor, leaves all the other channel <span class="hcp3">unchanged.</span></p>
+
+<p>~PULL DOWN *,1-4/32; <span class="hcp3">&nbsp;&nbsp;</span></p>
+
+<p>&nbsp;</p>
+
+<p style="margin-left: 0px;"><span class="hcp1">!Disconnects 
+ all the channels connected to &nbsp;pull-up/down 
+ resistors.</span> &nbsp;</p>
+
+<p>~PULL; </p>
+
+<p>&nbsp;</p>
+
+<p>~CALC CH=15;</p>
+
+<p><span class="hcp1">!Connects channel 15 to the pull-up resistor. 
+ &nbsp;All the 
+ other channels are unchanged.</span> &nbsp;</p>
+
+<p>~PULL UP CH; </p>
+
+<p>&nbsp;</p>
+
+<p><span class="hcp1">!Connects channel 15 to the pull-up resistor 
+ while channels 6 and 8 to the pull-down resistor. Disconnects the</span><span 
+ style="margin-left: 160px; color: #008000;"> other channels that might 
+ be connected.</span><span class="hcp3"> &nbsp;</span></p>
+
+<p>~PULL UP 15 DOWN 6-8; </p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">!Channel 7 in this case will be connected both 
+ to the pull-up and pull-down resistor. Disconnects the<span style="margin-left: 240px;"> 
+ &nbsp;&nbsp;other 
+ channels that might be connected.</span></p>
+
+<p>~PULL UP 15 DOWN 6-8 UP DOWN 7; </p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

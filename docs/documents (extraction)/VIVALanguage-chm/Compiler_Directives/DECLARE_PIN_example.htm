@@ -1,0 +1,142 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>DECLARE PIN example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+span.hcp1 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>DECLARE PIN 
+ example</h1>
+
+<p style="font-weight: bold;"><span><span style="font-weight: bold;">Example 
+ 1</span></span></p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL S1=34;</p>
+
+<p>DECLARE CHANNEL S2=39;</p>
+
+<p>DECLARE CHANNEL S3=40;</p>
+
+<p>DECLARE PIN P1=S1;</p>
+
+<p>DECLARE PIN P2=S2;</p>
+
+<p>DECLARE PIN P3=S3;</p>
+
+<p>DECLARE PIN P4=S4;</p>
+
+<p>START PRG1;</p>
+
+<p>/;</p>
+
+<p>IL S1,S3;</p>
+
+<p>/;</p>
+
+<p>OH S2,S4;</p>
+
+<p>/;</p>
+
+<p>IH S1,S3;</p>
+
+<p>/;</p>
+
+<p>OL S2,S4;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>Library &nbsp;file</p>
+
+<p>**************************</p>
+
+<p>**************************</p>
+
+<p>*****FILE S20LOG.LIB *****</p>
+
+<p>**************************</p>
+
+<p>**************************</p>
+
+<p>#7400(COMM,P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14)</p>
+
+<p>!D,4,14;</p>
+
+<p>*PI(IIOIIO.OIIOII.);</p>
+
+<p>*TY(......G......V);</p>
+
+<p>!3,2,1,0,0,P1,P2,P3; <span class="hcp1">!These names</span></p>
+
+<p>!3,2,1,0,0,P4,P5,P6;<span class="hcp1"> are associated to</span></p>
+
+<p>!3,2,1,0,0,P9,P10,P8; <span class="hcp1">the channel names!</span></p>
+
+<p>!3,2,1,0,0,P12,P13,P11;</p>
+
+<p>@C(4.7,0,2.4,.8,.1,1,P,C);</p>
+
+<p>@L(HH0...........);</p>
+
+<p>@L(Lh1...........);</p>
+
+<p>@L(hL1...........);</p>
+
+<p>@L(...HH0........);</p>
+
+<p>@L(...Lh1........);</p>
+
+<p>@L(...hL1........);</p>
+
+<p>@L(.......0HH....);</p>
+
+<p>@L(.......1Lh....);</p>
+
+<p>@L(.......1hL....);</p>
+
+<p>@L(..........0HH.);</p>
+
+<p>@L(..........1Lh.);</p>
+
+<p>@L(..........1hL.);</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p style="color: #008080;">________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

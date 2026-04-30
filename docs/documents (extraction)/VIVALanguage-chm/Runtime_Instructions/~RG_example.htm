@@ -1,0 +1,73 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~RG example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css">
+</head>
+<body>
+<h1>~RG example</h1>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL D0=23;</p>
+
+<p>DECLARE CHANNEL D1=24</p>
+
+<p>DECLARE CHANNEL D2=25;</p>
+
+<p>DECLARE CHANNEL D3=26</p>
+
+<p>DECLARE CHANNEL D4=27;</p>
+
+<p>DECLARE CHANNEL D5=28</p>
+
+<p>DECLARE CHANNEL D6=29;</p>
+
+<p>DECLARE CHANNEL D7=30;</p>
+
+<p>DECLARE CHANNEL DATB=139;</p>
+
+<p>DECLARE RUNTIME INTEGER VAR1,VAR2,VAR3;</p>
+
+<p>&nbsp;</p>
+
+<p>START PRG1 STATIC;</p>
+
+<p>/;</p>
+
+<p><span style="color: #008000;">!The least significant bit of the VAR1 
+ variable will contain the status of channel 23, while the most significant 
+ bit will contain that of channel 30</span> </p>
+
+<p>~RG VAR1=23,24,25,26,27,28,29,30; &nbsp;</p>
+
+<p>/;</p>
+
+<p>~RG VAR2=D0,D1,D2,D3;</p>
+
+<p>/;</p>
+
+<p>~RG VAR3=DATB;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

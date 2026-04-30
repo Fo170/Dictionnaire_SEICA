@@ -1,0 +1,108 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~MEASURE Current example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+p.hcp2 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>~MEASURE 
+ Current example</h1>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 1</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL ch1=1;</p>
+
+<p>DECLARE CHANNEL ch2=2;</p>
+
+<p>DECLARE CHANNEL ch3=3;</p>
+
+<p>DECLARE CHANNEL ch4=4;</p>
+
+<p>DECLARE RUNTIME FLOAT ris;</p>
+
+<p>…</p>
+
+<p>START example STATIC;</p>
+
+<p>….</p>
+
+<p class="hcp2">!Measure a current RMS value on channel ch2 
+ with the instrument set to have a range of 1 Ampere </p>
+
+<p>~MEASURE I TYPE=rms RANGE=1A ON=ch2;</p>
+
+<p>….</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p style="color: #008080;">_____________________________________________________________</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1"><span style="font-weight: bold;">Example 
+ 2</span></p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL ch1=1;</p>
+
+<p>DECLARE CHANNEL ch2=2;</p>
+
+<p>DECLARE CHANNEL ch3=3;</p>
+
+<p>DECLARE CHANNEL ch4=4;</p>
+
+<p>DECLARE RUNTIME FLOAT ris;</p>
+
+<p>…</p>
+
+<p>START example STATIC;</p>
+
+<p>….</p>
+
+<p class="hcp2">!Measure a current peak value on channel ch1 
+ with the instrument set to have a range of 1 Ampere, label &quot;meas1&quot;, 
+ set the</p>
+
+<p class="hcp2"><span style="color: #008000;">!instrument and 
+ start measuring with after 10ms, measure for 1s; the expected value is 
+ 600mA ±10%. &nbsp;&nbsp;</span></p>
+
+<p>~MEASURE I TYPE=peak RANGE=1A ON=ch1 REF=gnd LABEL=&quot;meas1&quot; 
+ EXPECT=600mA (10%) DELAY=10ms GATE=1s;</p>
+
+<p>….</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

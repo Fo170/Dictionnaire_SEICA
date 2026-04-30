@@ -1,0 +1,191 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~ON example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css">
+</head>
+<body>
+<h1>~ON example</h1>
+
+<p>timing t1;<br>
+period 1u;<br>
+strobe 500;<br>
+endtiming;<br>
+<br>
+<br>
+~SUBR ERROR;<br>
+!~PAUSE &quot;EVENT ON_ERROR&quot;;<br>
+~WRITE &quot;\CREVENT ON_ERROR&quot;;<br>
+ev=ev|1;<br>
+~RETURN;<br>
+~ENDSUBR;<br>
+<br>
+~SUBR EV_dynamic;<br>
+!~PAUSE &quot;EVENT ON_dynamic&quot;;<br>
+~WRITE &quot;\CREVENT ON_dynamic&quot;;<br>
+ev=ev|h100;<br>
+~RETURN;<br>
+~ENDSUBR;<br>
+<br>
+~SUBR EV_endburst;<br>
+!~PAUSE &quot;EVENT ON_endburst&quot;;<br>
+~WRITE &quot;\CREVENT ON_endburst&quot;;<br>
+ev=ev|h200;<br>
+~RETURN;<br>
+~ENDSUBR;<br>
+<br>
+~SUBR EV_ANA_ERROR;<br>
+!~PAUSE &quot;EVENT ON_ana_ERROR&quot;;<br>
+~WRITE &quot;\CREVENT ON_ana_ERROR&quot;;<br>
+ev=ev|h2;<br>
+~RETURN;<br>
+~ENDSUBR;<br>
+<br>
+<br>
+<br>
+<br>
+~SUBR EV_DIG_ERROR;<br>
+!~PAUSE &quot;EVENT ON_DIG_ERROR&quot;;<br>
+~WRITE &quot;\CREVENT ON_DIG_ERROR&quot;;<br>
+ev=ev|h4;<br>
+~RETURN;<br>
+~ENDSUBR;<br>
+<br>
+<br>
+~SUBR EV_sta_ERROR;<br>
+!~PAUSE &quot;EVENT ON_sta_ERROR&quot;;<br>
+~WRITE &quot;\CREVENT ON_sta_ERROR&quot;;<br>
+ev=ev|h8;<br>
+~RETURN;<br>
+~ENDSUBR;<br>
+<br>
+~SUBR EV_timeout;<br>
+!~PAUSE &quot;EVENT ON_timeout&quot;;<br>
+~set cluster_timeout val=100;<br>
+~WRITE &quot;\CREVENT ON_timeout&quot;;<br>
+ev=ev|h10;<br>
+~RETURN;<br>
+~ENDSUBR;<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+~SUBR BREAK;<br>
+ev=ev|h20;<br>
+!~PAUSE &quot;EVENT ON_BREAK&quot;;<br>
+~WRITE &quot;\CREVENT ON_BREAK&quot;;<br>
+~RETURN;<br>
+~ENDSUBR;<br>
+<br>
+~SUBR ABORT;<br>
+ev=ev|h40;<br>
+!~PAUSE &quot;EVENT ON_ABORT&quot;;<br>
+~WRITE &quot;\CREVENT ON_ABORT&quot;;<br>
+t=200; ! to end the loop waiting for esc<br>
+~RETURN;<br>
+~ENDSUBR;<br>
+<br>
+<br>
+~SUBR EV_END;<br>
+ev=ev|h80;<br>
+!~PAUSE &quot;EVENT ON_END&quot;;<br>
+~WRITE &quot;\CREVENT ON_END&quot;;<br>
+~if ev=h3ff;<br>
+~WRITE &quot;\CRFOUND ALL EVENT PASS&quot;;<br>
+~clear fail;<br>
+~else;<br>
+~FORMAT HEX;<br>
+~WRITE &quot;\CRSOME EVENT MISSING FAIL &quot;,EV ;<br>
+~set fail;<br>
+~endif;<br>
+<br>
+<br>
+~RETURN;<br>
+~ENDSUBR;<br>
+<br>
+<br>
+DECLARE RUNTIME INTEGER T,ev;<br>
+DECLARE SUBROUTINE ERROR,BREAK,EV_END,ABORT,EV_ana_ERROR,EV_dig_ERROR,EV_sta_ERROR,ev_endburst,ev_dynamic,ev_timeout;<br>
+<br>
+START EVENT STATIC;<br>
+<br>
+<br>
+<br>
+~ON ERROR CALL ERROR ;<br>
+! generic error handling<br>
+~WRITE &quot;\CR ~ATEST&quot;;<br>
+~atest ar lo=1 hi=-1 name=&quot;test2&quot;;<br>
+<br>
+<br>
+~ON static_ERROR CALL EV_sta_ERROR ;<br>
+~ON ana_ERROR CALL EV_ana_ERROR ;<br>
+~ON dig_ERROR CALL EV_dig_ERROR ;<br>
+~ON dynamic CALL EV_dynamic ;<br>
+~ON endburst CALL EV_endburst ;<br>
+~ON BREAK CALL BREAK;<br>
+~ON END CALL EV_END;<br>
+~ON_ABORT CALL ABORT ;<br>
+~on_timeout call ev_timeout ;<br>
+<br>
+~WRITE &quot;\CRWAIT TESTING CLUSTER TIMEOUT&quot;;<br>
+<br>
+~set cluster_timeout val=500m;<br>
+<br>
+~FOR T=1 TO 100;<br>
+~DELAY 10M;<br>
+~ENDFOR;<br>
+<br>
+~set cluster_timeout val=20;<br>
+<br>
+~WRITE &quot;\CRTYPE ESC IN 20 SECOND TO TEST ABORT&quot;;<br>
+<br>
+<br>
+~FOR T=1 TO 200;<br>
+~DELAY 50M;<br>
+~ENDFOR;<br>
+<br>
+<br>
+~set cluster_timeout val=20;<br>
+<br>
+<br>
+/ dmaster timing t1;<br>
+ol 1;<br>
+/;<br>
+oh 1;<br>
+/;<br>
+<br>
+/ static;<br>
+ol 1;<br>
+/;<br>
+oh 1;<br>
+/;<br>
+<br>
+~WRITE &quot;\CR ~ATEST&quot;;<br>
+~atest ar lo=1 hi=-1 name=&quot;test1&quot;;<br>
+~WRITE &quot;\CR SET FAIL&quot;;<br>
+~SET FAIL;<br>
+~WRITE &quot;\CR BREAK&quot;;<br>
+<br>
+~BREAK ALWAYS;<br>
+~BREAK ;<br>
+<br>
+<br>
+ENDTEST;<br>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

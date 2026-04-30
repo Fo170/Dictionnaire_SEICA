@@ -1,0 +1,90 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~READ_SCR example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+span.hcp1 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>~READ_SCR example</h1>
+
+<p>&nbsp;</p>
+
+<p style="font-weight: bold;">Example 1</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL S1=1;</p>
+
+<p>DECLARE CHANNEL S2=4;</p>
+
+<p>DECLARE RUNTIME FLOAT VAR1;</p>
+
+<p>DECLARE RUNTIME INTEGER IN1;</p>
+
+<p>DECLARE RUNTIME STRING ST1;</p>
+
+<p>CLOCK=50N;</p>
+
+<p>START TREAD STATIC ;</p>
+
+<p>~IH S1;</p>
+
+<p>/;</p>
+
+<p>~WRITE “Enter a number: ”; <span class="hcp1">!Read of a 
+ float number and stores it in the VAR1 variable!</span> </p>
+
+<p>~READ_SCR VAR1;</p>
+
+<p>/;</p>
+
+<p>~WRITE”Enter a whole number: ”; <span class="hcp1">!Read 
+ of a whole number and stores it in the IN1 variable !~READ_SCR IN1;</span></p>
+
+<p>/;</p>
+
+<p>~WRITE”Enter a string: ”; <span class="hcp1">!Read of a string 
+ and stores it in the ST1 variable !</span></p>
+
+<p><span style="font-weight: bold;">~READ_SCR</span> ST1;</p>
+
+<p>/;</p>
+
+<p>~IL S1 S2;</p>
+
+<p>/;</p>
+
+<p>~IH S1;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p style="color: #008080;">____________________________________________________________</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

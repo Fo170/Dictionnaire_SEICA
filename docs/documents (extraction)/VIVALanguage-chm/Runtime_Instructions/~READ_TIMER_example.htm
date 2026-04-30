@@ -1,0 +1,187 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~READ_TIMER example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css">
+</head>
+<body>
+<h1>~READ_TIMER 
+ example</h1>
+
+<p>&nbsp;</p>
+
+<p style="font-weight: bold;">Example 1</p>
+
+<p>&nbsp;</p>
+
+<p>FLOAT F1,F2,F3;</p>
+
+<p>integer j=0,K;</p>
+
+<p>subr mytimer ;</p>
+
+<p>writel on=4 &quot;TIMER END&quot;;</p>
+
+<p>j=1; &nbsp;!! 
+ TO BREAK THE LOOP</p>
+
+<p>RETURN;</p>
+
+<p>endsubr;</p>
+
+<p>declare subroutine &nbsp;mytimer;</p>
+
+<p>START PROTIMER STATIC;</p>
+
+<p>ON_TIMER CALL MYTIMER ;</p>
+
+<p>READ TIMER1 AR; &nbsp;!! 
+ TIME IN MICRO SINCE START PROGRAM</p>
+
+<p>WRITEL &nbsp;&nbsp;&quot;TIMEFROM 
+ START=&quot; AR;</p>
+
+<p>READ TIMER0 AR; &nbsp;!! 
+ TIME IN MICRO SINCE START PROGRAM</p>
+
+<p>AR=AR/1000000.;</p>
+
+<p>WRITEL &nbsp;&nbsp;&quot;TIMEFROM 
+ PC POWER (SEC) ON=&quot; AR;</p>
+
+<p>TIMER 1 CLEAR;</p>
+
+<p>TIMER 2 CLEAR;</p>
+
+<p>READ TIMER1 AR; &nbsp;!! 
+ TIME IN MICRO SINCE LAST CLEAR;</p>
+
+<p>WRITEL &nbsp;&nbsp;&quot;TIMEFROM 
+ (USEC) CLEAR=&quot; AR;</p>
+
+<p>READ TIMER3 AR; &nbsp;!! 
+ TIME IN MICRO SINCE LAST CLEAR;</p>
+
+<p>WRITEL &nbsp;&nbsp;&quot;TIMEFROM 
+ START=&quot; AR;</p>
+
+<p>READ TIMER2 F1;</p>
+
+<p>READ TIMER2 F2;</p>
+
+<p>F3=F2-F1;</p>
+
+<p>WRITEL &nbsp;&nbsp;&quot;TIMEBEEWEEN 
+ 2 READ TIMER &quot; F3 ;</p>
+
+<p>READ TIMER2 F1;</p>
+
+<p>DELAY 100M;</p>
+
+<p>!WRITEL &quot;AAAA&quot;;</p>
+
+<p>!AR=AR+1;</p>
+
+<p>READ TIMER2 F2;</p>
+
+<p>AR=F2-F1-F3;</p>
+
+<p>WRITEL &nbsp;&nbsp;&quot;TIME 
+ FOR 1 ISTRUCTION &quot; AR ;</p>
+
+<p>TIMER 2 CLEAR;</p>
+
+<p>READ TIMER2 STATUS F1;</p>
+
+<p>WRITEL on=1 &nbsp;&quot;TIMER 
+ 2 STATUS 0=CLEAR= &quot; F1 ;</p>
+
+<p>TIMER 2 ARM VAL=1.;</p>
+
+<p>READ TIMER2 F1;</p>
+
+<p>WRITEL on=1 &nbsp;&nbsp;&quot;TIME 
+ VALUE SET TO 1 SEC &quot; F1 ;</p>
+
+<p>~DELAY 600M;</p>
+
+<p>READ TIMER2 STATUS F1;</p>
+
+<p>WRITEL on=1 &nbsp;&quot;TIMER 
+ 2 STATUS= 1=ARMED= &quot; F1 ;</p>
+
+<p>~DELAY 300M;</p>
+
+<p>READ TIMER2 F1;</p>
+
+<p>WRITEL on=1 &nbsp;&quot;TIME 
+ VALUE SET TO 1 SEC &quot; F1 ;</p>
+
+<p>~DELAY 200M;</p>
+
+<p>READ TIMER2 STATUS F1;</p>
+
+<p>WRITEL on=1 &nbsp;&quot;TIMER 
+ 2 STATUS 2=ENDED= &quot; F1 ;</p>
+
+<p>j=0;</p>
+
+<p>K=0;</p>
+
+<p>TIMER 2 ARM &nbsp;VAL=20.;</p>
+
+<p>while j=0;</p>
+
+<p>K=K+1;</p>
+
+<p>READ TIMER2 F1;</p>
+
+<p>WRITEL on=1 &nbsp;USING=&quot;A20,F12.0,A4,I4,A4&quot;,&quot;\CU\001\001 
+ TIMER2= &quot; F1,&quot; &nbsp;&nbsp;&quot;, 
+ K, &quot; &nbsp;&nbsp;&quot; 
+ ;</p>
+
+<p>!F2=-3000000;</p>
+
+<p>!IF (F1&gt;F2) ;</p>
+
+<p>!TIMER 2 STOP;</p>
+
+<p>!ENDIF;</p>
+
+<p>endwhile;</p>
+
+<p>READ TIMER2 F1;</p>
+
+<p>!CALL MYTIMER;</p>
+
+<p>~PAUSE AR;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p style="color: #008080;">____________________________________________________________</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>STATIC DIGITAL EXAMPLE</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+span.hcp1 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>STATIC DIGITAL 
+ EXAMPLE</h1>
+
+<p>DECLARE RUNTIME INTEGER CAN;</p>
+
+<p>DECLARE CHANNEL CS=125;</p>
+
+<p>DECLARE CHANNEL WR=23;</p>
+
+<p>DECLARE GROUP DATA=1,2,3,4;</p>
+
+<p>&nbsp;</p>
+
+<p>START PRG1;</p>
+
+<p>~IH CS;<span class="hcp1"> ! CHANNEL 125 IS DRIVING HIGH 
+ AND CHECKED TO BE HIGH AT THE END OF THE PATTERN</span> </p>
+
+<p>/;</p>
+
+<p>~IH 23;<span class="hcp1"> ! CHANNEL &nbsp;125,23 
+ ARE DRIVING HIGH</span></p>
+
+<p>/;</p>
+
+<p>~IL 2,4,6,8;<span class="hcp1"> &nbsp;! 
+ CHANNEL &nbsp;125,23 
+ ARE DRIVING HIGH &nbsp;2,4,6,8 
+ are driving low</span></p>
+
+<p>/;</p>
+
+<p>~MH 1/8; &nbsp;&nbsp;<span class="hcp1">! 
+ CHANNEL 125,23 IS DRIVING HIGH AND CHECKED TO BE HIGH AT THE END OF THE 
+ PATTERN</span> &nbsp;</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hcp1">&nbsp;! CHANNEL 1,2,3,4,5,6,7,8 
+ ARE DRIVING HIGH AND IGNORED STATE AT END OF THE PATTERN</span> </p>
+
+<p>/;</p>
+
+<p>~OM &nbsp;&nbsp;DATA; 
+ <span class="hcp1">! CHANNEL 125,23 IS DRIVING HIGH AND CHECKED 
+ TO BE HIGH AT THE END OF THE PATTERN</span></p>
+
+<p><span class="hcp1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;! 
+ CHANNEL 5,6,7,8 ARE DRIVING HIGH AND IGNORED STATE AT END OF THE PATTERN</span> 
+ </p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hcp1">&nbsp;! CHANNEL 1,2,3,4 
+ ARE TRISTATED AND IGNORED STATE</span></p>
+
+<p>&nbsp;</p>
+
+<p>/;</p>
+
+<p>~OH 1 ; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hcp1">&nbsp;&nbsp;! CHANNEL 
+ 1 ARE SENSED TO BE LOW AT STROBE TIME;</span></p>
+
+<p>`OL 2 ; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hcp1">! CHANNEL 2 ARE SENSED 
+ TO BE HIGH AT STROBE TIME;</span></p>
+
+<p>~OM 5,6,7,8; &nbsp;&nbsp;<span class="hcp1">! 
+ CHANNEL 125,23 IS DRIVING HIGH AND CHECKED TO BE HIGH AT THE END OF THE 
+ PATTERN</span></p>
+
+<p>/; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hcp1">&nbsp;! CHANNEL 3,4, 
+ ARE TRISTATED AND IGNORED STATE</span> &nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

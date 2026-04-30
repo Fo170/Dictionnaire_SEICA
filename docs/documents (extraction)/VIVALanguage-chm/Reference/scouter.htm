@@ -1,0 +1,821 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" 
+ xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<title>SCOUNTER</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="File-List" href="SCOUTER_file/filelist.xml"><style>
+<!--
+; @font-face { font-family:MS Mincho; panose-1:2 2 6 9 4 2 5 8 3 4; mso-font-alt:-3 ; mso-font-charset:128; mso-generic-font-family:modern; mso-font-pitch:fixed; mso-font-signature:-536870145 1791491579 18 0 131231 0; font-family:Verdana; panose-1:2 11 6 4 3 5 4 4 2 4; mso-font-charset:0; mso-generic-font-family:swiss; mso-font-pitch:variable; mso-font-signature:-1593833729 1073750107 16 0 415 0; font-family:\0040MS Mincho; panose-1:2 2 6 9 4 2 5 8 3 4; mso-font-charset:128; mso-generic-font-family:modern; mso-font-pitch:fixed; mso-font-signature:-536870145 1791491579 18 0 131231 0; }
+; @page Section1 { x-size:595.3pt 841.9pt; margin:70.85pt 2.0cm 2.0cm 2.0cm; mso-header-margin:35.4pt; mso-footer-margin:35.4pt; mso-paper-source:0; }
+; @list l0 { mso-list-id:-5; mso-list-template-ids:1376662062; }
+; @list l0\003alevel1 { mso-level-tab-stop:18.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l0\003alevel2 { mso-level-text:%1.%2; mso-level-tab-stop:36.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; x-text-underline:off; x-text-overline:off; x-text-line-through:off; text-underline:none; }
+; @list l0\003alevel3 { mso-level-text:%1.%2.%3; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l0\003alevel4 { mso-level-style-link:Titolo 4; mso-level-text:%1.%2.%3.%4; mso-level-tab-stop:54.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; mso-ansi-font-size:10.0pt; font-family:Verdana; mso-ansi-font-weight:bold; mso-ansi-font-style:normal; x-text-underline:off; x-text-overline:off; x-text-line-through:off; text-underline:none; }
+; @list l0\003alevel5 { mso-level-style-link:Titolo 5; mso-level-text:%1.%2.%3.%4.%5; mso-level-tab-stop:72.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; mso-ansi-font-size:10.0pt; font-family:Verdana; mso-ansi-font-weight:bold; mso-ansi-font-style:italic; }
+; @list l0\003alevel6 { mso-level-style-link:Titolo 6; mso-level-text:%1.%2.%3.%4.%5.%6; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l0\003alevel7 { mso-level-style-link:Titolo 7; mso-level-text:%1.%2.%3.%4.%5.%6.%7; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l0\003alevel8 { mso-level-style-link:Titolo 8; mso-level-text:%1.%2.%3.%4.%5.%6.%7.%8; mso-level-tab-stop:126.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l0\003alevel9 { mso-level-style-link:Titolo 9; mso-level-text:%1.%2.%3.%4.%5.%6.%7.%8.%9; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l1 { mso-list-id:673070752; mso-list-template-ids:-91685180; }
+; @list l1\003alevel1 { mso-level-style-link:Titolo 1; mso-level-text:%1.; mso-level-tab-stop:36.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; mso-ansi-font-size:16.0pt; font-family:Verdana; mso-ansi-font-weight:bold; mso-ansi-font-style:normal; }
+; @list l1\003alevel2 { mso-level-style-link:Titolo 2; mso-level-text:%1. %2; mso-level-tab-stop:54.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; mso-ansi-font-size:14.0pt; font-family:Verdana; mso-ansi-font-weight:bold; mso-ansi-font-style:normal; }
+; @list l1\003alevel3 { mso-level-style-link:Titolo 3; mso-level-suffix:space; mso-level-text:%1.%2.%3; mso-level-tab-stop:none; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; mso-ansi-font-size:12.0pt; font-family:Verdana; mso-ansi-font-weight:bold; mso-ansi-font-style:normal; }
+; @list l1\003alevel4 { mso-level-text:%1.%2.%3.%4; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l1\003alevel5 { mso-level-text:%1.%2.%3.%4.%5; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l1\003alevel6 { mso-level-text:%1.%2.%3.%4.%5.%6; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l1\003alevel7 { mso-level-text:%1.%2.%3.%4.%5.%6.%7; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l1\003alevel8 { mso-level-text:%1.%2.%3.%4.%5.%6.%7.%8.; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l1\003alevel9 { mso-level-text:%1.%2.%3.%4.%5.%6.%7.%8.%9; mso-level-tab-stop:108.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l2 { mso-list-id:785272102; mso-list-type:hybrid; mso-list-template-ids:-894560774 1282469536 68157443 68157445 68157441 68157443 68157445 68157441 68157443 68157445; }
+; @list l2\003alevel1 { mso-level-start-at:0; mso-level-number-format:bullet; mso-level-text:-; mso-level-tab-stop:131.4pt; mso-level-number-position:left; margin-left:131.4pt; text-indent:-18.0pt; font-family:Arial; mso-fareast-font-family:Times New Roman; }
+; @list l3 { mso-list-id:1316832344; mso-list-type:hybrid; mso-list-template-ids:890548480 1282469536 68157443 68157445 68157441 68157443 68157445 68157441 68157443 68157445; }
+; @list l3\003alevel1 { mso-level-start-at:0; mso-level-number-format:bullet; mso-level-text:-; mso-level-tab-stop:36.0pt; mso-level-number-position:left; text-indent:-18.0pt; font-family:Arial; mso-fareast-font-family:Times New Roman; }
+; p.MsoNormal { margin:0cm; margin-bottom:.0001pt; text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+li.MsoNormal { margin:0cm; margin-bottom:.0001pt; text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+div.MsoNormal { margin:0cm; margin-bottom:.0001pt; text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+LI.kadov-p-CMsoNormal { text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+h1 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-next:Normale; margin-top:150.0pt; margin-right:0cm; margin-bottom:70.0pt; margin-left:0cm; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; page-break-after:avoid; mso-outline-level:1; mso-list:l1 level1 lfo4; mso-hyphenate:none; tab-stops:list 18.0pt left 1.0cm; font-size:16.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#000000; text-transform:uppercase; mso-font-kerning:14.0pt; mso-bidi-font-weight:normal; }
+LI.kadov-h1 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:1; mso-list:l1 level1 lfo4; mso-hyphenate:none; tab-stops:list 18.0pt left 1.0cm; font-size:16.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#000000; text-transform:uppercase; mso-font-kerning:14.0pt; mso-bidi-font-weight:normal; }
+h2 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-link:Carattere Carattere3; mso-style-next:Normale; margin-top:30.0pt; margin-right:0cm; margin-bottom:18.0pt; margin-left:0cm; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:2; mso-list:l1 level2 lfo4; tab-stops:list 18.0pt; font-size:14.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#333333; text-transform:uppercase; mso-bidi-font-weight:normal; }
+LI.kadov-h2 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-link:Carattere Carattere3; mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:2; mso-list:l1 level2 lfo4; tab-stops:list 18.0pt; font-size:14.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#333333; text-transform:uppercase; mso-bidi-font-weight:normal; }
+h3 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-link:Carattere Carattere2; mso-style-next:Normale; margin-top:15.0pt; margin-right:0cm; margin-bottom:10.0pt; margin-left:0cm; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:3; mso-list:l1 level3 lfo4; tab-stops:list 18.0pt left 64.35pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#000000; text-transform:uppercase; mso-bidi-font-weight:normal; }
+LI.kadov-h3 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-link:Carattere Carattere2; mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:3; mso-list:l1 level3 lfo4; tab-stops:list 18.0pt left 64.35pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#000000; text-transform:uppercase; mso-bidi-font-weight:normal; }
+h4 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-link:Carattere Carattere1; mso-style-next:Normale; margin-top:12.0pt; margin-right:0cm; margin-bottom:3.0pt; margin-left:0cm; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:4; mso-list:l0 level4 lfo1; tab-stops:list 18.0pt; font-size:10.0pt; font-family:Verdana; color:#000000; mso-bidi-font-weight:normal; }
+LI.kadov-h4 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-link:Carattere Carattere1; mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:4; mso-list:l0 level4 lfo1; tab-stops:list 18.0pt; font-size:10.0pt; font-family:Verdana; color:#000000; mso-bidi-font-weight:normal; }
+h5 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-next:Normale; margin-top:12.0pt; margin-right:0cm; margin-bottom:3.0pt; margin-left:0cm; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:5; mso-list:l0 level5 lfo1; tab-stops:list 18.0pt left 3.0cm; font-size:10.0pt; font-family:Verdana; color:#000000; mso-bidi-font-weight:normal; font-style:italic; mso-bidi-font-style:normal; }
+LI.kadov-h5 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:5; mso-list:l0 level5 lfo1; tab-stops:list 18.0pt left 3.0cm; font-size:10.0pt; font-family:Verdana; color:#000000; mso-bidi-font-weight:normal; font-style:italic; mso-bidi-font-style:normal; }
+h6 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:6; mso-list:l0 level6 lfo1; tab-stops:list 0cm left 92.7pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#000000; font-weight:normal; }
+LI.kadov-h6 { mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:6; mso-list:l0 level6 lfo1; tab-stops:list 0cm left 92.7pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#000000; font-weight:normal; }
+p.MsoHeading7 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:7; mso-list:l0 level7 lfo1; tab-stops:list 0cm left 100.35pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+li.MsoHeading7 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:7; mso-list:l0 level7 lfo1; tab-stops:list 0cm left 100.35pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+div.MsoHeading7 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:7; mso-list:l0 level7 lfo1; tab-stops:list 0cm left 100.35pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+LI.kadov-p-CMsoHeading7 { mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:7; mso-list:l0 level7 lfo1; tab-stops:list 0cm left 100.35pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+p.MsoHeading8 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:8; mso-list:l0 level8 lfo1; tab-stops:list 126.0pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; }
+li.MsoHeading8 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:8; mso-list:l0 level8 lfo1; tab-stops:list 126.0pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; }
+div.MsoHeading8 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:8; mso-list:l0 level8 lfo1; tab-stops:list 126.0pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; }
+LI.kadov-p-CMsoHeading8 { mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:8; mso-list:l0 level8 lfo1; tab-stops:list 126.0pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; }
+p.MsoHeading9 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:9; mso-list:l0 level9 lfo1; tab-stops:list 0cm left 121.05pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+li.MsoHeading9 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:9; mso-list:l0 level9 lfo1; tab-stops:list 0cm left 121.05pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+div.MsoHeading9 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:9; mso-list:l0 level9 lfo1; tab-stops:list 0cm left 121.05pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+LI.kadov-p-CMsoHeading9 { mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:9; mso-list:l0 level9 lfo1; tab-stops:list 0cm left 121.05pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+span.CarattereCarattere3 { mso-style-name:Carattere Carattere3; mso-style-locked:yes; mso-style-link:Titolo 2; mso-ansi-font-size:14.0pt; font-family:Verdana; mso-ascii-font-family:Verdana; mso-hansi-font-family:Verdana; color:#333333; text-transform:uppercase; mso-ansi-language:IT; mso-fareast-language:IT; mso-bidi-language:AR-SA; font-weight:bold; mso-bidi-font-weight:normal; }
+span.CarattereCarattere2 { mso-style-name:Carattere Carattere2; mso-style-locked:yes; mso-style-link:Titolo 3; mso-ansi-font-size:12.0pt; font-family:Verdana; mso-ascii-font-family:Verdana; mso-hansi-font-family:Verdana; color:#000000; text-transform:uppercase; mso-ansi-language:IT; mso-fareast-language:IT; mso-bidi-language:AR-SA; font-weight:bold; mso-bidi-font-weight:normal; }
+span.CarattereCarattere1 { mso-style-name:Carattere Carattere1; mso-style-locked:yes; mso-style-link:Titolo 4; font-family:Verdana; mso-ascii-font-family:Verdana; mso-hansi-font-family:Verdana; color:#000000; mso-ansi-language:IT; mso-fareast-language:IT; mso-bidi-language:AR-SA; font-weight:bold; mso-bidi-font-weight:normal; }
+p.SeicaNormale { mso-style-name:Seica Normale; mso-style-link:Seica Normale Carattere; margin:0cm; margin-bottom:.0001pt; text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+li.SeicaNormale { mso-style-name:Seica Normale; mso-style-link:Seica Normale Carattere; margin:0cm; margin-bottom:.0001pt; text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+div.SeicaNormale { mso-style-name:Seica Normale; mso-style-link:Seica Normale Carattere; margin:0cm; margin-bottom:.0001pt; text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+LI.kadov-p-CSeicaNormale { mso-style-name:Seica Normale; mso-style-link:Seica Normale Carattere; text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+span.SeicaNormaleCarattere { mso-style-name:Seica Normale Carattere; mso-style-locked:yes; mso-style-link:Seica Normale; mso-ansi-font-size:9.0pt; font-family:Verdana; mso-ascii-font-family:Verdana; mso-hansi-font-family:Verdana; color:#333333; mso-ansi-language:IT; mso-fareast-language:IT; mso-bidi-language:AR-SA; }
+span.SpellE { mso-spl-e:yes; }
+span.GramE { mso-gram-e:yes; }
+div.Section1 { page:Section1; }
+ol { margin-bottom:0cm; }
+ul { margin-bottom:0cm; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+span.hcp1 { mso-list:Ignore; }
+span.hcp2 { font:7.0pt 'Times New Roman'; }
+span.hcp3 { mso-ansi-language:EN-US; }
+span.hcp4 { mso-bidi-font-size:9.0pt; mso-ansi-language:EN-US; }
+b.hcp5 { mso-bidi-font-weight:normal; }
+span.hcp6 { mso-bidi-font-size:9.0pt; font-family:Arial; mso-fareast-font-family:Arial; mso-ansi-language:EN-US; }
+h3.hcp7 { margin-left:0cm; text-indent:0cm; tab-stops:64.35pt; }
+span.hcp8 { mso-fareast-font-family:Verdana; mso-bidi-font-family:Verdana; }
+span.hcp9 { mso-bidi-font-size:9.0pt; mso-fareast-font-family:MS Mincho; mso-ansi-language:EN-US; }
+b.hcp10 { font-weight:bold; mso-bidi-font-weight:normal; }
+span.hcp11 { font-size:12.0pt; mso-fareast-font-family:MS Mincho; mso-ansi-language:EN-US; }
+h4.hcp12 { mso-list:none; tab-stops:35.4pt; }
+b.hcp13 { font-weight:bold; }
+span.hcp14 { mso-fareast-font-family:MS Mincho; mso-ansi-language:EN-US; }
+span.hcp15 { mso-tab-count:1; }
+span.hcp16 { font-family:Arial; mso-fareast-font-family:Arial; mso-ansi-language:EN-US; }
+span.hcp17 { mso-spacerun:yes; }
+span.hcp18 { mso-ansi-language:EN-US; mso-no-proof:yes; }
+span.hcp19 { mso-ansi-language:FR; mso-no-proof:yes; }
+span.hcp20 { mso-no-proof:yes; }
+-->
+</style>
+</head>
+<body lang="IT" style="tab-interval: 35.4pt;">
+<div class=Section1>
+<h2 style="margin-left: 0cm;
+			text-indent: 0cm;
+			tab-stops: list 54.0pt;"><a name=_Toc391278122><span 
+ lang=EN-US
+	style="mso-fareast-font-family: Verdana;
+			mso-bidi-font-family: Verdana;
+			mso-ansi-language: EN-US;"><span class="hcp1">1. 
+ 1 <span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp3">COUNTER/FREQUENCY METER/Timer 
+ -SCOUNTER -</span></a></h2>
+
+<p class=MsoNormal><span lang="EN-US" class="hcp4">The 
+ instrument <b class="hcp5">SCOUNTER</b> is located 
+ in the <b class="hcp5">ACL</b> module and has 
+ the following features:</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 36.0pt;
+			text-indent: -18.0pt;
+			mso-list: l3 level1 lfo2;"><span lang="EN-US" class="hcp6"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp4">Two 
+ input channels: CHA for the “Start Event” CHB and “Stop Event”</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 36.0pt;
+			text-indent: -18.0pt;
+			mso-list: l3 level1 lfo2;"><span lang="EN-US" class="hcp6"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp4">Programmable 
+ thresholds</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 36.0pt;
+			text-indent: -18.0pt;
+			mso-list: l3 level1 lfo2;"><span lang="EN-US" class="hcp6"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp4">Programmable 
+ fronts</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 36.0pt;
+			text-indent: -18.0pt;
+			mso-list: l3 level1 lfo2;"><span lang="EN-US" class="hcp6"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp4">Input 
+ high voltage range (± 10V/± 100V)</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 36.0pt;
+			text-indent: -18.0pt;
+			mso-list: l3 level1 lfo2;"><span lang="EN-US" class="hcp6"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp4">High 
+ impedance input (100K/1M)</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h3 class="hcp7"><a name=_Toc391278128><span class="hcp8"><span class="hcp1">1.1.1</span></span> METHOD CLEAR</a></h3>
+
+<p class=MsoNormal
+	style="margin-left: 70.9pt;"><span lang="EN-US" class="hcp4">The 
+ method</span> <b class="hcp5"><span lang="EN-US" class="hcp9">CLEAR</span></b> <span lang="EN-US" class="hcp9">is used to disable and free the 
+ resources from the instrument, see channels CHA and CHB, disconnecting 
+ it from the measurement lines.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b class="hcp10"><span lang="EN-US" class="hcp11">Syntax</span></b></p>
+
+<h4 class="hcp12"><a name=_Toc391278129><span lang="EN-US" class="hcp3">VIVA LANGUAGE</span></a></h4>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b class="hcp13"><span lang="EN-US" class="hcp14">~CLEAR 
+ SCOUNTER;</span></b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h3 class="hcp7"><a name=_Toc391278132><span class="hcp8"><span class="hcp1">1.1.2</span></span> METHOD SET</a></h3>
+
+<p class=SeicaNormale><span lang="EN-US" class="hcp3">The method</span> 
+ <b class="hcp5"><span lang="EN-US" class="hcp14">SET</span></b><span lang="EN-US" class="hcp14">is 
+ used to program the instrument <b class="hcp5">SCOUNTER</b> 
+ to execute: pulse counter, frequency and time interval measurements.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b class="hcp10"><span 
+ lang=EN-US
+	style="font-size: 14.0pt;
+			mso-fareast-font-family: 'MS Mincho';
+			mso-ansi-language: EN-US;">Syntax</span></b></p>
+
+<h4 class="hcp12"><a name=_Toc391278133><span lang="EN-US" class="hcp3">VIVA LANGUAGE</span></a></h4>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 2.0cm; text-indent: -2.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">~SET 
+ SCOUNTER</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 35.45pt;"><span lang="EN-US" class="hcp14">[<b>VAL=</b><i>value</i>] 
+ [<b>LEVEL_A=</b><i>value</i>] [<b>LEVEL_B=</b><i>value</i>]</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 92.15pt; text-indent: -2.0cm;"><span lang="EN-US" class="hcp14">[<b>SLOPE_A=POS|NEG</b>] 
+ [<b>SLOPE_B= POS|NEG</b>]</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 35.45pt;"><b class="hcp13"><span lang="EN-US" class="hcp14">[INP_A=NONE|L4|L6] 
+ [RANGE_A=|10V|100V|10V_50</span></b><span lang="EN-US" class="hcp14">]</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 35.45pt;"><span lang="EN-US" class="hcp14">[<b>DELAY_TRIG=</b>value]</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 35.45pt;"><b class="hcp13"><span lang="EN-US" class="hcp14">[INP_B=NONE|L2|L8] 
+ [RANGE_B=|10V|100V|10V_50</span></b><span lang="EN-US" class="hcp14">]</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 35.45pt;"><b class="hcp13"><span lang="EN-US" class="hcp14">[[ARM|START<span 
+ class=GramE>]=</span>IMMEDIATE|HW1|HW2|SW1|DISABLE|DISARM</span></b><span lang="EN-US" class="hcp14">]</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 35.45pt;"><span lang="EN-US" class="hcp14">[<b>GATE=</b>value] 
+ [<b>AVERAGE=</b>value]</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 35.45pt;"><b class="hcp13"><span lang="EN-US" class="hcp14">[MODE=COUNT|COUNT_B|COUNT_GATE|FREQ|TINT_A|TINT_AB|PERIOD</span></b><span lang="EN-US" class="hcp3">]</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 35.45pt;"><b class="hcp13"><span lang="EN-US" class="hcp14">[HISTERESIS=AUTO|10NSF|300NS|10US]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 35.45pt;"><b class="hcp13"><span lang="EN-US" class="hcp14">[TRIG_OUT=NONE|SW1|SW2</span></b><span lang="EN-US" class="hcp14">]</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 35.45pt;"><b class="hcp13"><span lang="EN-US" class="hcp14">[DOMAIN=SCOUNTER|PC|ALL</span></b><span lang="EN-US" class="hcp14">];</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 35.45pt;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 3.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 3.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 3.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 3.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 3.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 3.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 3.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 2.0cm; text-indent: -1.0cm;"><b class="hcp10"><span lang="EN-US" class="hcp11">Detail of parameters</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">VAL=</span></b><i><span lang="EN-US" class="hcp14">value<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></i> 
+ <b><span lang="EN-US" class="hcp14">[0<span 
+ class=GramE>,00000001</span></span></b><b><span lang="EN-US" class="hcp3">-10.000.000, 
+ default: 0]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp14">Indicates 
+ the expected value of the measurement executed with the instrument SCOUNTER.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 159.75pt;
+			text-indent: -18.0pt;
+			mso-list: l2 level1 lfo3;
+			tab-stops: list 159.75pt;"><span lang="EN-US" class="hcp16"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp14">For 
+ the frequency measurements the units of measurement of the parameter is: 
+ Hz and the possible values are included in the <span class=GramE>interval<span class="hcp17">&nbsp;</span> 0,01</span></span><span lang="EN-US" class="hcp3">-10.000.000</span><span lang="EN-US" class="hcp14">.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 159.75pt;
+			text-indent: -18.0pt;
+			mso-list: l2 level1 lfo3;
+			tab-stops: list 159.75pt;"><span lang="EN-US" class="hcp16"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp14">For 
+ time measurements, the units of measurement of the parameter is: sec and 
+ the possible values of the parameter are included in the interval 0<span 
+ class=GramE>,00000001</span></span><span lang="EN-US" class="hcp3">-10.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 159.75pt;
+			text-indent: -18.0pt;
+			mso-list: l2 level1 lfo3;
+			tab-stops: list 159.75pt;"><span lang="EN-US" class="hcp16"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp14">For 
+ the pulse counter measurements the units of measurement of the parameter 
+ is the number of pulses and the possible values of the parameters are 
+ included in the interval 1</span><span lang="EN-US" class="hcp3">-10.000.000</span><span lang="EN-US" class="hcp14">. 
+ With the instrument set to operate as a pulse counter, when the number 
+ of pulses is equal or higher than the value defined with the parameter 
+ VAL the event “Compare” is generated.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">LEVEL_A=</span></b><i><span lang="EN-US" class="hcp14">value<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></i> 
+ <b><span lang="EN-US" class="hcp14">[-100</span></b><b><span lang="EN-US" class="hcp3">-+100V, default: 0V]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span class=GramE><span lang="EN-US" class="hcp14">Indicates 
+ the trigger level programmed for channel CHA.</span></span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">LEVEL_B=</span></b><i><span lang="EN-US" class="hcp14">value<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></i> 
+ <b><span lang="EN-US" class="hcp14">[-100</span></b><b><span lang="EN-US" class="hcp3">-+100V, default: 0V]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span class=GramE><span lang="EN-US" class="hcp14">Indicates 
+ the trigger level programmed for channel CHB.</span></span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp18">SLOPE_A=</span></b><i><span lang="EN-US" class="hcp18">option|value</span></i><b><span lang="EN-US" class="hcp14">[NEG|POS, 
+ <span class=SpellE>default<span class=GramE>:POS</span></span>]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp14">Defines 
+ the “Start Event” or first trigger: i.e. the active front of the signal 
+ on channel CHA:</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 205.55pt; text-indent: -63.8pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">NEG | 0<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The trigger 
+ activates on the front of descent of the signal present on channel CHA.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 205.55pt; text-indent: -63.8pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">POS | 1<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The trigger 
+ activates on the rising front of the signal present on channel CHA.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="FR" class="hcp19">SLOPE_B=</span></b><i><span lang="FR" class="hcp19">option|value</span></i><b><span 
+ lang=FR
+	style="mso-fareast-font-family: 'MS Mincho'; mso-ansi-language: FR;">[NEG|POS, 
+ <span class=SpellE>default:POS</span>]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp14">Defines 
+ the “Start Event” or first trigger: i.e. the active front of the signal 
+ on CHB:</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 205.55pt; text-indent: -63.8pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">NEG | 0<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The trigger 
+ activates on the front of descent of the signal present on channel CHB.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 205.55pt; text-indent: -63.8pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">POS | 1<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The trigger 
+ activates on the rising front of the signal present on channel CHB.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">DELAY_TRIG=</span></b><i><span lang="EN-US" class="hcp14">value<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></i> 
+ <b><span lang="EN-US" class="hcp14">[</span></b><b><span lang="EN-US" class="hcp3">0<span class=GramE>,00000002</span>-1sec, 
+ default: 0sec]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span class=GramE><span lang="EN-US" class="hcp14">Defines 
+ the delay between the START which took place in the COUNT mode and the 
+ measurement execution.</span></span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp18">START=</span></b><i><span lang="EN-US" class="hcp18">option|value<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></i> 
+ <b><span lang="EN-US" class="hcp14">[IMMEDIATE|HW1|HW2|SW1|DISABLE|DISARM, 
+ <span class=SpellE>default<span class=GramE>:DISABLE</span></span>]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; mso-pagination: none;"><span lang="EN-US" class="hcp18">Defines 
+ the starting mode to execute the measurement. The possible values of the 
+ parameter are:</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 8.0cm; text-indent: -3.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp18">IMMEDIATE | 0<span class="hcp15">&nbsp;&nbsp;</span></span></b> <span lang="EN-US" class="hcp18">The measurement 
+ will start immediately with the programmed triggers.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 8.0cm; text-indent: -3.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp18">HW1 | 4<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The measurement 
+ will start when the signal HW1, coming from the outside of the ACL module 
+ (RTCIN1) is active.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 8.0cm; text-indent: -3.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp18">HW2 | 5<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The measurement 
+ will start when the signal HW2, coming from the outside of the ACL module 
+ (RTCIN2) is active.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 8.0cm; text-indent: -3.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp18">SW1 | 6<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The measurement 
+ will start with the event “Trigger SW1”, which can be generated by the 
+ instruments IMM and SCOUNTER..</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 8.0cm; text-indent: -3.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp18">DISABLE | 7<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The instrument 
+ SCOUNTER is disabled.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 8.0cm; text-indent: -3.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp18">DISARM | 8<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">is used as 
+ “Stop Event” when the counter has been set to operate in the mode defined 
+ with parameter MODE equal to COUNT.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">GATE=</span></b><i><span lang="EN-US" class="hcp14">value<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></i> 
+ <b><span lang="EN-US" class="hcp14">[</span></b><b><span lang="EN-US" class="hcp3">0,001-10sec, default: 0sec]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span class=GramE><span lang="EN-US" class="hcp14">Defines 
+ the width of the acquisition window, i.e. the time to measure the signal.</span></span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp14">The 
+ default value 0 means AUTO, i.e. the measurement is executed with the 
+ parameter GATE calculated according to the value assigned to parameter 
+ VAL.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">AVERAGE=</span></b><i><span lang="EN-US" class="hcp14">value<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></i> 
+ <b><span lang="EN-US" class="hcp14">[</span></b><b><span lang="EN-US" class="hcp3">0-1.000, default: 1]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span class=GramE><span lang="EN-US" class="hcp14">Prepares 
+ the instrument to execute the number of measurements defined with parameter 
+ AVERAGE and outputs, as a result of the measurement the average value 
+ of the measurements.</span></span> <span lang="EN-US" class="hcp3">The 
+ value 0 indicates that the measurement is executed</span><span lang="EN-US" class="hcp14">with 
+ the value of parameter AVERAGE determined according to the value assigned 
+ to parameter VAL.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">MODE=</span></b><span 
+ class=SpellE><i><span lang="EN-US" class="hcp14">option|value</span></i></span><b><span lang="EN-US" class="hcp14"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ [COUNT|COUNT_B|COUNT_GATE|FREQ|TINT_A|TINT_AB|PERIOD</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp3">, default: COUNT]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp18">Defines 
+ the operating mode of the instrument counter, frequency-meter, chronometer 
+ and the modes start and stop in the operating mode. The possible values 
+ for this parameter are:</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">COUNT | 0<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The instrument 
+ is set to operate as a <b>counter</b>. It counts the events of the signal 
+ on CHA. The starting is specified by the value of the parameter START 
+ (IMMEDIATE/HW1/HW2/SW1).</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt;"><span lang="EN-US" class="hcp18">To 
+ stop the counting, it is necessary to execute a</span> <span lang="EN-US" class="hcp14">~SET 
+ SCOUNTER <span style="mso-bidi-font-weight: bold;">instruction</span> 
+ with parameter START set to DISARM.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">COUNT_B | 1<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The instrument 
+ is set to operate as a <b>counter</b>. The instrument will count the events 
+ of the signal on CHA for the time of the signal present on CHB.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">COUNT_GATE | 2<span class="hcp15">&nbsp;&nbsp;&nbsp;</span></span></b> <span lang="EN-US" class="hcp18">The instrument 
+ is set to operate as a <b>counter</b>. The instrument will count the events 
+ of the signal on CHA for a time defined with parameter GATE.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">FREQ | 3</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The instrument is set to operate as a <b>frequency-meter</b>. It measures 
+ the frequency of the signal present on channel CHA.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">TINT_A | 4</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The instrument is set to operate as a <b>chronomenter</b>. It is measured 
+ the time between the first “Start Event” and the first “Stop Event” detected 
+ on channel CHA.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">TINT_AB | 5</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The instrument is set to operate as a <b>chronometer</b>. The operation 
+ is the same as the described above with the parameter set to TINT_A but 
+ with the detection of the “Stop Event” derived from the<span class="hcp17">&nbsp;</span> 
+ signal applied to CHB.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">PERIOD | 6</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The instrument is set to operate as a <b>chronometer</b>. It is measured 
+ teh period of the signal present on channel CHA.</span></p>
+
+<b class="hcp13"><span lang=EN-US
+	style="font-size: 9.0pt;
+			mso-bidi-font-size: 10.0pt;
+			font-family: Verdana;
+			mso-fareast-font-family: 'Times New Roman';
+			mso-bidi-font-family: 'Times New Roman';
+			color: #333333;
+			mso-ansi-language: EN-US;
+			mso-fareast-language: IT;
+			mso-bidi-language: AR-SA;
+			mso-no-proof: yes;"><br style="clear: all;
+											mso-special-character: line-break;
+											page-break-before: always;">
+</span></b> 
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">HISTERESIS=</span></b><i><span lang="EN-US" class="hcp14">option<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></i> <b><span lang="EN-US" class="hcp14">[AUTO|10US|300NS|10NS</span></b><b><span lang="EN-US" class="hcp3">, default: AUTO]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp14">Defines 
+ the time, after the exceeding of the trigger threshold, where is disabled 
+ the instrument capability to detect another event<span style="background: #ffff00; mso-highlight: yellow;">.</span></span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp18">The 
+ possible values are:</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">AUTO | 0</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The parameter sets automatically according to the value of parameter VAL.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">10US | 1</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The disable time is 10s.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">300NS | 2</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The disable time is 300ns.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">10NS | 3</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The disable time is 10ns.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">RANGE_A=</span></b><span 
+ class=SpellE><i><span lang="EN-US" class="hcp14">option|value</span></i></span><b><span lang="EN-US" class="hcp14">[10V|100V|10V_50</span></b><b><span lang="EN-US" class="hcp3">, default: 10V]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp18">Defines 
+ the range of the input signal supplied to the instrument, i.e. a scale 
+ range value containing the programming value of the instrument. The possible 
+ values are:</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 212.65pt; text-indent: -70.9pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">10V | 1<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The input 
+ signal supplied on channel CHA may range</span> <span lang="EN-US" class="hcp3">±10V<span class="hcp20">.</span></span></p>
+
+<p class=MsoNormal
+	style="margin-left: 212.65pt; text-indent: -70.9pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">100V | 2</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ the input signal supplied on channel CHA may range ±100V.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 212.65pt; text-indent: -70.9pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">10V_50 | 3</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;</span> 
+ The input signal supplied on channel CHA may range ±10V, with a 50 input 
+ impedance.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">INP_A=</span></b><span 
+ class=SpellE><i><span lang="EN-US" class="hcp14">option|value</span></i></span><b><span lang="EN-US" class="hcp14"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> [NONE|L4|L6</span></b><b><span lang="EN-US" class="hcp3">, default: NONE]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp18">Defines 
+ the line of the ACL module connected to the CHA input.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp18">The 
+ possible values of the parameter are:</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">NONE | 0</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The CHA input is not connected to any line.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">L4 | 4</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The CHA input is connected to line 4.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">L6 | 6</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The CHA input is connected to line 6.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">RANGE_B=</span></b><span 
+ class=SpellE><i><span lang="EN-US" class="hcp14">option|value</span></i></span><b><span lang="EN-US" class="hcp14">[10V|100V|10V_50</span></b><b><span lang="EN-US" class="hcp3">, default: 10V]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp18">Defines 
+ the input signal range supplied to the instrument,i.e. a scale range value 
+ containing the programming value of the instrument. The possible values 
+ of the parameter are:</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 212.65pt; text-indent: -70.9pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">10V | 1<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The input 
+ signal supplied on channel CHB may range</span> <span lang="EN-US" class="hcp3">±10V<span class="hcp20">.</span></span></p>
+
+<p class=MsoNormal
+	style="margin-left: 212.65pt; text-indent: -70.9pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">100V | 2</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The input signal supplied on channel CHB may range ±100V.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 212.65pt; text-indent: -70.9pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">10V_50 | 3</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;</span> 
+ The input signal supplied on channel CHB may range ±10V, with a 50 input 
+ impedance.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp18">The 
+ default value of the parameter INP_CHB is NONE.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">INP_B=</span></b><span 
+ class=SpellE><i><span lang="EN-US" class="hcp14">option|value</span></i></span><b><span lang="EN-US" class="hcp14"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> [NONE|L2|L8</span></b><b><span lang="EN-US" class="hcp3">, default: NONE]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp18">Defines 
+ the line of the ACL module connected to the channel CHB input.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp18">The 
+ possible values are:</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">NONE | 0</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The input of the channel CHB is not connected to any line.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">L2 | 2</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The input of the channel CHB is connected to line 2.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">L8 | 8</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The input of the channel CHBis connected to line 8.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">TRIG_OUT=</span></b><span 
+ class=SpellE><i><span lang="EN-US" class="hcp14">option|value</span></i></span><b><span lang="EN-US" class="hcp14"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ [NONE|SW1|SW2</span></b><b><span lang="EN-US" class="hcp3">, 
+ default: NONE]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp18">Defines 
+ the type of trigger signal output to synchronize with other instruments.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp18">The 
+ possible values are:</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">NONE | 0</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ No trigger signal is output.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">SW1 | 1</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The trigger signal software SW1 is output, syncrhronic with measurement 
+ starting.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">SW2 | 2</span></b><span lang="EN-US" class="hcp18"><span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+ The value SW2 indicates the possibility to output a second trigger signal 
+ software SW2. Up to now, this function is not implemented.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp18">DOMAIN=</span></b><i><span lang="EN-US" class="hcp18">option|value</span></i><i><span lang="EN-US" class="hcp14"><span class="hcp15">&nbsp;</span></span></i> <b><span lang="EN-US" class="hcp14">[DRA|PC|ALL</span></b><b><span lang="EN-US" class="hcp3">, default: SCOUNTER]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp18">This 
+ parameter allows to synchronize the program execution according to the 
+ ACL module status, to the SCOUNTER status or none of them.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp18">The 
+ possible values are:</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">SCOUNTER | 0<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The parameter 
+ is controlled through the ACL module and released at the end of the run 
+ SCOUNTER</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">PC | 1<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The parameter 
+ is controlled through the Main Computer without waiting the SCOUNTER end 
+ of run or of the other instruments.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 241.0pt; text-indent: -99.25pt;"><b class="hcp13"><span lang="EN-US" class="hcp18">ALL | 2<span class="hcp15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp18">The parameter 
+ is controlled through the ACL module and released and the end of run of 
+ all the instruments in use.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h3 class="hcp7"><span class="hcp8"><span class="hcp1">1.1.3</span></span> <span lang="EN-US" class="hcp3"><span class="hcp17">&nbsp;</span></span><a 
+ name=_Toc391278137>METHOD MEASURE</a></h3>
+
+<p class=MsoNormal
+	style="margin-left: 70.9pt;"><span lang="EN-US" class="hcp4">The 
+ method <span class=GramE><b class="hcp5">Measure</b><span 
+ style="mso-fareast-font-family: 'MS Mincho';"><span class="hcp17">&nbsp;</span> 
+ makes</span></span></span> <span lang="EN-US" class="hcp9">available 
+ the measurements executed with instrument <b class="hcp5">SCOUNTER</b>, 
+ through the method <b class="hcp5">Set</b>.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal
+	style="text-align: left;"
+	align=left>&nbsp;</p>
+
+<p class=MsoNormal><b class="hcp10"><span lang="EN-US" class="hcp11">Syntax</span></b></p>
+
+<h4 class="hcp12"><a name=_Toc391278138><span lang="EN-US" class="hcp3">VIVA LANGUAGE</span></a></h4>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal
+	style="text-align: left;"
+	align=left><b class="hcp13"><span lang="EN-US" class="hcp14">~MEAS 
+ SCOUNTER</span></b><span lang="EN-US" class="hcp14"><span class="hcp15">&nbsp;&nbsp;&nbsp;</span> <b>[INTO=</b><i>variable</i><b>];</b></span></p>
+
+<p class=MsoNormal
+	style="text-align: left;"
+	align=left>&nbsp;</p>
+
+<p class=MsoNormal
+	style="text-align: left;"
+	align=left>&nbsp;</p>
+
+<p class=MsoNormal
+	style="text-align: left;"
+	align=left>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+</div>
+
+</body>
+</html>

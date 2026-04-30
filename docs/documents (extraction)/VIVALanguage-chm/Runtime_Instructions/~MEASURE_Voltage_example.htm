@@ -1,0 +1,150 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~MEASURE Voltage example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+p.hcp2 { color:#008000; }
+p.hcp3 { color:#008080; }
+span.hcp4 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<h1>~MEASURE 
+ Voltage example</h1>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 1</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL ch1=1;</p>
+
+<p>DECLARE CHANNEL ch2=2;</p>
+
+<p>DECLARE CHANNEL ch3=3;</p>
+
+<p>DECLARE CHANNEL ch4=4;</p>
+
+<p>DECLARE RUNTIME FLOAT ris;</p>
+
+<p>…</p>
+
+<p>START example STATIC;</p>
+
+<p>….</p>
+
+<p class="hcp2">! Measure a voltage RMS value on channel ch1, 
+ measure the signal with the instrument set to have 10V range.</p>
+
+<p>~MEASURE V TYPE=rms RANGE=10V ON=ch1;</p>
+
+<p>….</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3">________________________________________________________________</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1"><span class="hcp4">Example 
+ 2</span></p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL ch1=1;</p>
+
+<p>DECLARE CHANNEL ch2=2;</p>
+
+<p>DECLARE CHANNEL ch3=3;</p>
+
+<p>DECLARE CHANNEL ch4=4;</p>
+
+<p>DECLARE RUNTIME FLOAT ris;</p>
+
+<p>…</p>
+
+<p>START example STATIC;</p>
+
+<p>….</p>
+
+<p class="hcp2">!Measure on channel ch1 the maximum voltage 
+ found an acquisition window of 500ms; store the measured value in the 
+ variable ris and !check if it’s greater than or less than the value expected; 
+ if the measurement fails, jump to label meas1 and write on Viva’s Report 
+ this !result with the name &quot;test1&quot;. &nbsp;&nbsp;</p>
+
+<p>~MEASURE VOLTAGE ON=ch1 TYPE=max INTO=ris GATE=500ms EXPECT=2V (5%) 
+ JUMP_ONERROR=meas1 LABEL=&quot;test1&quot;;</p>
+
+<p>….</p>
+
+<p>LABEL=meas1;</p>
+
+<p>….</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span style="color: #008080;">________________________________________________________________</span></p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1"><span class="hcp4">Example 
+ 3</span></p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL ch1=1;</p>
+
+<p>DECLARE CHANNEL ch2=2;</p>
+
+<p>DECLARE CHANNEL ch3=3;</p>
+
+<p>DECLARE CHANNEL ch4=4;</p>
+
+<p>DECLARE RUNTIME FLOAT ris;</p>
+
+<p>…</p>
+
+<p>START example STATIC;</p>
+
+<p>….</p>
+
+<p class="hcp2">!Measure on channel ch4 a DC voltage and check 
+ if the measured value is greater than HI or lower than LO; if it is, jump 
+ to label fine and !write on Viva’s Report this result with the name &quot;test2&quot;. 
+ &nbsp;&nbsp;</p>
+
+<p>~MEASURE VOLTAGE TYPE=DC on=ch4 HI=8.2V LO=7.8V JUMP_ONERROR=fine LABEL=&quot;test2&quot;;</p>
+
+<p>….</p>
+
+<p>LABEL=fine;</p>
+
+<p>....</p>
+
+<p>ENDTEST;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

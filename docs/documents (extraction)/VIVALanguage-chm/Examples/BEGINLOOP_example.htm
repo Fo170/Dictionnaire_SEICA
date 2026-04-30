@@ -1,0 +1,126 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>BEGINLOOP example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+p.hcp2 { color:#008080; }
+span.hcp3 { color:#008080; }
+-->
+</style>
+</head>
+<body>
+<h1>BEGINLOOP example</h1>
+
+<p class="hcp1">Example 1</p>
+
+<p>&nbsp;</p>
+
+<p>BEGINLOOP 10;</p>
+
+<p>COPY;</p>
+
+<p>OM 1 2 3 4;</p>
+
+<p>/;</p>
+
+<p>COPY;</p>
+
+<p>OL 1 2;</p>
+
+<p>OH 3 4;</p>
+
+<p>/ MASK NOPROBE;</p>
+
+<p>/ ONERROR JUMP SOTTO MASK NOPROBE;</p>
+
+<p>ENDLOOP;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2"><span class="hcp3">________________________________________________________________ 
+ </span></p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1"><span style="font-weight: bold;">Example 
+ 2</span></p>
+
+<p style="color: #008000;">Example for the F40 module</p>
+
+<p>CLOCKF INT=20N;</p>
+
+<p>TIMING TIM1;</p>
+
+<p>PERIOD 4U;</p>
+
+<p>PHASE1 100N, 300N;</p>
+
+<p>STROBE 3.5U;</p>
+
+<p>ENDTIMING;</p>
+
+<p>DECLARE CHANNEL D0=12;</p>
+
+<p>DECLARE CHANNEL OUT1=12;</p>
+
+<p>START PROG1;</p>
+
+<p>/ TIMING TIM1;</p>
+
+<p>IL D0;</p>
+
+<p>/;</p>
+
+<p>BEGINLOOP 10;</p>
+
+<p>P1 D0;</p>
+
+<p>OL OUT1;</p>
+
+<p>/;</p>
+
+<p>ENDLOOP ONERROR;</p>
+
+<p>/;</p>
+
+<p>BEGINLOOP 100;</p>
+
+<p>IL D0;</p>
+
+<p>/;</p>
+
+<p>IH D0;</p>
+
+<p>ENDLOOP;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2"><span class="hcp3">________________________________________________________________ 
+ </span></p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

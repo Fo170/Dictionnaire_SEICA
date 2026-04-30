@@ -1,0 +1,155 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~DO example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<h1>~DO example</h1>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example &nbsp;1</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL S1=1;</p>
+
+<p>DECLARE CHANNEL S2=4;</p>
+
+<p>&nbsp;</p>
+
+<p>START PRG1 STATIC;</p>
+
+<p>/;</p>
+
+<p>IH S1 S2;</p>
+
+<p>/;</p>
+
+<p>IL S1 S2;</p>
+
+<p>/;</p>
+
+<p><span class="hcp2">~DO</span> 80;</p>
+
+<p>~WRITE &quot;--&quot;;</p>
+
+<p><span class="hcp2">~DONE</span>;</p>
+
+<p>/;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p style="color: #008080;">________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example &nbsp;2</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL S1=1;</p>
+
+<p>DECLARE CHANNEL S2=2;</p>
+
+<p>DECLARE CHANNEL S3=3;</p>
+
+<p>DECLARE CHANNEL S4=4;</p>
+
+<p>DECLARE VARIABLE VAR1;</p>
+
+<p>DECLARE RUNTIME FLOAT NCAN;</p>
+
+<p>DECLARE RUNTIME INTEGER</p>
+
+<p>PRICAN,ULTCAN,SUBERR,MAXERR;</p>
+
+<p>&nbsp;</p>
+
+<p>START PGR1 STATIC;</p>
+
+<p>/;</p>
+
+<p>IH S1 S2;</p>
+
+<p>/;</p>
+
+<p>IL S1 S2;</p>
+
+<p>/;</p>
+
+<p>~CALC NCAN=4;</p>
+
+<p>~CALC CAN=1;</p>
+
+<p>~CALC SUBERR=23;</p>
+
+<p>/;</p>
+
+<p>~CALC MAXERR=4;</p>
+
+<p>/;</p>
+
+<p><span class="hcp2">~DO</span> NCAN;</p>
+
+<p>~CURSOR 60,3;</p>
+
+<p>~WRITE &quot;CHANNEL N. &quot; CAN;</p>
+
+<p>~CALC CAN=CAN+1;</p>
+
+<p>~MEAS VOLT=LI1,MAX=12,TIM=1;</p>
+
+<p>~BRANCH ONERROR FINE;</p>
+
+<p><span class="hcp2">~DONE</span>;</p>
+
+<p>/;</p>
+
+<p>IH S2;</p>
+
+<p>/;</p>
+
+<p>IH S1;</p>
+
+<p>/;</p>
+
+<p>LABEL=FINE;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

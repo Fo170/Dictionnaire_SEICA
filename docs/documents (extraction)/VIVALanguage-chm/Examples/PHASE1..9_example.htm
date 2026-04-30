@@ -1,0 +1,205 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>PHASE1..9 example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+p.hcp2 { color:#008080; }
+span.hcp3 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>PHASE1..9 example</h1>
+
+<p class="hcp1"><span style="font-weight: bold;">Example 
+ 1</span></p>
+
+<p>&nbsp;</p>
+
+<p style="color: #008000;">DEFINITION AND APPLICATION OF A TIMING WITH 
+ PHASE .</p>
+
+<p>&nbsp;</p>
+
+<p>CLOCKF INT=20N;</p>
+
+<p>TIMING TIM1;</p>
+
+<p>STROBE1 900N;</p>
+
+<p>PHASE1 100N 300N;</p>
+
+<p>PERIOD 1000N;</p>
+
+<p>ENDTIMING;</p>
+
+<p>DECLARE CHANNEL D0=13;</p>
+
+<p>DECLARE CHANNEL A0=16;</p>
+
+<p>START PROG1 STATIC;</p>
+
+<p>/ DINAMIC;</p>
+
+<p>IL D0;</p>
+
+<p>/;</p>
+
+<p>P1 D0;</p>
+
+<p>/;</p>
+
+<p style="color: #000000;">ENDTEST;</p>
+
+<p class="hcp2">&nbsp;</p>
+
+<p class="hcp2">________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 2</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2"><span class="hcp3">DEFINITION OF 
+ THREE PHASES WITH CORRECT AND WRONG APPLICATION.</span> </p>
+
+<p>&nbsp;</p>
+
+<p>CLOCKF=20N;</p>
+
+<p>TIMING TIM1;</p>
+
+<p>STROBE1 900N;</p>
+
+<p>PHASE1 100N 300N;</p>
+
+<p>PHASE2 200N 600N;</p>
+
+<p>PHASE3 20N 100N;</p>
+
+<p>PHASE4 20N 200N;</p>
+
+<p>PERIOD 1000N;</p>
+
+<p>ENDTIMING;</p>
+
+<p>DECLARE CHANNEL D0=13;</p>
+
+<p>DECLARE CHANNEL A0=16;</p>
+
+<p>DECLARE CHANNEL CS=23;</p>
+
+<p>DECLARE CHANNEL ADS=40;</p>
+
+<p>START PROG1 STATIC;</p>
+
+<p>/ DINAMIC;</p>
+
+<p>IL D0;</p>
+
+<p>IL A0;</p>
+
+<p>IL CS;</p>
+
+<p>IL ADS;</p>
+
+<p>/;</p>
+
+<p>P1 D0;</p>
+
+<p>P2 A0; <span class="hcp3">&lt;- WRONG application, more that 
+ two simultaneous phases on channels of the same module!!</span> </p>
+
+<p>P3 CS; </p>
+
+<p>/;</p>
+
+<p>IH CS;</p>
+
+<p>P1 D0;</p>
+
+<p>P2 A0; <span class="hcp3">&lt;- P1,P2,P4= CORRECT application, 
+ the signals are not on the same F40 module</span></p>
+
+<p>P4 ADS;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2"><span style="color: #008080;">________________________________________________________________ 
+ </span></p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 3</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL S1=1;</p>
+
+<p>DECLARE CHANNEL S2=2;</p>
+
+<p>DECLARE VARIABLE VAR1;</p>
+
+<p>CLOCK=50N;</p>
+
+<p>TIMING TIM1;</p>
+
+<p>PERIOD 10C;</p>
+
+<p>PHASE1 2C 4C;</p>
+
+<p>PHASE3 2C 4C; <span class="hcp3">! PHASE3 is moved to 3C</span></p>
+
+<p>STROBE 9C; &nbsp;<span class="hcp3">and 
+ a WARNING is inserted in the file Prg1.lis!</span></p>
+
+<p>ENDTIMING;</p>
+
+<p>START PRG1;</p>
+
+<p>IH S1 S2;</p>
+
+<p>/ TIMING TIM1;</p>
+
+<p>IL S1 S2;</p>
+
+<p>/;</p>
+
+<p>@CALCOLATE VAR1=3;</p>
+
+<p>/;</p>
+
+<p>IH S2;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

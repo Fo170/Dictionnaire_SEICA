@@ -1,0 +1,145 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~SWITCH CASE example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { color:#008000; }
+span.hcp2 { color:#008000; }
+p.hcp3 { margin-left:40px; }
+-->
+</style>
+</head>
+<body>
+<h1>~SWITCH CASE 
+ example</h1>
+
+<p>&nbsp;</p>
+
+<p style="font-weight: bold;">Example &nbsp;1</p>
+
+<p>&nbsp;</p>
+
+<p style="color: #000000;">declare runtime INTEGER NC, J;</p>
+
+<p>START NEWCASE STATIC;</p>
+
+<p>NC=11;</p>
+
+<p>J=6;</p>
+
+<p class="hcp1">! In this switch, when one of the cases is true 
+ and the corresponding code is executed, the compiler will </p>
+
+<p class="hcp1">! exit the switch instruction, no other cases 
+ will be evaluated</p>
+
+<p>~SWITCH NC;</p>
+
+<p>~CASE &nbsp;from 
+ 3 to 4 ; &nbsp;<span class="hcp2">! 
+ Case NC=3 or NC=4</span> </p>
+
+<p>~PAUSE &quot;from 3 to 4&quot;;</p>
+
+<p>~CASE &nbsp;from 
+ 1 to 10 &nbsp;; 
+ <span class="hcp2">! case NC between 1 and 10</span></p>
+
+<p>~PAUSE &quot; from 1 to 10&quot;;</p>
+
+<p>~CASE NOT from 1 &nbsp;to 
+ 10 ; <span class="hcp2">! case NC not between 1 and 10</span></p>
+
+<p>~PAUSE &quot;not from 1 to 10&quot;;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span class="hcp2">! This switch 
+ has the keyword CONTINUE meaning that all cases will be evaluated</span> 
+ </p>
+
+<p class="hcp3">~switch j continue ; </p>
+
+<p class="hcp3">~case 6 ;</p>
+
+<p class="hcp3">~pause &quot;j=6&quot;;</p>
+
+<p class="hcp3">~exit; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hcp2">! nel caso di switch 
+ continue si puo' usare exit</span></p>
+
+<p class="hcp3">~case not 7;</p>
+
+<p class="hcp3">~pause &quot;not j=7&quot;;</p>
+
+<p class="hcp3">~endcase;</p>
+
+<p>&nbsp;</p>
+
+<p>~CASE 4,5,6,7; &nbsp;&nbsp;<span class="hcp2">&nbsp;! 
+ case NC=4 or NC=5 or NC=6 or NC=7</span></p>
+
+<p>~pause &quot;4,5,6,7&quot;;</p>
+
+<p>~CASE &gt;6; &nbsp;&nbsp;&nbsp;&nbsp;<span class="hcp2">&nbsp;! case NC &gt; 
+ 6</span></p>
+
+<p>~pause &quot;nc&gt;6&quot;;</p>
+
+<p>~CASE &gt;=8 &amp;&amp; nc&lt;10 ; &nbsp;&nbsp;<span class="hcp2">&nbsp;! case NC &gt;=8 
+ and NC &lt; 10</span></p>
+
+<p>~IF NC =2 ;</p>
+
+<p>~PAUSE &quot;if2&quot;;</p>
+
+<p>~ENDIF;</p>
+
+<p>~pause &quot;&gt;=9 &lt;10&quot;;</p>
+
+<p>~exit;</p>
+
+<p>~PAUSE 2;</p>
+
+<p>~CASE 4 ;</p>
+
+<p>~PAUSE 4;</p>
+
+<p>~CASE j; &nbsp;<span class="hcp2">&nbsp;&nbsp;! 
+ Use of variables: case NC=j</span> </p>
+
+<p>~PAUSE &quot;=j&quot;;</p>
+
+<p>~CASE DEFAULT; <span class="hcp2">! case No condition</span></p>
+
+<p>~PAUSE &quot;DEFAULT&quot;;</p>
+
+<p>~ENDCASE;</p>
+
+<p>ENDTEST; </p>
+
+<p style="color: #008080;">___________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

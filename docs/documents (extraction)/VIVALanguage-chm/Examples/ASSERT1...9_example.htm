@@ -1,0 +1,178 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>ASSERT1...9 example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+p.hcp3 { color:#008000; }
+p.hcp4 { color:#008080; }
+span.hcp5 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>ASSERT &nbsp;ASSERT1...9 
+ example</h1>
+
+<p class="hcp1">&nbsp;</p>
+
+<p class="hcp1"><span class="hcp2">Example 
+ 1</span></p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3">DEFINITION AND APPLICATION OF A TIMING WITH 
+ AN ASSERT TIME. &nbsp;</p>
+
+<p>CLOCKF INT=20N;</p>
+
+<p>TIMING TIM1;</p>
+
+<p>STROBE1 900N;</p>
+
+<p>ASSERT1 100N;</p>
+
+<p>PERIOD 1000N;</p>
+
+<p>ENDTIMING;</p>
+
+<p>DECLARE CHANNEL D0=13;</p>
+
+<p>DECLARE CHANNEL A0=16;</p>
+
+<p>START PROG1 STATIC;</p>
+
+<p>/ DINAMIC;</p>
+
+<p>IL D0;</p>
+
+<p>/;</p>
+
+<p>AH1 D0;</p>
+
+<p>/;</p>
+
+<p>AL1 D0;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp4"><span style="color: #008080;">________________________________________________________________ 
+ </span></p>
+
+<p class="hcp1"><span class="hcp2">Example 
+ 2</span></p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3">DEFINITION OF THREE PHASES WITH UNCORRECT AND 
+ CORRECT APPLICATION. </p>
+
+<p>CLOCKF=20N;</p>
+
+<p>TIMING TIM1;</p>
+
+<p>STROBE1 900N;</p>
+
+<p>PHASE1 100N 300N;</p>
+
+<p>ASSERT1 200N;</p>
+
+<p>ASSERT2 400N;</p>
+
+<p>ASSERT3 500N;</p>
+
+<p>ASSERT4 120N;</p>
+
+<p>ASSERT5 220N;</p>
+
+<p>PERIOD 1000N;</p>
+
+<p>ENDTIMING;</p>
+
+<p>DECLARE CHANNEL D0=13;</p>
+
+<p>DECLARE CHANNEL A0=16;</p>
+
+<p>DECLARE CHANNEL CS1=20;</p>
+
+<p>DECLARE CHANNEL CS2=22;</p>
+
+<p>DECLARE CHANNEL CS3=25;</p>
+
+<p>DECLARE CHANNEL ADS=40;</p>
+
+<p>START PROG1 STATIC;</p>
+
+<p>/ DINAMIC;</p>
+
+<p>IL D0;</p>
+
+<p>IL A0;</p>
+
+<p>IL CS;</p>
+
+<p>IL ADS;</p>
+
+<p>/;</p>
+
+<p>AH1 D0;</p>
+
+<p>AH2 CS1;</p>
+
+<p>AH3,CS2;</p>
+
+<p>AH4 CS3;</p>
+
+<p>AH5 ADS; <span class="hcp5">&nbsp;!CORRECT 
+ application, more than four phases at the same time but not on the same 
+ module ( the ADS signal is on a different F40 module)</span></p>
+
+<p>/;</p>
+
+<p>P1 A0;</p>
+
+<p>/; <span class="hcp5">!UNCORRECT application, because 4 assert 
+ times are being used and a phase on channels from the same F40 module 
+ (the plans defined in the previous pattern remain active)</span> </p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp4">________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

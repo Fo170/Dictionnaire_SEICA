@@ -1,0 +1,70 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~READ_CLOCK example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css">
+</head>
+<body>
+<h1>~READ_CLOCK 
+ example</h1>
+
+<p>&nbsp;</p>
+
+<p style="font-weight: bold;">Example 1</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE RUNTIME INTEGER CLO, CLO1 I;</p>
+
+<p>DECLARE RUNTIME FLOAT &nbsp;CLO2;</p>
+
+<p>START LETTURA STATIC;</p>
+
+<p>~READ_CLOCK CLO;</p>
+
+<p>~WRITE &quot;\CR CLOCK= &quot; CLO;</p>
+
+<p>~FOR I=1 TO 23;</p>
+
+<p>~IL D0;/;~IH D0;/;</p>
+
+<p>~ENDFOR;</p>
+
+<p>~READ_CLOCK CLO1;</p>
+
+<p>~WRITE &quot;\CR CLOCK= &quot; CLO1;</p>
+
+<p>~CALC CLO1=CLO1-CLO;</p>
+
+<p>~WRITE &quot; \CR CLOCKD= &quot; CLO1;</p>
+
+<p>~CAlC CLO2=CLO1/1000;</p>
+
+<p>~WRITE &quot; \CR CLOCKD= &quot; CLO2;</p>
+
+<p>~PAUSE;</p>
+
+<p>ENDTEST;</p>
+
+<p style="color: #008080;">____________________________________________________________</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

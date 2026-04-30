@@ -1,0 +1,87 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~PAUSE example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+span.hcp1 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>~PAUSE example</h1>
+
+<p>&nbsp;</p>
+
+<p>DECLARE RUNTIME INTEGER CAN;</p>
+
+<p>DECLARE RUNTIME FLOAT VAR1;</p>
+
+<p>&nbsp;</p>
+
+<p>START PRG1 STATIC;</p>
+
+<p>/;</p>
+
+<p>~CALC CAN=12;</p>
+
+<p>~CURSOR 60,20;</p>
+
+<p>~WRITE CAN;</p>
+
+<p>~PAUSE;</p>
+
+<p>~CALC CAN=CAN+1;</p>
+
+<p>/;</p>
+
+<p>~CURSOR 60,21;</p>
+
+<p>~WRITE CAN;</p>
+
+<p>~PAUSE;</p>
+
+<p>/;</p>
+
+<p>~CALC CAN=CAN+1;</p>
+
+<p>~CALC VAR1=3.56;</p>
+
+<p>~PAUSE VAR1; <span class="hcp1">!Displays the contents of 
+ the VAR1 variable in the Pause Message box and executes a pause</span> 
+ &nbsp;</p>
+
+<p>/;</p>
+
+<p>~PAUSE 11111; <span class="hcp1">!Displays the constant and 
+ executes a pause</span> &nbsp;</p>
+
+<p>/;</p>
+
+<p>~PAUSE “PROBE SU U4-6”; <span class="hcp1">!Displays the 
+ string and executes a pause</span> &nbsp;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

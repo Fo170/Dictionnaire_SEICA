@@ -1,0 +1,315 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" 
+ xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<title>drc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="File-List" href="DRC_file/filelist.xml"><style>
+<!--
+; @font-face { font-family:MS Mincho; panose-1:2 2 6 9 4 2 5 8 3 4; mso-font-alt:-3 ; mso-font-charset:128; mso-generic-font-family:modern; mso-font-pitch:fixed; mso-font-signature:-536870145 1791491579 18 0 131231 0; font-family:Verdana; panose-1:2 11 6 4 3 5 4 4 2 4; mso-font-charset:0; mso-generic-font-family:swiss; mso-font-pitch:variable; mso-font-signature:-1593833729 1073750107 16 0 415 0; font-family:\0040MS Mincho; panose-1:2 2 6 9 4 2 5 8 3 4; mso-font-charset:128; mso-generic-font-family:modern; mso-font-pitch:fixed; mso-font-signature:-536870145 1791491579 18 0 131231 0; }
+; @page Section1 { x-size:595.3pt 841.9pt; margin:70.85pt 2.0cm 2.0cm 2.0cm; mso-header-margin:35.4pt; mso-footer-margin:35.4pt; mso-paper-source:0; }
+; @list l0 { mso-list-id:-5; mso-list-template-ids:1376662062; }
+; @list l0\003alevel1 { mso-level-tab-stop:18.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l0\003alevel2 { mso-level-text:%1.%2; mso-level-tab-stop:36.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; x-text-underline:off; x-text-overline:off; x-text-line-through:off; text-underline:none; }
+; @list l0\003alevel3 { mso-level-text:%1.%2.%3; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l0\003alevel4 { mso-level-style-link:Titolo 4; mso-level-text:%1.%2.%3.%4; mso-level-tab-stop:54.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; mso-ansi-font-size:10.0pt; font-family:Verdana; mso-ansi-font-weight:bold; mso-ansi-font-style:normal; x-text-underline:off; x-text-overline:off; x-text-line-through:off; text-underline:none; }
+; @list l0\003alevel5 { mso-level-style-link:Titolo 5; mso-level-text:%1.%2.%3.%4.%5; mso-level-tab-stop:72.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; mso-ansi-font-size:10.0pt; font-family:Verdana; mso-ansi-font-weight:bold; mso-ansi-font-style:italic; }
+; @list l0\003alevel6 { mso-level-style-link:Titolo 6; mso-level-text:%1.%2.%3.%4.%5.%6; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l0\003alevel7 { mso-level-style-link:Titolo 7; mso-level-text:%1.%2.%3.%4.%5.%6.%7; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l0\003alevel8 { mso-level-style-link:Titolo 8; mso-level-text:%1.%2.%3.%4.%5.%6.%7.%8; mso-level-tab-stop:126.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l0\003alevel9 { mso-level-style-link:Titolo 9; mso-level-text:%1.%2.%3.%4.%5.%6.%7.%8.%9; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l1 { mso-list-id:673070752; mso-list-template-ids:-91685180; }
+; @list l1\003alevel1 { mso-level-style-link:Titolo 1; mso-level-text:%1.; mso-level-tab-stop:36.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; mso-ansi-font-size:16.0pt; font-family:Verdana; mso-ansi-font-weight:bold; mso-ansi-font-style:normal; }
+; @list l1\003alevel2 { mso-level-style-link:Titolo 2; mso-level-text:%1. %2; mso-level-tab-stop:54.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; mso-ansi-font-size:14.0pt; font-family:Verdana; mso-ansi-font-weight:bold; mso-ansi-font-style:normal; }
+; @list l1\003alevel3 { mso-level-style-link:Titolo 3; mso-level-suffix:space; mso-level-text:%1.%2.%3; mso-level-tab-stop:none; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; mso-ansi-font-size:12.0pt; font-family:Verdana; mso-ansi-font-weight:bold; mso-ansi-font-style:normal; }
+; @list l1\003alevel4 { mso-level-text:%1.%2.%3.%4; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l1\003alevel5 { mso-level-text:%1.%2.%3.%4.%5; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l1\003alevel6 { mso-level-text:%1.%2.%3.%4.%5.%6; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l1\003alevel7 { mso-level-text:%1.%2.%3.%4.%5.%6.%7; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l1\003alevel8 { mso-level-text:%1.%2.%3.%4.%5.%6.%7.%8.; mso-level-tab-stop:0cm; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l1\003alevel9 { mso-level-text:%1.%2.%3.%4.%5.%6.%7.%8.%9; mso-level-tab-stop:108.0pt; mso-level-number-position:left; margin-left:0cm; text-indent:0cm; }
+; @list l2 { mso-list-id:1316832344; mso-list-type:hybrid; mso-list-template-ids:890548480 1282469536 68157443 68157445 68157441 68157443 68157445 68157441 68157443 68157445; }
+; @list l2\003alevel1 { mso-level-start-at:0; mso-level-number-format:bullet; mso-level-text:-; mso-level-tab-stop:36.0pt; mso-level-number-position:left; text-indent:-18.0pt; font-family:Arial; mso-fareast-font-family:Times New Roman; }
+; p.MsoNormal { margin:0cm; margin-bottom:.0001pt; text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+li.MsoNormal { margin:0cm; margin-bottom:.0001pt; text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+div.MsoNormal { margin:0cm; margin-bottom:.0001pt; text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+LI.kadov-p-CMsoNormal { text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+h1 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-next:Normale; margin-top:150.0pt; margin-right:0cm; margin-bottom:70.0pt; margin-left:0cm; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; page-break-after:avoid; mso-outline-level:1; mso-list:l1 level1 lfo3; mso-hyphenate:none; tab-stops:list 18.0pt left 1.0cm; font-size:16.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#000000; text-transform:uppercase; mso-font-kerning:14.0pt; mso-bidi-font-weight:normal; }
+LI.kadov-h1 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:1; mso-list:l1 level1 lfo3; mso-hyphenate:none; tab-stops:list 18.0pt left 1.0cm; font-size:16.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#000000; text-transform:uppercase; mso-font-kerning:14.0pt; mso-bidi-font-weight:normal; }
+h2 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-link:Carattere Carattere3; mso-style-next:Normale; margin-top:30.0pt; margin-right:0cm; margin-bottom:18.0pt; margin-left:0cm; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:2; mso-list:l1 level2 lfo3; tab-stops:list 18.0pt; font-size:14.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#333333; text-transform:uppercase; mso-bidi-font-weight:normal; }
+LI.kadov-h2 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-link:Carattere Carattere3; mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:2; mso-list:l1 level2 lfo3; tab-stops:list 18.0pt; font-size:14.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#333333; text-transform:uppercase; mso-bidi-font-weight:normal; }
+h3 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-link:Carattere Carattere2; mso-style-next:Normale; margin-top:15.0pt; margin-right:0cm; margin-bottom:10.0pt; margin-left:0cm; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:3; mso-list:l1 level3 lfo3; tab-stops:list 18.0pt left 64.35pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#000000; text-transform:uppercase; mso-bidi-font-weight:normal; }
+LI.kadov-h3 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-link:Carattere Carattere2; mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:3; mso-list:l1 level3 lfo3; tab-stops:list 18.0pt left 64.35pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#000000; text-transform:uppercase; mso-bidi-font-weight:normal; }
+h4 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-link:Carattere Carattere1; mso-style-next:Normale; margin-top:12.0pt; margin-right:0cm; margin-bottom:3.0pt; margin-left:0cm; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:4; mso-list:l0 level4 lfo1; tab-stops:list 18.0pt; font-size:10.0pt; font-family:Verdana; color:#000000; mso-bidi-font-weight:normal; }
+LI.kadov-h4 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-link:Carattere Carattere1; mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:4; mso-list:l0 level4 lfo1; tab-stops:list 18.0pt; font-size:10.0pt; font-family:Verdana; color:#000000; mso-bidi-font-weight:normal; }
+h5 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-next:Normale; margin-top:12.0pt; margin-right:0cm; margin-bottom:3.0pt; margin-left:0cm; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:5; mso-list:l0 level5 lfo1; tab-stops:list 18.0pt left 3.0cm; font-size:10.0pt; font-family:Verdana; color:#000000; mso-bidi-font-weight:normal; font-style:italic; mso-bidi-font-style:normal; }
+LI.kadov-h5 { mso-style-update:auto; mso-style-parent:Seica Normale; mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:5; mso-list:l0 level5 lfo1; tab-stops:list 18.0pt left 3.0cm; font-size:10.0pt; font-family:Verdana; color:#000000; mso-bidi-font-weight:normal; font-style:italic; mso-bidi-font-style:normal; }
+h6 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:6; mso-list:l0 level6 lfo1; tab-stops:list 0cm left 92.7pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#000000; font-weight:normal; }
+LI.kadov-h6 { mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:6; mso-list:l0 level6 lfo1; tab-stops:list 0cm left 92.7pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; color:#000000; font-weight:normal; }
+p.MsoHeading7 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:7; mso-list:l0 level7 lfo1; tab-stops:list 0cm left 100.35pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+li.MsoHeading7 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:7; mso-list:l0 level7 lfo1; tab-stops:list 0cm left 100.35pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+div.MsoHeading7 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:7; mso-list:l0 level7 lfo1; tab-stops:list 0cm left 100.35pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+LI.kadov-p-CMsoHeading7 { mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:7; mso-list:l0 level7 lfo1; tab-stops:list 0cm left 100.35pt; font-size:12.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+p.MsoHeading8 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:8; mso-list:l0 level8 lfo1; tab-stops:list 126.0pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; }
+li.MsoHeading8 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:8; mso-list:l0 level8 lfo1; tab-stops:list 126.0pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; }
+div.MsoHeading8 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:8; mso-list:l0 level8 lfo1; tab-stops:list 126.0pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; }
+LI.kadov-p-CMsoHeading8 { mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:8; mso-list:l0 level8 lfo1; tab-stops:list 126.0pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; }
+p.MsoHeading9 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:9; mso-list:l0 level9 lfo1; tab-stops:list 0cm left 121.05pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+li.MsoHeading9 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:9; mso-list:l0 level9 lfo1; tab-stops:list 0cm left 121.05pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+div.MsoHeading9 { mso-style-next:Normale; margin:0cm; margin-bottom:.0001pt; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:9; mso-list:l0 level9 lfo1; tab-stops:list 0cm left 121.05pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+LI.kadov-p-CMsoHeading9 { mso-style-next:Normale; text-align:justify; text-indent:0cm; mso-pagination:widow-orphan; mso-outline-level:9; mso-list:l0 level9 lfo1; tab-stops:list 0cm left 121.05pt; font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#000000; font-style:italic; mso-bidi-font-style:normal; }
+span.CarattereCarattere3 { mso-style-name:Carattere Carattere3; mso-style-locked:yes; mso-style-link:Titolo 2; mso-ansi-font-size:14.0pt; font-family:Verdana; mso-ascii-font-family:Verdana; mso-hansi-font-family:Verdana; color:#333333; text-transform:uppercase; mso-ansi-language:IT; mso-fareast-language:IT; mso-bidi-language:AR-SA; font-weight:bold; mso-bidi-font-weight:normal; }
+span.CarattereCarattere2 { mso-style-name:Carattere Carattere2; mso-style-locked:yes; mso-style-link:Titolo 3; mso-ansi-font-size:12.0pt; font-family:Verdana; mso-ascii-font-family:Verdana; mso-hansi-font-family:Verdana; color:#000000; text-transform:uppercase; mso-ansi-language:IT; mso-fareast-language:IT; mso-bidi-language:AR-SA; font-weight:bold; mso-bidi-font-weight:normal; }
+span.CarattereCarattere1 { mso-style-name:Carattere Carattere1; mso-style-locked:yes; mso-style-link:Titolo 4; font-family:Verdana; mso-ascii-font-family:Verdana; mso-hansi-font-family:Verdana; color:#000000; mso-ansi-language:IT; mso-fareast-language:IT; mso-bidi-language:AR-SA; font-weight:bold; mso-bidi-font-weight:normal; }
+p.SeicaNormale { mso-style-name:Seica Normale; mso-style-link:Seica Normale Carattere; margin:0cm; margin-bottom:.0001pt; text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+li.SeicaNormale { mso-style-name:Seica Normale; mso-style-link:Seica Normale Carattere; margin:0cm; margin-bottom:.0001pt; text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+div.SeicaNormale { mso-style-name:Seica Normale; mso-style-link:Seica Normale Carattere; margin:0cm; margin-bottom:.0001pt; text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+LI.kadov-p-CSeicaNormale { mso-style-name:Seica Normale; mso-style-link:Seica Normale Carattere; text-align:justify; mso-pagination:widow-orphan; font-size:9.0pt; mso-bidi-font-size:10.0pt; font-family:Verdana; mso-fareast-font-family:Times New Roman; mso-bidi-font-family:Times New Roman; color:#333333; }
+span.SeicaNormaleCarattere { mso-style-name:Seica Normale Carattere; mso-style-locked:yes; mso-style-link:Seica Normale; mso-ansi-font-size:9.0pt; font-family:Verdana; mso-ascii-font-family:Verdana; mso-hansi-font-family:Verdana; color:#333333; mso-ansi-language:IT; mso-fareast-language:IT; mso-bidi-language:AR-SA; }
+span.SpellE { mso-spl-e:yes; }
+span.GramE { mso-gram-e:yes; }
+div.Section1 { page:Section1; }
+ol { margin-bottom:0cm; }
+ul { margin-bottom:0cm; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+span.hcp1 { mso-list:Ignore; }
+span.hcp2 { font:7.0pt 'Times New Roman'; }
+span.hcp3 { mso-ansi-language:EN-US; }
+span.hcp4 { mso-bidi-font-size:9.0pt; mso-ansi-language:EN-US; }
+span.hcp5 { mso-bidi-font-size:9.0pt; font-family:Arial; mso-fareast-font-family:Arial; mso-ansi-language:EN-US; }
+span.hcp6 { mso-spacerun:yes; }
+h3.hcp7 { margin-left:0cm; text-indent:0cm; tab-stops:64.35pt; }
+span.hcp8 { mso-fareast-font-family:Verdana; mso-bidi-font-family:Verdana; }
+span.hcp9 { mso-tab-count:1; }
+b.hcp10 { mso-bidi-font-weight:normal; }
+span.hcp11 { mso-bidi-font-size:9.0pt; mso-fareast-font-family:MS Mincho; mso-ansi-language:EN-US; }
+span.hcp12 { mso-fareast-font-family:Times New Roman; }
+b.hcp13 { font-weight:bold; mso-bidi-font-weight:normal; }
+span.hcp14 { font-size:12.0pt; mso-fareast-font-family:MS Mincho; mso-ansi-language:EN-US; }
+h4.hcp15 { mso-list:none; tab-stops:35.4pt; }
+b.hcp16 { font-weight:bold; }
+span.hcp17 { mso-fareast-font-family:MS Mincho; mso-ansi-language:EN-US; }
+span.hcp18 { mso-bookmark:_Toc391278081; }
+span.hcp19 { mso-ansi-language:EN-US; mso-no-proof:yes; }
+-->
+</style>
+</head>
+<body lang="IT" style="tab-interval: 35.4pt;">
+<div class=Section1>
+<p class=MsoNormal>&nbsp;</p>
+
+<h2 style="margin-left: 0cm;
+			text-indent: 0cm;
+			tab-stops: list 54.0pt;"><a name=_Toc391278071><span 
+ lang=EN-US
+	style="mso-fareast-font-family: Verdana;
+			mso-bidi-font-family: Verdana;
+			mso-ansi-language: EN-US;"><span class="hcp1">1. 
+ 1 <span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp3">Driver HV - DRC -</span></a></h2>
+
+<p class=MsoNormal><span lang="EN-US" class="hcp4">The 
+ DRC driver is located in the ACL module and has the following characteristics:</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 36.0pt;
+			text-indent: -18.0pt;
+			mso-list: l2 level1 lfo2;"><span lang="EN-US" class="hcp5"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp4">DC 
+ generator with programmable voltage and current limit</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 36.0pt;
+			text-indent: -18.0pt;
+			mso-list: l2 level1 lfo2;"><span lang="EN-US" class="hcp5"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp4">Operation 
+ in the four quadrants</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 36.0pt;
+			text-indent: -18.0pt;
+			mso-list: l2 level1 lfo2;"><span lang="EN-US" class="hcp5"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp4">Output 
+ voltage value: ± 100V</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 36.0pt;
+			text-indent: -18.0pt;
+			mso-list: l2 level1 lfo2;"><span lang="EN-US" class="hcp5"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp4">Output 
+ current value: ± 0,1A</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 36.0pt;
+			text-indent: -18.0pt;
+			mso-list: l2 level1 lfo2;"><span lang="EN-US" class="hcp5"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp4">Two 
+ carriers in current (10/100mA<span class="hcp6">&nbsp;</span> 
+ and 0,1/10mA)</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 36.0pt;
+			text-indent: -18.0pt;
+			mso-list: l2 level1 lfo2;"><span lang="EN-US" class="hcp5"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp4">Slew 
+ rate: 10V/s</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 36.0pt;
+			text-indent: -18.0pt;
+			mso-list: l2 level1 lfo2;"><span lang="EN-US" class="hcp5"><span class="hcp1">-<span class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span> 
+ <span lang="EN-US" class="hcp4">Resolution 
+ for current and voltage values on 14 bit</span></p>
+
+<h3 class="hcp7"><a name=_Toc391278077><span class="hcp8"><span class="hcp1">1.1.1</span></span> METHOD<span class="hcp9">&nbsp;&nbsp;</span> 
+ CLEAR</a></h3>
+
+<p class=MsoNormal><span lang="EN-US" class="hcp4">The 
+ method</span> <b class="hcp10"><span lang="EN-US" class="hcp11">CLEAR</span></b> <span lang="EN-US" class="hcp11">is used to deactivate the <b class="hcp10">DRC</b> 
+ driver disconnecting it from measurement lines and switching off the voltage 
+ booster.</span></p>
+
+<p class=MsoNormal><span lang="EN-US" class="hcp11">It sends to 
+ the instrument a reset command which sets the parameters of the instrument 
+ to the default values. <span class=GramE>(Described in <span style="mso-field-code: ' REF _Ref84218316 \005ch \005c\002a MERGEFORMAT ';"><span class="hcp12">Tab. <span style="mso-no-proof: yes;">51</span></span></span>, of appendix A).</span></span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b class="hcp13"><span lang="EN-US" class="hcp14">Syntax</span></b></p>
+
+<h4 class="hcp15"><a name=_Toc391278078><span lang="EN-US" class="hcp3">VIVA LANGUAGE</span></a></h4>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b class="hcp16"><span lang="EN-US" class="hcp17">~CLEAR 
+ DRC;</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 2.0cm;">&nbsp;</p>
+
+<h3 class="hcp7"><a name=_Toc391278081><span class="hcp8"><span class="hcp1">1.1.2</span></span> METHOD</a><span 
+ class=GramE><span class="hcp18"><span class="hcp6">&nbsp;</span></span></span> 
+ <span class="hcp18">SET</span></h3>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b class="hcp13"><span lang="EN-US" class="hcp14">Syntax</span></b></p>
+
+<h4 class="hcp15"><a name=_Toc391278082><span lang="EN-US" class="hcp3">VIVA LANGUAGE</span></a></h4>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 70.9pt; text-indent: -70.9pt;"><b class="hcp16"><span lang="EN-US" class="hcp11">~SET DRC<span class="hcp9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp11">[<b>V=</b><i>value</i>] [<b>I=</b><i>value</i>] 
+ <b>[OUT=NONE|L1|L2|L4|L6|</b>]</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 63.8pt;"><b class="hcp16"><span lang="EN-US" class="hcp11">[START=IMMEDIATE|SW1</span></b><span lang="EN-US" class="hcp11">];</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 2.0cm; text-indent: -2.0cm;"><b class="hcp13"><span lang="EN-US" class="hcp14">Detail <span class=GramE>of<span class="hcp6">&nbsp;</span> parameters</span></span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 2.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp16"><span lang="EN-US" class="hcp17">V=</span></b><i><span lang="EN-US" class="hcp17">value<span class="hcp9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></i> 
+ <b><span lang="EN-US" class="hcp17">[-<span 
+ class=GramE>100 <span class="hcp12"><span class="hcp6">&nbsp;</span>+</span></span></span></b><b><span lang="EN-US" class="hcp3">100V, default: 0V]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span class=GramE><span lang="EN-US" class="hcp17">Indicates 
+ the programming value of the maximum voltage output by the instrument.</span></span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp16"><span lang="EN-US" class="hcp17">I=</span></b><i><span lang="EN-US" class="hcp17">value<span class="hcp9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></i> 
+ <b><span lang="EN-US" class="hcp17">[</span></b><span lang="EN-US" class="hcp3">±</span><b><span lang="EN-US" class="hcp17">0<span 
+ class=GramE>,0001</span></span></b><b><span lang="EN-US" class="hcp3">-</span></b><span lang="EN-US" class="hcp3">±<b>0,1A, default: 0,01A]</b></span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span class=GramE><span lang="EN-US" class="hcp17">Indicates 
+ the programming value of the maximum current output by the instrument.</span></span></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp16"><span lang="EN-US" class="hcp19">OUT=</span></b><i><span lang="EN-US" class="hcp19">option|value</span></i><i><span lang="EN-US" class="hcp17"><span class="hcp9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></i> 
+ <b><span lang="EN-US" class="hcp17">[NONE|L1|L2|L4|L6</span></b><b><span lang="EN-US" class="hcp3">, default: NONE]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm;"><span lang="EN-US" class="hcp19">Defines 
+ the line of the ACL module to which is connected the DRC output. The possible 
+ values are:</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 7.0cm; text-indent: -2.0cm;"><b class="hcp16"><span lang="EN-US" class="hcp19">NONE | 0<span class="hcp9">&nbsp;&nbsp;&nbsp;</span></span></b> <span lang="EN-US" class="hcp19">The instrument 
+ is not connected to an internal measurement line.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 7.0cm; text-indent: -2.0cm;"><b class="hcp16"><span lang="EN-US" class="hcp19">L1 | 1<span class="hcp9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp19">the instrument 
+ output is connected to the internal measurement line L1.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 7.0cm; text-indent: -2.0cm;"><b class="hcp16"><span lang="EN-US" class="hcp19">L2 | 2<span class="hcp9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp19">the instrument 
+ output is connected to the internal measurement line L2.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 7.0cm; text-indent: -2.0cm;"><b class="hcp16"><span lang="EN-US" class="hcp19">L4 | 4<span class="hcp9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp19">the instrument 
+ output is connected to the internal measurement line L4.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 7.0cm; text-indent: -2.0cm;"><b class="hcp16"><span lang="EN-US" class="hcp19">L6 | 6<span class="hcp9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp19">the instrument 
+ output is connected to the internal measurement line L6.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 7.0cm; text-indent: -2.0cm;">&nbsp;</p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; text-indent: -4.0cm;"><b class="hcp16"><span lang="EN-US" class="hcp19">START=</span></b><i><span lang="EN-US" class="hcp19">option|value</span></i><i><span lang="EN-US" class="hcp17"><span class="hcp9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></i> 
+ <b><span lang="EN-US" class="hcp17">[IMMEDIATE|SW1, 
+ <span class=SpellE>default<span class=GramE>:IMMEDIATE</span></span>]</span></b></p>
+
+<p class=MsoNormal
+	style="margin-left: 5.0cm; mso-pagination: none;"><span lang="EN-US" class="hcp19">Indicates 
+ the start mode to generate the signal. The possible values of this parameter 
+ are:</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 8.0cm; text-indent: -3.0cm;"><b class="hcp16"><span lang="EN-US" class="hcp19">IMMEDIATE | 0<span class="hcp9">&nbsp;&nbsp;</span></span></b> <span lang="EN-US" class="hcp19">The generation 
+ of the output signal is immediate.</span></p>
+
+<p class=MsoNormal
+	style="margin-left: 8.0cm; text-indent: -3.0cm;"><b class="hcp16"><span lang="EN-US" class="hcp19">SW1 | 1<span class="hcp9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b> 
+ <span lang="EN-US" class="hcp19">The generation 
+ of the output signal starts with the event “Trigger SW1”, which can be 
+ generated by the instruments IMM and SCOUNTER.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+</div>
+
+</body>
+</html>

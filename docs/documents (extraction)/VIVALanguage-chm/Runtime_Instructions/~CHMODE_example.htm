@@ -1,0 +1,122 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~CHMODE example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { color:#008000; }
+span.hcp2 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>~CHMODE example</h1>
+
+<p>&nbsp;</p>
+
+<p>START example STATIC;</p>
+
+<p>.....</p>
+
+<p>~CHMODE NORMAL 10,12,15, &nbsp;CLK 
+ 17 CLKN 18, &nbsp;TDI 
+ 19 &nbsp;TMS 
+ 20 &nbsp;STATIC 
+ 21;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">!Channels 10, 12, and 15 &nbsp;connected 
+ to the dynamic digital channel (default) </p>
+
+<p class="hcp1">17 will output the internal pulse generator</p>
+
+<p class="hcp1">18 will output the negate of the pulse generator</p>
+
+<p class="hcp1"><span class="hcp2">19 are tied to 
+ the first 16 bit shift register </span></p>
+
+<p class="hcp1"><span class="hcp2">20 are tied to 
+ the second 16 bit shift register </span></p>
+
+<p class="hcp1">21 are tied the int static internal register 
+ ,The other channels are left unchanged.</p>
+
+<p>&nbsp;</p>
+
+<p>~DIGCLOCK &nbsp;17 
+ &nbsp;FR=10000000 
+ &nbsp;DUTY=50 
+ PHASE=20. N=16 PREPARE ;</p>
+
+<p><span class="hcp2">! PREPARE the pulse generator to produce 
+ 16 clock at 10Meghz on the 3th generator (channel 1</span>7/24) &nbsp;</p>
+
+<p><span class="hcp2">! the clock resolution is main clock of 
+ the F50 max 20ns</span> &nbsp;</p>
+
+<p>~TX &nbsp;17 
+ &nbsp;TDI=H1055 
+ TMS=H1003 &nbsp;N=16 
+ START;</p>
+
+<p class="hcp1">! set both shift register to shift the data 
+ simultaneous </p>
+
+<p class="hcp1">! will emulate a tap boundary scan where TDI,TMS,AND 
+ CLK will be the channel 19,20,17</p>
+
+<p class="hcp1">&nbsp;</p>
+
+<p>~CHMODE NORMAL 1/32 &nbsp;TDI 
+ 19 ;</p>
+
+<p class="hcp1"><span class="hcp2">19 are tied to 
+ the first 16 bit shift register </span></p>
+
+<p>~DIGCLOCK &nbsp;17 
+ &nbsp;FR=9600 
+ &nbsp;DUTY=50 
+ PHASE=90. N=10 PREPARE ;</p>
+
+<p><span class="hcp2">! PREPARE the pulse generator to produce 
+ 10 clock at 9600 baud on the 3th generator (channel 1</span>7/24) &nbsp;&nbsp;</p>
+
+<p>~TX &nbsp;17 
+ &nbsp;DATA=H157 
+ N=10 START;</p>
+
+<p class="hcp1">! set the 1th shift register to output the byte 
+ h55 with 1 bit of parity 1 bit of stop on the channel 19</p>
+
+<p>&nbsp;&nbsp;&nbsp;</p>
+
+<p>.....</p>
+
+<p>~CHOUT * NORMAL 17/21; </p>
+
+<p class="hcp1"><span class="hcp2">channel &nbsp;17/21 
+ are revert to its default mode (digital dynamic) </span></p>
+
+<p>&nbsp;</p>
+
+<p>......</p>
+
+<p>ENDTEST; </p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

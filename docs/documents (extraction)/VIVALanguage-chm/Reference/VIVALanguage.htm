@@ -1,0 +1,145 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>VIVA Language</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><script language="javascript" src="ehlpdhtm.js"></script>
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; x-text-underline:normal; text-decoration:underline; }
+p.hcp2 { margin-left:840px; }
+-->
+</style>
+</head>
+<body>
+<h1>Welcome</h1>
+
+<p>This chapter describes the programming language for developing functional 
+ tests of electronic boards. It is a high level, structured, proprietary 
+ language of the SEICA test systems and is composed of instructions, pattern 
+ options and instrument drivers. This manual describes each single element 
+ along with examples for its use.</p>
+
+<p>&nbsp;</p>
+
+<p>There are two functional programming environments, the COMPILED and 
+ the RUN-TIME.</p>
+
+<p>Normally a test program starts in RUN-TIME ENVIRONMENT where it is possible 
+ to insert messages/instructions for the operator and switch the power 
+ supplies on. Here it is also possible to drive all instruments in the 
+ system (switch on/off decided by programmer) and to handle the graphic 
+ interface. The following step is to switch to the COMPILED ENVIRONMENT 
+ where it is possible to execute the test patterns at a certain frequency 
+ therefore applying test stimuli according to the timing of the UUT. It 
+ is possible to use the compiled environment to execute digital functional 
+ test also at high frequency.</p>
+
+<p>A test system equipped with a DHF (real time controller) or F40 (high 
+ freq. channel card and real time controller) and one or more hybrid channel 
+ cards can use both the COMPILED and the RUN-TIME environment. </p>
+
+<p>A test system equipped only with a LAM module and channel boards as 
+ a base configuration uses only the RUN-TIME environment. In this system 
+ is however possible to mount external instrumentation and drive it as 
+ the internal one.</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">INSTRUCTIONS</p>
+
+<p>&nbsp;</p>
+
+<p>Instructions are divided in: compiler directives and run-time instructions. 
+ The first group is composed of those constructs that begins with the @ 
+ character or the DECLARE VARIABLE keyword. With the compiler directives 
+ it is possible to execute macros, to do FOR-ENDFOR cycles, to use IF-THEN-ELSE 
+ constructs, to perform arithmetic/logic expressions and “move” the functional 
+ channels at a certain frequency.</p>
+
+<p>The run-time instructions begins with the ~ or &amp; character and permits 
+ the programmer to change the test program execution (run-time), to handle 
+ the graphic interface (static Run-time terminal) to define subroutines, 
+ to execute FOR-ENDFOR cycles, to use IF-THEN-ELSE constructs, to perform 
+ arithmetic/logic expressions and “move” the functional channels. There 
+ is an overlay area between the two groups because there are constructs 
+ and instructions that work both in run-time and in compiled environment. 
+ The compiler directives/instruction applicability is indicated with the 
+ notation listed in the previous paragraph.</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">MODULE 
+ DESCRIPTION</p>
+
+<p>&nbsp;</p>
+
+<p>LAM: logic/analogical measurement </p>
+
+<p>SER: Power supply control</p>
+
+<p>SE2: Power supply control with current programming</p>
+
+<p>P32: 32-hybrid channel with programmable voltage levels</p>
+
+<p>F40: 32-hybrid channel high frequency (25Mhz) and real time controller</p>
+
+<p>USB: User board with programmable resources (loads, OP AMP, relay,) 
+ for customization</p>
+
+<p>GEN: programmable waveform generator</p>
+
+<p>HV: AC/DC high voltage/high current meter</p>
+
+<p>EXL: Matrix to connect external instrumentation</p>
+
+<p>DHF: real time controller for digital pattern up to 10Mhz</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p style="font-weight: bold;">NOTES TO WRITE A TEST PROGRAM</p>
+
+<p>The notes here below are usually followed when writing a functional 
+ test program: </p>
+
+<p>· The command keywords are in CAPITAL LETTERS (optional but advised 
+ for a better clearness)</p>
+
+<p>&nbsp;</p>
+
+<p>· Variable names are in capital letters (optional but advised for a 
+ better clearness)</p>
+
+<p>&nbsp;</p>
+
+<p>· The ! character is used as a comment at the beginning or at the end 
+ of the line.</p>
+
+<p>· The * character is used as a comment at the beginning of the line 
+ only</p>
+
+<p>· The ; character ends the line</p>
+
+<p>· The / character indicates a test pattern</p>
+
+<p>· The &amp; character is alias of &nbsp;~</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp2">&nbsp;</p>
+
+<p class="hcp2">&nbsp;</p>
+
+<p class="hcp2">&nbsp;</p>
+
+<p style="margin-left: 840px;
+			color: #800080;
+			font-weight: bold;">rel. 1.02</p>
+
+</body>
+</html>

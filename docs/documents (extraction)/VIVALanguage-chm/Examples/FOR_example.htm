@@ -1,0 +1,127 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>@FOR example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css">
+</head>
+<body>
+<h1>@FOR example</h1>
+
+<p>&nbsp;</p>
+
+<p style="font-weight: bold;">Example 1</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE VARIABLE I,J,K,VOLTE;</p>
+
+<p>DECLARE CHANNEL CLK=2;</p>
+
+<p>DECLARE CHANNEL A0=34;</p>
+
+<p>DECLARE CHANNEL A1=35;</p>
+
+<p>DECLARE CHANNEL A2=36;</p>
+
+<p>DECLARE CHANNEL A3=37;</p>
+
+<p>DECLARE GROUP ADD=A0,A1,A2,A3;</p>
+
+<p>START PRG1;</p>
+
+<p>/;</p>
+
+<p>@FOR I=1 TO=10;</p>
+
+<p>IL CLK;</p>
+
+<p>/;</p>
+
+<p>IH CLK;</p>
+
+<p>/;</p>
+
+<p>@ENDFOR;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>@CALCOLATE K=1;</p>
+
+<p>@CALCOLATE VOLTE =25;</p>
+
+<p>/;</p>
+
+<p>@FOR J=1 TO VOLTE STEP=2;</p>
+
+<p>@CALC K=K*2;</p>
+
+<p>IG ADD=K;</p>
+
+<p>/;</p>
+
+<p>@ENDFOR;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>@CALCOLATE K=10;</p>
+
+<p>@CALCOLATE VOLTE =2;</p>
+
+<p>/;</p>
+
+<p>@FOR I=K TO VOLTE STEP -2;</p>
+
+<p>IL CLK;</p>
+
+<p>/;</p>
+
+<p>IH CLK;</p>
+
+<p>/;</p>
+
+<p>@ENDFOR;</p>
+
+<p>/;</p>
+
+<p>@CALCOLATE I=2;</p>
+
+<p>@CALCOLATE VOLTE =15;</p>
+
+<p>/;</p>
+
+<p>@FOR J=I+1 TO VOLTE;</p>
+
+<p>@CALC K=K*2;</p>
+
+<p>IG ADD=K;</p>
+
+<p>/;</p>
+
+<p>@ENDFOR;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

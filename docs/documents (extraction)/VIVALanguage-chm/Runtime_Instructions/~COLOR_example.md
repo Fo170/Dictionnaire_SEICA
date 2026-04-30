@@ -1,0 +1,51 @@
+# ~COLOR example
+
+DECLARE RUNTIME FLOAT J,K;
+
+DECLARE RUNTIME STRING R1;
+
+START PRG1 STATIC;
+
+/;
+
+LABEL=OK;
+
+~CURSOR 65,4;
+
+~COLOR 1,2;
+
+~WRITE PASS;
+
+/;
+
+~BRANCH FINE;
+
+/;
+
+LABEL=NOK;
+
+~CURSOR 65,4;
+
+~COLOR 1,5
+
+~WRITE FAIL;
+
+/;
+
+LABEL=FINE;
+
+/;
+
+~CALC RES=R2;
+
+/;
+
+~WRITE \CO\005\002\, Resistor , 
+ RES;
+
+/;
+
+ENDTEST;
+
+&#169;2008 
+ Seica S.p.a - All right reserved

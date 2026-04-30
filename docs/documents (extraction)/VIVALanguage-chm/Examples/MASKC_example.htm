@@ -1,0 +1,107 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>MASKC example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { color:#008000; }
+-->
+</style>
+</head>
+<body>
+<h1>MASKC example</h1>
+
+<p class="hcp1">&nbsp;</p>
+
+<p class="hcp1"><span style="font-weight: bold;">Example 
+ 1</span></p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL S1=1;</p>
+
+<p>DECLARE CHANNEL S2=2;</p>
+
+<p>DECLARE CHANNEL S3=3;</p>
+
+<p>DECLARE RUNTIME INTEGER OHCH,SUBERR;</p>
+
+<p>START PRG1 STATIC;</p>
+
+<p>~CALC SUBERR=0;</p>
+
+<p>/;</p>
+
+<p>~IL S1,S2;</p>
+
+<p>~OH S3;</p>
+
+<p>/;</p>
+
+<p>~IH S1;</p>
+
+<p>~OL S3;</p>
+
+<p>/ MASKC; <span class="hcp2">!The low measurement on channel 
+ 3 is masked, the partial error flag is activated, while the global flag 
+ is not!</span></p>
+
+<p>~BRANCH ONERROR NOK;<span class="hcp2"> !If the partial error 
+ flag is active, jump to label NOK!</span> </p>
+
+<p>/;</p>
+
+<p>~LI1 *,OHCH;</p>
+
+<p>~OH OHCH;</p>
+
+<p>/ MASKC ONERROR NOK;</p>
+
+<p>/;</p>
+
+<p>LABEL=NOK;</p>
+
+<p>~CURSOR 65,9;</p>
+
+<p>~COLOR 1,5;</p>
+
+<p>~WRITE &quot;FAIL&quot;;</p>
+
+<p>~COLOR 1,15;</p>
+
+<p>~REPORT SUBERR;</p>
+
+<p>~CALC SUBERR=SUBERR+1;</p>
+
+<p>/;</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p style="color: #008080;">________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

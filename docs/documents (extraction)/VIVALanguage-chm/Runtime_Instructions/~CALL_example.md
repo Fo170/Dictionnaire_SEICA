@@ -1,0 +1,65 @@
+# ~CALL example
+
+Example 
+ 1
+
+START PRG1 STATIC;
+
+~START_SUB;
+
+~SUB1 (INTEGER DAT,ADR);
+
+~WG DATAB=DAT;
+
+~WG ADB=ADR;
+
+~RETURN;
+
+~SUB2 (FLOAT PAR1,PAR2);
+
+~CALC RIS=PAR1+PAR2);
+
+~WRITE RIS;
+
+~RETURN;
+
+~SUB3 (STRING COMP, PAR);
+
+~WRITE COMP , PAR;
+
+~RETURN;
+
+~SUB4 (FLOAT OP1,OP2);
+
+~CALC RIS=OP1+OP2;
+
+~WRITE RISULTATO = ,RIS;
+
+~RETURN;
+
+~END_SUB;
+
+.
+
+~CALL SUB1 (0X55,0XAA);
+
+~CALL SUB2 (12.5,14.7);
+
+~CALL SUB3 (RESISTENZA, R12) ONERROR;
+
+~CALC VAR1=12.67;
+
+~CALC VAR2=VAR1+45.7;
+
+/;
+
+~CALL SUB4 (VAR1,VAR2);
+
+/;
+
+ENDTEST; 
+
+________________________________________________________________ 
+
+&#169;2008 
+ Seica S.p.a - All right reserved

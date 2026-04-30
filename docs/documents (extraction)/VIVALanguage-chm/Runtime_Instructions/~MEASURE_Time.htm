@@ -1,0 +1,1033 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~MEASURE Time</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style>
+<!--
+body { border-left-style:Inset; border-left-width:4px; border-right-style:Inset; border-right-width:4px; border-top-style:Inset; border-top-width:4px; border-bottom-style:Inset; border-bottom-width:4px; }
+-->
+</style><style title="hcp" type="text/css">
+<!--
+div.hcp1 { position:relative; }
+span.hcp2 { font-size:10.0pt; }
+h1.hcp3 { font-size:10.0pt; }
+p.hcp4 { margin-left:40px; }
+p.hcp5 { font-weight:bold; margin-left:40px; x-text-underline:normal; text-decoration:underline; }
+span.hcp6 { font-weight:bold; }
+span.hcp7 { font-weight:bold; font-style:italic; }
+span.hcp8 { font-style:italic; }
+p.hcp9 { margin-left:160px; }
+td.hcp10 { padding:0cm 3.5pt 0cm 3.5pt; border-top-style:solid; border-right-style:solid; border-bottom-style:solid; border-bottom-color:#c0c0c0; border-bottom-width:0.5pt; border-right-color:#c0c0c0; border-right-width:0.5pt; border-left-color:#c0c0c0; border-left-width:0.5pt; border-left-style:Solid; border-top-color:#c0c0c0; border-top-width:0.5pt; }
+p.hcp11 { text-align:center; color:#008080; font-weight:bold; }
+td.hcp12 { padding:0cm 3.5pt 0cm 3.5pt; border-top-style:solid; border-right-style:solid; border-bottom-style:solid; border-bottom-color:#c0c0c0; border-bottom-width:0.5pt; border-right-color:#c0c0c0; border-right-width:0.5pt; border-top-color:#c0c0c0; border-top-width:0.5pt; }
+td.hcp13 { padding:0cm 3.5pt 0cm 3.5pt; border-right-style:solid; border-bottom-style:solid; border-bottom-color:#c0c0c0; border-bottom-width:0.5pt; border-right-color:#c0c0c0; border-right-width:0.5pt; border-left-color:#c0c0c0; border-left-width:0.5pt; border-left-style:Solid; }
+p.hcp14 { text-align:center; }
+td.hcp15 { padding:0cm 3.5pt 0cm 3.5pt; border-right-style:solid; border-bottom-style:solid; border-bottom-color:#c0c0c0; border-bottom-width:0.5pt; border-right-color:#c0c0c0; border-right-width:0.5pt; }
+p.hcp16 { text-align:center; font-size:10.0pt; x-text-underline:normal; text-decoration:underline; }
+p.hcp17 { text-align:center; font-size:10.0pt; x-text-underline:off; text-decoration:none; }
+p.hcp18 { font-size:8pt; }
+span.hcp19 { x-text-underline:normal; text-decoration:underline; }
+p.hcp20 { text-align:center; x-text-underline:normal; text-decoration:underline; }
+p.hcp21 { margin-left:40px; font-style:italic; }
+p.hcp22 { margin-left:160px; font-style:italic; }
+span.hcp23 { font-style:normal; }
+span.hcp24 { margin-left:160px; }
+p.hcp25 { text-align:justify; }
+tr.hcp26 { x-cell-content-align:top; }
+td.hcp27 { padding-right:10px; padding-left:10px; x-cell-content-align:center; }
+p.hcp28 { font-family:Verdana, sans-serif; font-size:11pt; font-weight:bold; }
+span.hcp29 { font-family:'Wingdings 2'  , serif; }
+-->
+</style>
+</head>
+<body>
+<div placeholder id="header" style="width:100%;" class="hcp1">
+ <p>&nbsp;</p>
+</div>
+<h1>~MEASURE Time<span class="hcp2">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></h1>
+
+<h1>&nbsp;</h1>
+
+<h1 class="hcp3">&nbsp;</h1>
+
+<h1 class="hcp3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;">________________________</p>
+
+<h3>Syntax</h3>
+
+<p class="hcp4">The syntax varies if you want to measure 
+ time on one signal or between events of two different signals.</p>
+
+<h3 style="margin-left: 40px;">&nbsp;</h3>
+
+<p class="hcp5">Time 
+ measurement on one signal</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp4">~<span class="hcp6">Measure 
+ T</span><span class="hcp7">ime</span> 
+ TYPE=<span class="hcp8">option </span>RANGE=<span class="hcp8">value 
+ </span>ACCF=<span class="hcp8">value </span>EXPECT=<span class="hcp8">value </span>LO=<span class="hcp8">value 
+ </span>HI=<span class="hcp8">value </span>N_SAMPLE=<span class="hcp8">value</span></p>
+
+<p style="margin-left: 120px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRIG_LEVEL=<span class="hcp8">value </span>TRIG_SLOPE=<span class="hcp8">option 
+ </span>DELAY=<span class="hcp8">value G</span>ATE=<span class="hcp8">value </span>ON=<span class="hcp8">signal 
+ </span>REF=<span class="hcp8">signal </span></p>
+
+<p class="hcp9">LABEL=<span class="hcp8">name 
+ </span><span>S</span>YNC=name<span> TRIG=</span><span class="hcp8">name 
+ </span><span>INTO=</span><span class="hcp8">variable </span><span>JUMP_ONERROR=</span><span class="hcp8">name </span><span>USING=</span><span class="hcp8">instrument 
+ </span><span>; </span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				margin-left: 80px;
+				border-spacing: 0px;
+				left: 0px;
+				top: 437px;
+				width: 737px;
+				height: 2049px;
+				border-spacing: 0px;"
+		cellspacing=0
+		height=2049
+		width=737>
+<col>
+<col style="width: 12.558%;">
+<col style="width: 59.3pt;">
+<col style="width: 11.302%;">
+<col style="width: 194.2pt;">
+
+<tr style="height: 53px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp10">
+<p align="center" class="hcp11">Parameters</td>
+<td style="width:12.558%;" width="12.558%" class="hcp12">
+<p align="center" class="hcp11">Unit of measure</td>
+<td style="width:84px;" width="84px" class="hcp12">
+<p align="center" class="hcp11">Mandatory</td>
+<td style="width:11.302%;" width="11.302%" class="hcp12">
+<p align="center" class="hcp11">Options</td>
+<td style="width:269px;" width="269px" class="hcp12">
+<p align="center" class="hcp11">Description</td></tr>
+
+<tr style="height: 275px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">TYPE=option</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp16"><span lang=EN-US>period</span></p>
+<p>&nbsp;</p>
+<p align="center" class="hcp17"><span lang=EN-US>interval</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center" class="hcp17"><span lang=EN-US>fall</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center" class="hcp17"><span lang=EN-US>rise</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center" class="hcp17"><span lang=EN-US>duty&nbsp;</span></p>
+<p>&nbsp;</td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>&nbsp;</p>
+<p>Period of the waveform.</p>
+<p>&nbsp;</p>
+<p>Time measure between a start and stop event.</p>
+<p>&nbsp;</p>
+<p>Time required to go from 90% to 10% of amplitude in first negative edge 
+ of signal.</p>
+<p>&nbsp;</p>
+<p>Time required to go from 10% to 90% of amplitude in first positive edge 
+ of signal.</p>
+<p>&nbsp;</p>
+<p>Time that the signal is ON in a total signal period.</p>
+<p>&nbsp;</td></tr>
+
+<tr style="height: 113px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">RANGE=value</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[V]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</p>
+<p class="hcp18">(recommended)</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Full scale required for the measurement. It is highly recommended to 
+ define this value or the value of the parameter expect in order to set 
+ correctly the instrument’s scale.</td></tr>
+
+<tr style="height: 58px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">ACCF=value</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[%] o [Hz]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Frequency accuracy required</td></tr>
+
+<tr style="height: 291px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">EXPECT=value</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[s]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Expected value for the measure. This value accepts also a tolerance 
+ that can be expressed either in percentage or in seconds. </p>
+<p><span class="hcp19">Example</span>:</p>
+<p>..Expect=1s (10%)</p>
+<p>..Expect=1s (50ms) this means ±50ms.</p>
+<p>The parenthesis are not required.When this value is defined, the result 
+ of the measure will be automatically confronted with the expected value, 
+ and in case of error (meaning the measured value is greater or less than 
+ the expected value) the failing result is printed onto Viva’s Report only 
+ in the case a label was defined for this measure instruction.</td></tr>
+
+<tr style="height: 53px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">LO=value</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[s]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Minimum value expected</td></tr>
+
+<tr style="height: 53px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">HI=value</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[s]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Maximum value expected</td></tr>
+
+<tr style="height: 53px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">N_SAMPLE=value</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Number of samples to acquire for the measure</td></tr>
+
+<tr style="height: 53px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">TRIG_LEVEL=value</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[V]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Trigger level</td></tr>
+
+<tr style="height: 85px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">TRIG_SLOPE=option</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp20">Pos</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center" class="hcp14">Neg</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Active edge of the signal is the rising edge</p>
+<p>&nbsp;</p>
+<p>Active edge of the signal is the falling edge</td></tr>
+
+<tr style="height: 53px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">DELAY=value</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[s]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Time between the trigger event and the start of the measure </td></tr>
+
+<tr style="height: 115px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">GATE=value</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[s]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Acquisition window (length of time during which the signal is measured)This 
+ parameter affects the parameters of Freq and N_sample according to the 
+ formula:</p>
+<p class="hcp21">Freq=N_sample*Gate</td></tr>
+
+<tr style="height: 53px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">ON=signal</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">Yes</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Where to measure </td></tr>
+
+<tr style="height: 53px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">REF=signal</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Reference signal (commonly GND)</td></tr>
+
+<tr style="height: 98px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">LABEL=name</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Identification for this measure. If the parameters Hi, Lo or Expect 
+ are defined, then this is the name that appears in Viva’s Report in case 
+ of a fail. </td></tr>
+
+<tr style="height: 53px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">SYNC=name</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Identification name of the trigger that will start the measurement.</td></tr>
+
+<tr style="height: 183px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">TRIG=name</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>This trigger event will start execution of all previous instructions 
+ that where synchronized with this trigger. Example:</p>
+<p>~ …. SYNC=Pluto…;</p>
+<p>~….. TRIG=Pluto….;</p>
+<p>The first instruction will start execution at the same time as the second 
+ instruction, because it is synchronized to its trigger event.</td></tr>
+
+<tr style="height: 101px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">INTO=variable</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Name of a declared variable in which you want to store the measured 
+ value. If this parameter is not defined, the value is stored in the register 
+ AR. </td></tr>
+
+<tr style="height: 199px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">JUMP_ONERROR=name</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>This parameter has meaning only if used together with parameters expect, 
+ hi or low. It defines where to jump in case the measured value is greater 
+ or less than the expected value. For this instruction to work, you must 
+ also declare a label &nbsp;to 
+ jump to with the instruction LABEL=name (see functional language manual). 
+ This parameter works in the same way as a ~branch instruction.</td></tr>
+
+<tr style="height: 53px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">USING=instrument</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">no</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Name of the instrument you want to use</td></tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp5"><span 
+ style="font-weight: bold; x-text-underline: normal; /*begin!kadov{{*/ text-decoration: underline; /*}}end!kadov*/ ">Time 
+ measurement between two different signals</span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp4">~<span class="hcp6">Measure 
+ T</span><span class="hcp7">ime &nbsp;</span>TYPE=<span class="hcp8">option </span>RANGE_START=<span class="hcp8">value 
+ </span>RANGE_STOP=<span class="hcp8">value </span>ACCF=<span class="hcp8">value </span>EXPECT=<span class="hcp8">value</span> 
+ LO=<span class="hcp8">value</span></p>
+
+<p class="hcp9"><span style="margin-left: 0px;">HI=</span><span 
+ style="margin-left: 0px; font-style: italic;">value </span>N_SAMPLE=<span class="hcp8">value </span>TRIG_LEVEL_START=<span class="hcp8">value 
+ </span>TRIG_LEVEL_STOP=<span class="hcp8">value</span></p>
+
+<p class="hcp22"><span class="hcp23">TRIG_SLOPE_START</span>=option 
+ <span class="hcp23">TRIG_SLOPE_STOP</span>=option <span class="hcp23">DELAY</span>=value <span class="hcp23">GATE</span>=value</p>
+
+<p class="hcp22"><span class="hcp23">START_ON</span>=signal 
+ <span class="hcp23">STOP_ON</span>=signal <span class="hcp23">REF</span>=signal 
+ <span class="hcp23">LABEL</span>=name <span class="hcp23">SYNC</span>=name 
+ TRIG=name</p>
+
+<p class="hcp9">INTO=<span class="hcp8">variable</span> 
+ JUMP_ONERROR=<span class="hcp8">name</span> USING=<span class="hcp8">instrument ;</span></p>
+
+<p class="hcp9"><span class="hcp24">&nbsp;</span><span class="hcp24">&nbsp;</span><span class="hcp24">&nbsp;</span></p>
+
+<p class="hcp4">&nbsp;</p>
+
+<p class="hcp4">&nbsp;</p>
+
+<table x-use-null-cells
+		style="border: none;
+				x-border-left: 1px table-solid;
+				x-border-top: 1px table-solid;
+				x-border-right: 1px table-solid;
+				x-border-bottom: 1px table-solid;
+				margin-left: 80px;
+				border-spacing: 0px;
+				left: 0px;
+				top: 2709px;
+				width: 737px;
+				height: 2175px;
+				border-spacing: 0px;"
+		cellspacing=0
+		height=2175
+		width=737>
+<col>
+<col style="width: 12.558%;">
+<col style="width: 59.3pt;">
+<col style="width: 11.302%;">
+<col style="width: 194.2pt;">
+
+<tr style="height: 53px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp10">
+<p align="center" class="hcp11">Parameters</td>
+<td style="width:12.558%;" width="12.558%" class="hcp12">
+<p align="center" class="hcp11">Unit of measure</td>
+<td style="width:84px;" width="84px" class="hcp12">
+<p align="center" class="hcp11">Mandatory</td>
+<td style="width:11.302%;" width="11.302%" class="hcp12">
+<p align="center" class="hcp11">Options</td>
+<td style="width:269px;" width="269px" class="hcp12">
+<p align="center" class="hcp11">Description</td></tr>
+
+<tr style="height: 275px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">TYPE=option</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp16"><span lang=EN-US>period</span></p>
+<p>&nbsp;</p>
+<p align="center" class="hcp17"><span lang=EN-US>interval</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center" class="hcp17"><span lang=EN-US>fall</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center" class="hcp17"><span lang=EN-US>rise</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center" class="hcp17"><span lang=EN-US>duty&nbsp;</span></p>
+<p>&nbsp;</td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>&nbsp;</p>
+<p>Period of the waveform.</p>
+<p>&nbsp;</p>
+<p>Time measure between a start and stop event.</p>
+<p>&nbsp;</p>
+<p>Time required to go from 90% to 10% of amplitude in first negative edge 
+ of signal.</p>
+<p>&nbsp;</p>
+<p>Time required to go from 10% to 90% of amplitude in first positive edge 
+ of signal.</p>
+<p>&nbsp;</p>
+<p>Time that the signal is ON in a total signal period.</p>
+<p>&nbsp;</td></tr>
+
+<tr style="height: 113px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">RANGE_START=value</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[V]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</p>
+<p class="hcp18">(recommended)</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Full scale of the signal that generates the start event. It is highly 
+ recommended to define this value or the value of the parameter expect 
+ in order to set correctly the instrument’s scale.</td></tr>
+
+<tr style="height: 112px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">RANGE_STOP=value</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[V]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</p>
+<p class="hcp18">(recommended)</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Full scale of the signal that generates the stop event. It is highly 
+ recommended to define this value or the value of the parameter expect 
+ in order to set correctly the instrument’s scale.</td></tr>
+
+<tr style="height: 58px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">ACCF=value</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[%] o [Hz]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Frequency accuracy required</td></tr>
+
+<tr style="height: 291px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">EXPECT=value</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[s]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Expected value for the measure. This value accepts also a tolerance 
+ that can be expressed either in percentage or in seconds. </p>
+<p><span class="hcp19">Example</span>:</p>
+<p>..Expect=1s (10%)</p>
+<p>..Expect=1s (50ms) this means ±50ms.</p>
+<p>The parenthesis are not required.When this value is defined, the result 
+ of the measure will be automatically confronted with the expected value, 
+ and in case of error (meaning the measured value is greater or less than 
+ the expected value) the failing result is printed onto Viva’s Report only 
+ in the case a label was defined for this measure instruction.</td></tr>
+
+<tr style="height: 53px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">LO=value</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[s]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Minimum value expected</td></tr>
+
+<tr style="height: 53px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">HI=value</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[s]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Maximum value expected</td></tr>
+
+<tr style="height: 53px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">N_SAMPLE=value</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Number of samples to acquire for the measure</td></tr>
+
+<tr style="height: 53px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">TRIG_LEVEL_START=value</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[V]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Trigger level for the start event</td></tr>
+
+<tr style="height: 85px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">TRIG_LEVEL_STOP=value</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[V]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp20">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Trigger level for the stop event</td></tr>
+
+<tr style="height: 85px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">TRIG_SLOPE_START=option</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp20"><span class="hcp19">Pos</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center" class="hcp14">Neg</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Active edge of the signal is the rising edge</p>
+<p>&nbsp;</p>
+<p>Active edge of the signal is the falling edge</td></tr>
+
+<tr style="height: 85px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">TRIG_SLOPE_STOP=option</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp20">Pos</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center" class="hcp14">Neg</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Active edge of the signal is the rising edge</p>
+<p>&nbsp;</p>
+<p>Active edge of the signal is the falling edge</td></tr>
+
+<tr style="height: 53px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">DELAY=value</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[s]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Time between the trigger event and the start of the measure </td></tr>
+
+<tr style="height: 115px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">GATE=value</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[s]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Acquisition window (length of time during which the signal is measured)This 
+ parameter affects the parameters of Freq and N_sample according to the 
+ formula:</p>
+<p class="hcp21">Freq=N_sample*Gate</td></tr>
+
+<tr style="height: 53px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">START_ON=signal</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">Yes</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Signal that starts the measure</td></tr>
+
+<tr style="height: 53px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">STOP_ON=signal</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">Yes</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Signal that stops the measure</td></tr>
+
+<tr style="height: 53px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">REF=signal</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Reference signal (commonly GND)</td></tr>
+
+<tr style="height: 98px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">LABEL=name</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Identification for this measure. If the parameters Hi, Lo or Expect 
+ are defined, then this is the name that appears in Viva’s Report in case 
+ of a fail. </td></tr>
+
+<tr style="height: 53px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">SYNC=name</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Identification name of the trigger that will start the measurement.</td></tr>
+
+<tr style="height: 183px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">TRIG=name</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>This trigger event will start execution of all previous instructions 
+ that where synchronized with this trigger. Example:</p>
+<p>~ …. SYNC=Pluto…;</p>
+<p>~….. TRIG=Pluto….;</p>
+<p>The first instruction will start execution at the same time as the second 
+ instruction, because it is synchronized to its trigger event.</td></tr>
+
+<tr style="height: 101px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">INTO=variable</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>Name of a declared variable in which you want to store the measured 
+ value. If this parameter is not defined, the value is stored in the register 
+ AR. </td></tr>
+
+<tr style="height: 199px;">
+<td colspan="1" rowspan="1" style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">JUMP_ONERROR=name</td>
+<td colspan="1" rowspan="1" style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td colspan="1" rowspan="1" style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">No</td>
+<td colspan="1" rowspan="1" style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;</td>
+<td colspan="1" rowspan="1" style="width:269px;" width="269px" class="hcp15">
+<p>This parameter has meaning only if used together with parameters expect, 
+ hi or low. It defines where to jump in case the measured value is greater 
+ or less than the expected value. For this instruction to work, you must 
+ also declare a label &nbsp;to 
+ jump to with the instruction LABEL=name (see functional language manual). 
+ This parameter works in the same way as a ~branch instruction.</td></tr>
+
+<tr style="height: 53px;">
+<td style="width:86.3pt;" width="86.3pt" class="hcp13">
+<p align="center" class="hcp14">USING=instrument</td>
+<td style="width:12.558%;" width="12.558%" class="hcp15">
+<p align="center" class="hcp14">[-]</td>
+<td style="width:84px;" width="84px" class="hcp15">
+<p align="center" class="hcp14">no</td>
+<td style="width:11.302%;" width="11.302%" class="hcp15">
+<p align="center" class="hcp14">&nbsp;<span lang="EN-US" class="hcp2">&nbsp;</span></td>
+<td style="width:269px;" width="269px" class="hcp15">
+<p>Name of the instrument you want to use</td></tr>
+</table>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;">&nbsp;</p>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;">&nbsp;</p>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;">&nbsp;</p>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;">__________________________</p>
+
+<h3>Note</h3>
+
+<p class="hcp25">The mandatory keyword for this instruction 
+ is MEASURE T, but it is also accepted MEASURE TIME.</p>
+
+<p class="hcp25">&nbsp;</p>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;">&nbsp;</p>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;"><span style="color: #0000ff;">_</span>_________________________</p>
+
+<h3><span style="font-family: Verdana, sans-serif; font-weight: bold;">See 
+ also</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ </h3>
+
+<p><a href="~MEASURE.htm">~Measure</a></p>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #0000ff;">&nbsp;</p>
+
+<p class=InlinestruzioniSottotitolo1
+	style="font-family: Verdana, sans-serif;
+			font-weight: bold;
+			color: #008080;"><span style="font-family: Verdana, sans-serif;
+											font-weight: bold;
+											color: #008080;">__________________________</span></p>
+
+<h3>Examples</h3>
+
+<p><a href="~MEASURE_Time_example.htm">~Measure Time example</a></p>
+
+<p>&nbsp;</p>
+
+<p class=inlinestruzionisottotitolo1
+	style="font-family: Verdana, sans-serif;
+			color: #000000;
+			font-weight: normal;">&nbsp;</p>
+
+<p class=inlinestruzionisottotitolo1
+	style="font-family: Verdana, sans-serif;
+			color: #000000;
+			font-weight: normal;">&nbsp;</p>
+
+<div top-level=TRUE
+	style="background-color: #ffffff;
+			padding: 5px;
+			position: absolute;
+			top: 104px;
+			left: 19px;
+			width: 594px;
+			height: 85px;
+			/*begin!kadov{{*/ x-right: 313px;
+			x-bottom: 5590px; /*}}end!kadov*/ ">
+<p class="hcp25">NVL instruction to measure time on a test 
+ point or between two test points of the board; the compiler will automatically 
+ choose an instrument of the machine that satisfies the request.</p>
+
+<p style="font-family: Verdana, sans-serif;">&nbsp;</p>
+</div>
+
+<div top-level=TRUE
+	style="background-color: #ffffff;
+			padding: 5px;
+			position: absolute;
+			width: 457px;
+			height: 58px;
+			top: 44px;
+			left: 401px;
+			/*begin!kadov{{*/ x-right: 68px;
+			x-bottom: 5677px; /*}}end!kadov*/ ">
+<table x-use-null-cells
+		style="x-cell-content-align: Center;
+				left: 0px;
+				top: 60px;
+				height: 29px;
+				border-left-style: Outset;
+				border-top-style: Outset;
+				border-right-style: Outset;
+				border-bottom-style: Outset;
+				border-left-width: 1px;
+				border-right-width: 1px;
+				border-top-width: 1px;
+				border-bottom-width: 1px;
+				border-left-color: #008080;
+				border-right-color: #008080;
+				border-top-color: #008080;
+				border-bottom-color: #008080;
+				border-spacing: 0px;
+				border-spacing: 0px;"
+		cellspacing=0
+		height=29>
+<col>
+
+<tr valign="top" class="hcp26">
+<td valign="middle" class="hcp27">
+<p class="hcp28"><span class=Tab>Preprocessor</span> <span class="hcp29">* &nbsp;</span><span 
+ class=Tab>Runtime :</span> &nbsp;&nbsp;<span 
+ class=Tab
+	style="font-weight: normal;">Dynamic</span><span 
+ style="font-weight: normal;"> </span><span class="hcp29">*</span> 
+ &nbsp;&nbsp;&nbsp;<span class=Tab
+													style="font-weight: normal;">Static</span> 
+ &nbsp;<span class="hcp29">R</span></td></tr>
+</table>
+
+<p>&nbsp;</p>
+</div>
+
+<div top-level=TRUE
+	style="background-color: #ffffff;
+			padding: 5px;
+			position: absolute;
+			width: 169px;
+			height: 66px;
+			top: 107px;
+			left: 645px;
+			/*begin!kadov{{*/ x-right: 104px;
+			x-bottom: 5588px; /*}}end!kadov*/ ">
+<table x-use-null-cells
+		style="x-cell-content-align: top;
+				height: 40px;
+				border-left-style: Double;
+				border-top-style: Double;
+				border-right-style: Double;
+				border-bottom-style: Double;
+				border-left-width: 4px;
+				border-right-width: 4px;
+				border-top-width: 4px;
+				border-bottom-width: 4px;
+				border-left-color: #008080;
+				border-right-color: #008080;
+				border-top-color: #008080;
+				border-bottom-color: #008080;
+				border-spacing: 0px;
+				border-spacing: 0px;
+				left: 0px;
+				top: 0px;
+				width: 167px;"
+		width=167
+		cellspacing=0
+		height=40>
+<col>
+
+<tr valign="top" class="hcp26">
+<td valign="middle" class="hcp27">
+<p class="hcp28"><span class=Tab>Modules: &nbsp;</span></p>
+<p><span class=Tab>ACLAM,</span></p>
+<p><span class=Tab>external instruments</span></td></tr>
+</table>
+
+<p>&nbsp;</p>
+</div>
+
+<div placeholder id="footer" style="width:100%;" class="hcp1">
+ <p style="text-align: center;
+			font-size: 10pt;
+			font-weight: bold;"
+	align=center>&#169;2008 
+ Seica S.p.a - All rights reserved</p>
+ <p>&nbsp;</p>
+</div>
+</body>
+</html>

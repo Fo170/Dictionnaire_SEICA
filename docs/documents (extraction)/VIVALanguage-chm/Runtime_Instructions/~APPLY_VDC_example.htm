@@ -1,0 +1,122 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>~APPLY VDC example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+p.hcp2 { color:#008000; }
+p.hcp3 { font-weight:bold; color:#008080; }
+-->
+</style>
+</head>
+<body>
+<h1>~APPLY VDC example</h1>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 1</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL ch1=1;</p>
+
+<p>DECLARE CHANNEL ch2=2;</p>
+
+<p>…</p>
+
+<p>START example STATIC;</p>
+
+<p>….</p>
+
+<p class="hcp2">!Apply 5V DC to channel 1</p>
+
+<p>~APPLY VDC V=5V TO=ch1; </p>
+
+<p>......</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3">_____________________________________________________________</p>
+
+<p class="hcp1">&nbsp;</p>
+
+<p class="hcp1">Example 2</p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL ch1=1;</p>
+
+<p>DECLARE CHANNEL ch2=2;</p>
+
+<p>…</p>
+
+<p>START example STATIC;</p>
+
+<p>….</p>
+
+<p class="hcp2">!Apply a DC voltage value 5V and 400mA on channel 
+ ch1 referred to ground, the instrument must be certified on the fntool 
+ table to have an accuracy greater or equal than 2%. The generator will 
+ start with the trigger event syncro1 and with a delay of 100ms from the 
+ trigger event.</p>
+
+<p>~APPLY VDC V=5V I=400mA ACCV=2% DELAY=100ms TO=ch1 REF=gnd LABEL=apply_dc 
+ SYNC=syncro1;</p>
+
+<p>.....</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span style="font-weight: bold; color: #008080;">_____________________________________________________________</span></p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1"><span style="font-weight: bold;">Example 
+ 3</span></p>
+
+<p>&nbsp;</p>
+
+<p>DECLARE CHANNEL ch1=1;</p>
+
+<p>DECLARE CHANNEL ch2=2;</p>
+
+<p>…</p>
+
+<p>START example STATIC;</p>
+
+<p>….</p>
+
+<p class="hcp2">!Apply a DC voltage value 5V and 400mA to both 
+ channels ch1 and ch2.</p>
+
+<p>~APPLY VDC V=5V I=400mA TO=ch1,ch2 LABEL=apply_dc2;</p>
+
+<p>......</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>

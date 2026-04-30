@@ -1,0 +1,161 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>NOSTEP example</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="default.css"><style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { color:#008000; }
+p.hcp3 { color:#008080; }
+-->
+</style>
+</head>
+<body>
+<h1>NOSTEP example</h1>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">&nbsp;</p>
+
+<p class="hcp1"><span style="font-weight: bold;">Example 
+ 1</span></p>
+
+<p>&nbsp;</p>
+
+<p>START PRG1;</p>
+
+<p>/; <span class="hcp2">!pattern 1!</span></p>
+
+<p>IL 2;</p>
+
+<p>IH 3;</p>
+
+<p>/; <span class="hcp2">!pattern2!</span></p>
+
+<p>IH 3;</p>
+
+<p>IL 2;</p>
+
+<p>/ NOSTEP; <span class="hcp2">!pattern3 this pattern is not 
+ stored in the File.pac or in the status file!</span></p>
+
+<p>IL 34;</p>
+
+<p>/; <span class="hcp2">!pattern4!</span></p>
+
+<p>IH 35;</p>
+
+<p>/ NOSTEP; <span class="hcp2">!pattern5 this pattern is not 
+ stored in the File.pac or in the status file!</span></p>
+
+<p>/; <span class="hcp2">!pattern6!</span></p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3"><span style="color: #008080;">________________________________________________________________ 
+ </span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp1">Example 2</p>
+
+<p>&nbsp;</p>
+
+<p style="color: #008000;">At the beginning of the program &nbsp;a 
+ synchronization on signal the FF2 low is carried out, then the simulated 
+ program is executed. Patterns 1 to 205 therefore are not stored in the 
+ status file because they have the NOSTEP pattern option.</p>
+
+<p>DECLARE CHANNEL RES=59;</p>
+
+<p>DECLARE CHANNEL CLK=2;</p>
+
+<p>DECLARE CHANNEL FF2=63;</p>
+
+<p>DECLARE CHANNEL S1=5;</p>
+
+<p>DECLARE CHANNEL S2=89;</p>
+
+<p>START PRG2;</p>
+
+<p>/ NOSTEP;<span class="hcp2"> !pattern1!</span></p>
+
+<p>IL RES;</p>
+
+<p>@FOR I=1 TO 100</p>
+
+<p>IL CLK;</p>
+
+<p>/ NOSTEP;</p>
+
+<p>IH CLK;</p>
+
+<p>/ NOSTEP; <span class="hcp2">!pattern 203!</span></p>
+
+<p>@ENDFOR;</p>
+
+<p>/LAB1 NOSTEP; <span class="hcp2">!pattern 204!</span></p>
+
+<p>IL CLK;</p>
+
+<p>OL FF2;</p>
+
+<p>/ NOSTEP; <span class="hcp2">!pattern 205!</span></p>
+
+<p>IH CLK;</p>
+
+<p>JUMP LAB1;</p>
+
+<p>/; <span class="hcp2">!Start simulated program!</span></p>
+
+<p>IH S1;</p>
+
+<p>/;</p>
+
+<p>IL S2;</p>
+
+<p>/;</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>.</p>
+
+<p>ENDTEST;</p>
+
+<p>&nbsp;</p>
+
+<p class="hcp3">________________________________________________________________ 
+ </p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div placeholder
+	id=footer
+	style="width: 100%; position: relative;">
+ <p>&nbsp;</p>
+ <p style="font-size: 10pt;
+			font-weight: bold;
+			text-align: center;"
+	align=center>&#169;2008 
+ Seica S.p.a - All right reserved</p>
+</div>
+</body>
+</html>
